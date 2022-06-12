@@ -200,3 +200,27 @@ p {
 .header.activated {
   box-shadow: 0 1px 0.5rem var(--transparent-light-color);
 }
+
+/* Scroll to the top btn */
+.scrollToTop-btn i {
+  color: var(--dark-color);
+}
+.scrollToTop-btn {
+  display: none;
+  position: fixed;
+  height: 4.5rem;
+  width: 4.5rem;
+  bottom: 20px;
+  right: 10px;
+  z-index: 999;
+  border: 2px solid var(--dark-color);
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5rem;
+}
+
+.scrollToTop-btn:hover {
+  opacity: 0.5;
+}
