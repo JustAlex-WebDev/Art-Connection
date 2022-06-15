@@ -9,7 +9,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image1.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image1.jpg",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image2.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image2.jpg",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image3.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image3.jpg",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image4.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image4.jpg",
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image5.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image5.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image6.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image6.jpg",
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image7.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image7.jpg",
   },
   {
     id: 8,
@@ -86,7 +86,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image8.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image8.jpg",
   },
   {
     id: 9,
@@ -97,7 +97,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image9.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image9.jpg",
   },
   {
     id: 10,
@@ -108,7 +108,7 @@ const menu = [
     desc: `Item Description`,
     price: "150",
     currency: "BGN",
-    img: "/images/image10.jpg",
+    img: "/E-Commerce-Shop-REST-API-Project/images/image10.jpg",
   },
 ];
 
