@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Website</title>
+    <script
+      src="https://kit.fontawesome.com/ded7193994.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/E-Commerce-Shop-REST-API-Project/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <nav class="navbar container">
+        <a href="/E-Commerce-Shop-REST-API-Project/index.html">
+          <h2 class="logo" title="Main Page">ArtConnection</h2>
+        </a>
+
+        <div class="list">
+          <button
+            class="btn place-items-center"
+            id="heart-icon"
+            title="Favourites"
+          >
+            <i
+              class="fa-solid fa-heart heart-icon"
+              onclick="toggleFavourites()"
+            ></i>
+          </button>
+
+          <button
+            class="btn place-items-center"
+            id="shoppingBag-icon"
+            title="Shopping Cart"
+          >
+            <i
+              class="fa-solid fa-cart-shopping shoppingBag-icon"
+              onclick="toggleCart()"
+            ></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Menu -->
+    <section class="menu" id="menu">
+      <!-- menu items -->
+      <div class="section-center">
+        <!-- single item -->
+        <!-- <article class="menu-item">
+          <div class="img-container">
+            <img src="${item.img}" class="photo" alt="" />
+            <div class="image-overlay image-overlay-blur">
+              <button class="btn overlay-btn" onclick="addToCart(${item.id})" title="Add to shopping cart">
+                <span
+                  ><i
+                    class="
+                      fa-solid fa-cart-shopping
+                      shoppingBag-icon
+                      overlay-icon
+                    "
+                  ></i></span
+                >Add to cart
+              </button>
+            </div>
+          </div>
+          <div class="item-info-right" title="Add to favourites">
+            <i class="fa-solid fa-heart heart-icon"></i>
+          </div>
+          <div class="item-info">
+            <h3>${item.name}</h3>
+            <h3 class="item-description">${item.desc}</h3>
+            <h3 class="colors">${item.color}</h3>
+            <h3 class="price">
+              ${item.price}<span class="currency"> ${item.currency}</span>
+            </h3>
+          </div>
+        </article> -->
+        <!-- end of single item -->
+      </div>
+    </section>
+
+    <!-- Scroll to the top btn -->
+    <button
+      onclick="topFunction()"
+      class="btn scrollToTop-btn"
+      id="myBtn"
+      title="Go to top"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="/E-Commerce-Shop-REST-API-Project/script.js"></script>
+  </body>
+</html>
