@@ -3,8 +3,9 @@
 ## About the project
 
 This project will be build in order to train responsive HTML, CSS and Javascript. 
-An E-Commerce Shop which originally will be created with local data and then it will
-be made to work with REST API using fetch() and REACT.
+Also, it will be a great way for me to learn some more advanced ways of development. 
+An E-Commerce Shop, which will originally be created using local data and then it will
+be transformed into REACT.
 
 ## Expected updates to the project (very soon)
 
