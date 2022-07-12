@@ -1,4 +1,4 @@
-# E-Commerce-Shop-REST-API-Project
+# E-Commerce-Shop-FAKE-API-Project
 
 ## About the project
 
