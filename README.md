@@ -10,9 +10,7 @@ contain the second more advanced way in which the project will be build.
 ## The link to the project
 
 https://e-commerce-shop-fake-api.herokuapp.com/
-###
-###
-###
+
 ## Expected updates to the project (very soon)
 
 I will transform all the code into REACT, by using components, styled components, hooks as useEffect and useState. 
