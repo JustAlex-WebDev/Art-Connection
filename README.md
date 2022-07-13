@@ -4,14 +4,14 @@
 
 An E-Commerce Shop, which will originally be created using local data, simple html, css and javascript. And then it will
 be transformed into more advanced project with the help of REACT and JSON server. 
-The two ways in which the project will be done will seperated into different branches and the main branch will 
-contain the second more advanced way in which the project will be build.
+The two ways in which the app will be done will be seperated into different branches and the main branch will 
+contain the second (more advanced) way in which the project will be build.
 
-## The link to the project
+## Link to the app
 
 https://e-commerce-shop-fake-api.herokuapp.com/
 
-## Expected updates to the project (very soon)
+## Expected updates to the app (very soon)
 
 I will transform all the code into REACT, by using components, styled components, hooks as useEffect and useState. 
 Also i will make a JSON server from which i would fetch my data.
