@@ -1,5 +1,6 @@
 import GlobalStyles from "./Components/Styles/Global";
 import Header from "./Components/Header";
+import ScrollToTop from "./Components/ScrollToTop";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -17,10 +18,27 @@ function App() {
 
   window.addEventListener("scroll", scrollHeader);
 
+  // Scroll To Top Btn
+  const scollToTopBtn = () => {
+    if (window.scrollY >= 40) {
+      setScrollToTopBtn(true);
+    } else {
+      setScrollToTopBtn(false);
+    }
+  };
+
+  window.addEventListener("scroll", scollToTopBtn);
+
+  // Scroll To Top
+  const scollToTop = () => {
+    document.documentElement.scrollTop = 0;
+  };
+
   return (
     <>
       <GlobalStyles />
       <Header headerBackground={headerBackground} />
+      <ScrollToTop scrollToTopBtn={scrollToTopBtn} onScollToTop={scollToTop} />
     </>
   );
 }
