@@ -19,4 +19,4 @@ Also, it will be a great way for me to learn some more advanced ways of web deve
 
 ## Link to the app
 
-https://e-commerce-shop-fake-api.herokuapp.com/
+https://comfy-kleicha-661d3e.netlify.app
