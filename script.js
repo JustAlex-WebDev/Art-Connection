@@ -203,7 +203,7 @@ function renderCartItems() {
             <i class="fa-solid fa-plus plus-icon" onclick = "changeNumberOfUnits('plus',${item.id})"></i>
           </div>
           <div class="cart-icon-container">
-            <i class="fa-solid fa-heart heart-icon cart-heart-icon"></i>
+            <i class="fa-solid fa-heart heart-icon cart-heart-icon" onclick="addToFavourites(${item.id})></i>
             <i class="fa-regular fa-trash-can cart-trash-icon" onclick = "removeItemFromCart(${item.id})"></i>
           </div>
         </div>
@@ -329,6 +329,7 @@ function renderFavouritesItems() {
                 shoppingBag-icon
                 favourites-cart-icon
               "
+              onclick="addToCart(${item.id})"
             ></i>
             <i class="fa-regular fa-trash-can favourites-trash-icon" onclick = "removeItemFromFavourites(${item.id})"></i>
           </div>
