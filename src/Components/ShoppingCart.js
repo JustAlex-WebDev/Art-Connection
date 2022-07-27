@@ -1,6 +1,11 @@
 import { StyledShoppingCart } from "./Styles/ShoppingCartStyled";
 
-const ShoppingCart = ({ cartMenu, onCartDelete, onNumberOfUnits }) => {
+const ShoppingCart = ({
+  cartMenu,
+  onCartDelete,
+  onNumberOfUnits,
+  onFavouritesAdd,
+}) => {
   let totalPrice = 0;
   let totalItems = 0;
   return (
@@ -44,7 +49,10 @@ const ShoppingCart = ({ cartMenu, onCartDelete, onNumberOfUnits }) => {
                 ></i>
               </div>
               <div className="cart-icon-container">
-                <i className="fa-solid fa-heart heart-icon cart-heart-icon"></i>
+                <i
+                  className="fa-solid fa-heart heart-icon cart-heart-icon"
+                  onClick={() => onFavouritesAdd(item.id)}
+                ></i>
                 <i
                   className="fa-regular fa-trash-can cart-trash-icon"
                   onClick={() => onCartDelete(item.id)}

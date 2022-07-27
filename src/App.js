@@ -2,6 +2,7 @@ import GlobalStyles from "./Components/Styles/Global";
 import Header from "./Components/Header";
 import Menu from "./Components/Menu";
 import ShoppingCart from "./Components/ShoppingCart";
+import Favourites from "./Components/Favourites";
 import ScrollToTop from "./Components/ScrollToTop";
 import { useState, useEffect } from "react";
 
@@ -15,6 +16,11 @@ function App() {
 
   // Setting up the cart items array
   const [cartMenu, setCartMenu] = useState(cartFromLocalStorage);
+
+  // Setting up the favourites items array
+  const [favouritesMenu, setFavouritesMenu] = useState(
+    favouritesFromLocalStorage
+  );
 
   // Setting up the on scroll animation of the header
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -71,6 +77,40 @@ function App() {
     );
   };
 
+  // Add To Favourites
+  const addToFavourites = async (id) => {
+    // const res = await fetch("http://localhost:5000/menu", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(id),
+    // });
+
+    // const data = await res.json();
+
+    // setMenu([...menu, data]);
+
+    if (favouritesMenu.some((item) => item.id === id)) {
+      alert("This item is already in your favourites!");
+    } else {
+      // console.log(id);
+      const item = menu.find((product) => product.id === id);
+      const newFavouritesMenu = { ...item, numberOfUnits: 1 };
+      // console.log(newFavItem);
+      setFavouritesMenu([...favouritesMenu, newFavouritesMenu]);
+    }
+  };
+
+  // Delete From Favourites
+  const deleteFromFavourites = (id) => {
+    // await fetch("http://localhost:5000/menu/${id}", {
+    //   method: "DELETE",
+    // });
+
+    setFavouritesMenu(favouritesMenu.filter((item) => item.id !== id));
+  };
+
   // Header-Background styles on scroll
   const scrollHeader = () => {
     if (window.scrollY >= 15) {
@@ -102,11 +142,21 @@ function App() {
     <>
       <GlobalStyles />
       <Header headerBackground={headerBackground} />
-      <Menu menu={menu} />
+      <Menu
+        menu={menu}
+        onCartAdd={addToCart}
+        onFavouritesAdd={addToFavourites}
+      />
       <ShoppingCart
         cartMenu={cartMenu}
         onCartDelete={deleteFromCart}
         onNumberOfUnits={numberOfUnits}
+        onFavouritesAdd={addToFavourites}
+      />
+      <Favourites
+        favouritesMenu={favouritesMenu}
+        onFavouritesDelete={deleteFromFavourites}
+        onCartAdd={addToCart}
       />
       <ScrollToTop scrollToTopBtn={scrollToTopBtn} onScollToTop={scollToTop} />
     </>
