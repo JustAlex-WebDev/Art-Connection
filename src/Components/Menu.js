@@ -1,6 +1,6 @@
 import { StyledMenu } from "./Styles/MenuStyled";
 
-const Menu = ({ menu, onCartAdd, onFavouritesAdd }) => {
+const Menu = ({ menu, onToggleFav, onCartAdd, onFavouritesAdd }) => {
   return (
     <StyledMenu className="menu active-content" id="menu">
       <div className="section-center">
@@ -33,7 +33,10 @@ const Menu = ({ menu, onCartAdd, onFavouritesAdd }) => {
                 className={`btn fa-solid fa-heart heart-icon ${
                   item.fav ? "fav" : ""
                 }`}
-                onClick={() => onFavouritesAdd(item.id)}
+                onClick={
+                  () => onFavouritesAdd(item.id)
+                  // && onToggleFav(item.id)
+                }
               ></i>
             </div>
             <div className="item-info">

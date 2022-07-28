@@ -1,12 +1,16 @@
 import { StyledHeader } from "./Styles/HeaderStyled";
 
-const Header = ({ headerBackground }) => {
+const Header = ({ headerBackground, onToggleTab }) => {
   return (
     <StyledHeader className="header" id="header">
       <div className={`bg ${headerBackground ? "activated" : ""}`}>
         <nav className="navbar container">
           <button style={{ cursor: "pointer" }}>
-            <h2 className="logo" title="Main Page">
+            <h2
+              className="logo"
+              title="Main Page"
+              onClick={() => onToggleTab(1)}
+            >
               ArtConnection
             </h2>
           </button>
@@ -17,7 +21,11 @@ const Header = ({ headerBackground }) => {
               id="heart-icon"
               title="Favourites"
             >
-              <i className="fa-solid fa-heart heart-icon"></i>
+              <i
+                className="fa-solid fa-heart heart-icon"
+                onClick={() => onToggleTab(2)}
+                onDoubleClick={() => onToggleTab(1)}
+              ></i>
             </button>
 
             <button
@@ -25,7 +33,11 @@ const Header = ({ headerBackground }) => {
               id="shoppingBag-icon"
               title="Shopping Cart"
             >
-              <i className="fa-solid fa-cart-shopping shoppingBag-icon"></i>
+              <i
+                className="fa-solid fa-cart-shopping shoppingBag-icon"
+                onClick={() => onToggleTab(3)}
+                onDoubleClick={() => onToggleTab(1)}
+              ></i>
             </button>
           </div>
         </nav>
