@@ -6,6 +6,13 @@ import Favourites from "./Components/Favourites";
 import ScrollToTop from "./Components/ScrollToTop";
 import { useState, useEffect } from "react";
 
+// Using local storage for the cart items
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+// Using local storage for the favourites items
+const favouritesFromLocalStorage = JSON.parse(
+  localStorage.getItem("favourites") || "[]"
+);
+
 function App() {
   // Setting up the menu items array
   const [menu, setMenu] = useState(
@@ -13,18 +20,36 @@ function App() {
     [],
     []
   );
-
   // Setting up the cart items array
   const [cartMenu, setCartMenu] = useState(cartFromLocalStorage);
-
   // Setting up the favourites items array
   const [favouritesMenu, setFavouritesMenu] = useState(
     favouritesFromLocalStorage
   );
-
   // Setting up the on scroll animation of the header
   const [headerBackground, setHeaderBackground] = useState(false);
   const [scrollToTopBtn, setScrollToTopBtn] = useState(false);
+  // Setting up the toggle between diff pages
+  const [toggleState, setToggleState] = useState(1);
+
+  // Using local storage for the cart items
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartMenu));
+  }, [cartMenu]);
+
+  // Using local storage for the favourites items
+  useEffect(() => {
+    localStorage.setItem("favourites", JSON.stringify(favouritesMenu));
+  }, [favouritesMenu]);
+
+  useEffect(() => {
+    const getMenu = async () => {
+      const menuFromServer = await fetchMenu();
+      setMenu(menuFromServer);
+    };
+
+    getMenu();
+  }, []);
 
   // Fetch Menu
   const fetchMenu = async () => {
@@ -111,6 +136,19 @@ function App() {
     setFavouritesMenu(favouritesMenu.filter((item) => item.id !== id));
   };
 
+  // Toggle between the main menu, the shopping cart and the favourites
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+
+  // Toggle Fav
+  // const toggleFav = (id) => {
+  //   console.log(id);
+  //   setMenu(
+  //     menu.map((item) => (item.id === id ? { ...item, fav: !item.fav } : item))
+  //   );
+  // };
+
   // Header-Background styles on scroll
   const scrollHeader = () => {
     if (window.scrollY >= 15) {
@@ -141,23 +179,30 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Header headerBackground={headerBackground} />
-      <Menu
-        menu={menu}
-        onCartAdd={addToCart}
-        onFavouritesAdd={addToFavourites}
-      />
-      <ShoppingCart
-        cartMenu={cartMenu}
-        onCartDelete={deleteFromCart}
-        onNumberOfUnits={numberOfUnits}
-        onFavouritesAdd={addToFavourites}
-      />
-      <Favourites
-        favouritesMenu={favouritesMenu}
-        onFavouritesDelete={deleteFromFavourites}
-        onCartAdd={addToCart}
-      />
+      <Header headerBackground={headerBackground} onToggleTab={toggleTab} />
+      {toggleState === 1 && (
+        <Menu
+          menu={menu}
+          onCartAdd={addToCart}
+          // onToggleFav={toggleFav}
+          onFavouritesAdd={addToFavourites}
+        />
+      )}
+      {toggleState === 3 && (
+        <ShoppingCart
+          cartMenu={cartMenu}
+          onCartDelete={deleteFromCart}
+          onNumberOfUnits={numberOfUnits}
+          onFavouritesAdd={addToFavourites}
+        />
+      )}
+      {toggleState === 2 && (
+        <Favourites
+          favouritesMenu={favouritesMenu}
+          onFavouritesDelete={deleteFromFavourites}
+          onCartAdd={addToCart}
+        />
+      )}
       <ScrollToTop scrollToTopBtn={scrollToTopBtn} onScollToTop={scollToTop} />
     </>
   );
