@@ -9,7 +9,7 @@ contain the second (more advanced) way in which the project will be build.
 
 ## Why I am building the project
 
-This project will be build in order to train responsive HTML, CSS, Javascript, React adn Fake APIs.
+This project will be build in order to train responsive HTML, CSS, Javascript, React and Fake APIs.
 By putting my skills into practise, it will be a great way for me to learn some more advanced ways of web development.
 
 ## Link to the app
