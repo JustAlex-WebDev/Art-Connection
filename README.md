@@ -1,17 +1,3 @@
-# E-Commerce-Shop-FAKE-API-Project
+# E-Commerce-Shop-FAKE-API-Project (Latest Version)
 
-## About the project
-
-An E-Commerce Shop, which will originally be created using local data, simple html, css and javascript. And then it will
-be transformed into more advanced project with the help of REACT and JSON server.
-The two ways in which the app will be done will be seperated into different branches and the main branch will
-contain the second (more advanced) way in which the project will be build.
-
-## Why I am building the project
-
-This project will be build in order to train responsive HTML, CSS, Javascript, React and Fake APIs.
-By putting my skills into practise, it will be a great way for me to learn some more advanced ways of web development.
-
-## Link to the app
-
-https://comfy-kleicha-661d3e.netlify.app
+This is the latest version of the e-commerce-shop app. All the code from the previous two versions of the project (simple and advanced) will be refactored and recoded in a more modern and cleaner way. The new version of the website will be styled with Tailwind CSS. Also, there will be a lot of cool features such as using Context for the Light/Dark Theme, using Routes from React-Router-Dom to navigate to different pages and Firebase backend, with which I am going to be able to authenticate new users, sign up new users then sign in with that user and store user specific data and finally sign out. It would be good for people to be able to keep track of an item they like or to simply buy one. Therefor, there will be favourites and shopping cart which people would be able to use after being authenticated.
