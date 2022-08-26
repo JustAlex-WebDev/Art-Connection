@@ -14,5 +14,10 @@
 }
 
 body {
-  background-color: #fffff5;
+  /* background-color: #fffff5; */
+  background-color: #fcf2e6;
+}
+
+.image:hover .overlay {
+  display: flex;
 }

@@ -1,7 +1,12 @@
 import React from "react";
+import ItemSearch from "../components/ItemSearch";
 
-const Home = () => {
-  return <div>Home</div>;
+const Home = ({ items }) => {
+  return (
+    <div>
+      <ItemSearch items={items} />
+    </div>
+  );
 };
 
 export default Home;
