@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#fffff5] w-full shadow-md">
+    <div className="bg-[##fcf0e2] w-full shadow-md">
       <div className="main-div flex items-center justify-between h-20 font-bold text-[#543232]">
         <Link to="/">
           <h1 className="text-xl hover:opacity-50">Art Connection</h1>
@@ -26,7 +26,7 @@ const Navbar = () => {
           </Link>
           <Link
             to="/signup"
-            className="bg-[#543232] text-[#fffff5] px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
+            className="bg-[#543232] text-[#fcf2e6] px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
           >
             Sign Up
           </Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-[#fffff5] shadow-xl"
+              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-[#fcf2e6] shadow-xl z-10 text-lg"
               : "fixed right-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in-out duration-300"
           }
         >
@@ -81,12 +81,12 @@ const Navbar = () => {
               className="border-b py-6 flex justify-center"
             >
               <Link to="/favourites" className="hover:opacity-50">
-                <AiOutlineHeart size={20} />
+                <AiOutlineHeart size={25} />
               </Link>
             </li>
             <li onClick={handleNav} className="py-6 flex justify-center">
               <Link to="/shoppingcart" className="hover:opacity-50">
-                <FiShoppingCart size={20} />
+                <FiShoppingCart size={25} />
               </Link>
             </li>
           </ul>
@@ -102,7 +102,7 @@ const Navbar = () => {
             <Link to="/signup" className="hover:opacity-50">
               <button
                 onClick={handleNav}
-                className="w-full my-2 p-3 bg-[#543232] text-[#fffff5] rounded-2xl shadow-md"
+                className="w-full my-2 p-3 bg-[#543232] text-[#fcf2e6] rounded-2xl shadow-md"
               >
                 Sign Up
               </button>
