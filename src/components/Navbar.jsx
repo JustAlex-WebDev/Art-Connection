@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[##fcf0e2] w-full shadow-md">
+    <div className="bg-[#fcf0e2] w-full shadow-md">
       <div className="main-div flex items-center justify-between h-20 font-bold text-[#543232]">
         <Link to="/">
           <h1 className="text-xl hover:opacity-50">Art Connection</h1>
@@ -55,7 +55,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-[#fcf2e6] shadow-xl z-10 text-lg"
+              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-[#fcf0e2] shadow-xl z-10 text-lg"
               : "fixed right-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in-out duration-300"
           }
         >
