@@ -6,6 +6,24 @@
   @apply px-2 w-full max-w-[1140px] mx-auto;
 }
 
+.dark {
+  --color-bg-primary: #2c2725;
+  --color-bg-secondary: #2e2927;
+  --color-bg-button: #fcf0e2;
+  --color-text-primary: #fcf2e6;
+  --color-text-button: #2c2725;
+  --color-placeholder-primary: #fcf2e6;
+}
+
+.light {
+  --color-bg-primary: #fcf2e6;
+  --color-bg-secondary: #fcf0e2;
+  --color-bg-button: #2e2927;
+  --color-text-primary: #2e2927;
+  --color-text-button: #fcf2e6;
+  --color-placeholder-primary: #2e2927;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +32,7 @@
 }
 
 body {
-  /* background-color: #fffff5; */
-  background-color: #fcf2e6;
+  background-color: var(--color-bg-primary);
 }
 
 .image:hover .overlay {
