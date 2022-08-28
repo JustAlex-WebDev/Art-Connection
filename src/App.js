@@ -8,12 +8,13 @@ import Account from "./routes/Account";
 import Favourites from "./routes/Home";
 import Shoppingcart from "./routes/Home";
 import { paintings } from "./data";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   const [items, setItems] = useState(paintings);
 
   return (
-    <div>
+    <ThemeProvider>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home items={items} />} />
@@ -23,7 +24,7 @@ function App() {
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/shoppingcart" element={<Shoppingcart />} />
       </Routes>
-    </div>
+    </ThemeProvider>
   );
 }
 

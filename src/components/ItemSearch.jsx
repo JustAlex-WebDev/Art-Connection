@@ -8,11 +8,11 @@ const ItemSearch = ({ items }) => {
   return (
     <div className="main-div my-4">
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right">
-        <h1 className="text-2xl font-bold my-2 text-[#543232]">Search Art</h1>
+        <h1 className="text-2xl font-bold my-2 text-primary">Search Art</h1>
         <form>
           <input
             onChange={(e) => setSearchText(e.target.value)}
-            className="w-full bg-[#fcf0e2] placeholder-[#543232] text-[#543232] px-4 py-2 rounded-2xl shadow-lg"
+            className="w-full bg-secondary placeholder-primary text-primary px-4 py-2 rounded-2xl shadow-lg"
             type="text"
             placeholder="Search a painting"
           />
