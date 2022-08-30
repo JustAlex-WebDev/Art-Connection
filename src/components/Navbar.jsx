@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-secondary w-full shadow-md">
+    <div className="bg-secondary w-full shadow-md fixed top-0 z-50">
       <div className="main-div flex items-center justify-between h-20 font-bold text-primary">
         <Link to="/">
           <h1 className="text-xl hover:opacity-50">Art Connection</h1>

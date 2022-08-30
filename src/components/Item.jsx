@@ -23,7 +23,7 @@ const Item = ({ item }) => {
           </button>
         </div>
       </div>
-      <div className="flex w-[7rem] md:w-[10rem] lg:w-[13rem] justify-start flex-col relative text-primary">
+      <div className="flex w-[7rem] md:w-[10rem] lg:w-[13rem] justify-start flex-col relative text-primary mb-8">
         <h3>{item.name}</h3>
         <h3 className="opacity-60">{item.author}</h3>
         <h3 className="pt-4">{item.price.toLocaleString()} USD</h3>
