@@ -16,6 +16,9 @@ module.exports = {
       placeholderColor: {
         primary: "var(--color-placeholder-primary)",
       },
+      borderColor: {
+        primary: "var(--color-border-primary)",
+      },
     },
   },
   plugins: [],

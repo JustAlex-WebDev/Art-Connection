@@ -5,7 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
-const Navbar = () => {
+const Navbar = ({ navbarShadow }) => {
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -13,7 +13,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-secondary w-full shadow-md fixed top-0 z-50">
+    <div
+      className={
+        navbarShadow
+          ? "bg-secondary w-full shadow-md fixed top-0 z-50"
+          : "bg-secondary w-full shadow-sm fixed top-0 z-50"
+      }
+    >
       <div className="main-div flex items-center justify-between h-20 font-bold text-primary">
         <Link to="/">
           <h1 className="text-xl hover:opacity-50">Art Connection</h1>
@@ -59,7 +65,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-secondary shadow-xl z-10 text-lg"
+              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-secondary shadow-xl z-50 text-lg"
               : "fixed right-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in-out duration-300"
           }
         >

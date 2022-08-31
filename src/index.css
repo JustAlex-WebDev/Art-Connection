@@ -13,6 +13,7 @@
   --color-text-primary: #fff;
   --color-text-button: #161616;
   --color-placeholder-primary: #fff;
+  --color-border-primary: #fff;
 }
 
 .light {
@@ -22,6 +23,7 @@
   --color-text-primary: #161616;
   --color-text-button: #fff;
   --color-placeholder-primary: #161616;
+  --color-border-primary: #161616;
 }
 
 * {
@@ -29,6 +31,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Urbanist", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
