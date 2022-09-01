@@ -51,11 +51,11 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home items={items} />} />
+        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/favourites" element={<Favourites />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
       </Routes>
     </ThemeProvider>
   );
