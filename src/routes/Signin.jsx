@@ -28,13 +28,13 @@ const Signin = () => {
               <AiFillLock className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-button hover:opacity-50 text-btnText rounded-2xl shadow-xl font-bold">
+          <button className="w-full my-2 p-3 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold">
             Sign In
           </button>
         </form>
         <p className="my-4 text-center text-primary">
           Don't have an account?<span> </span>
-          <Link className="hover:opacity-50" to="/signup">
+          <Link className="hover:opacity-50 font-bold" to="/signup">
             Sign Up
           </Link>
         </p>
