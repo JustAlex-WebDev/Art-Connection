@@ -5,6 +5,7 @@ export const paintings = [
     author: "Christopher Wool",
     price: 1500,
     img: "/images/image1.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const paintings = [
     author: "Peter Doig",
     price: 200,
     img: "/images/image2.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const paintings = [
     author: "Damien Hirst",
     price: 2450,
     img: "/images/image3.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const paintings = [
     author: "Richard Prince",
     price: 100,
     img: "/images/image4.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const paintings = [
     author: "Anselm Kiefer",
     price: 190,
     img: "/images/image5.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export const paintings = [
     author: "Adrian Ghenie",
     price: 500,
     img: "/images/image6.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ export const paintings = [
     author: "Mark Grotjahn",
     price: 175,
     img: "/images/image7.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ export const paintings = [
     author: "Rudolf Stingel",
     price: 450,
     img: "/images/image8.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ export const paintings = [
     author: "Zeng Fanzhi",
     price: 1200,
     img: "/images/image9.jpg",
+    numberOfUnits: 1,
   },
   {
     id: 10,
@@ -68,5 +77,6 @@ export const paintings = [
     author: "Yoshitomo Nara",
     price: 80,
     img: "/images/image10.jpg",
+    numberOfUnits: 1,
   },
 ];
