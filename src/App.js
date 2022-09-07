@@ -10,6 +10,7 @@ import ShoppingCart from "./routes/ShoppingCart";
 import ScrollToTop from "./components/ScrollToTop";
 import { paintings } from "./data";
 import { ThemeProvider } from "./context/ThemeContext";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   const [items, setItems] = useState(paintings);
@@ -44,19 +45,21 @@ function App() {
 
   return (
     <ThemeProvider>
-      <Navbar navbarShadow={navbarShadow} />
-      <ScrollToTop
-        scrollToTopIndicator={scrollToTop}
-        scrollToTopFunction={scrollToTopFunction}
-      />
-      <Routes>
-        <Route path="/" element={<Home items={items} />} />
-        <Route path="/favourites" element={<Favourites />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/account" element={<Account />} />
-      </Routes>
+      <AuthContextProvider>
+        <Navbar navbarShadow={navbarShadow} />
+        <ScrollToTop
+          scrollToTopIndicator={scrollToTop}
+          scrollToTopFunction={scrollToTopFunction}
+        />
+        <Routes>
+          <Route path="/" element={<Home items={items} />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }

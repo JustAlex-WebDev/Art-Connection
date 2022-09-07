@@ -1,12 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
-import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { UserAuth } from "../context/AuthContext";
 
 const Navbar = ({ navbarShadow }) => {
   const [nav, setNav] = useState(false);
+  const { user, logOut } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async (e) => {
+    try {
+      await logOut();
+      navigate("/");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
   const handleNav = () => {
     setNav(!nav);
@@ -27,32 +38,61 @@ const Navbar = ({ navbarShadow }) => {
         <div className="hidden md:block">
           <ThemeToggle />
         </div>
-        <div className="hidden md:flex items-center">
-          <Link
-            to="/signin"
-            className="p-4 hover:opacity-50 duration-100 ease-in-out"
-          >
-            Sign In
-          </Link>
-          <Link
-            to="/signup"
-            className="bg-button text-button px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
-          >
-            Sign Up
-          </Link>
-          <Link
-            to="/favourites"
-            className="p-4 hover:opacity-50 duration-100 ease-in-out"
-          >
-            <AiOutlineHeart size={25} />
-          </Link>
-          <Link
-            to="/shoppingcart"
-            className="p-4 hover:opacity-50 duration-100 ease-in-out"
-          >
-            <FiShoppingCart size={25} />
-          </Link>
-        </div>
+        {user?.email ? (
+          <div className="hidden md:flex items-center">
+            <Link
+              to="/account"
+              className="p-4 hover:opacity-50 duration-100 ease-in-out"
+            >
+              Account
+            </Link>
+            <button
+              onClick={handleSignOut}
+              className="bg-button text-button px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
+            >
+              Sign Out
+            </button>
+            <Link
+              to="/favourites"
+              className="p-4 hover:opacity-50 duration-100 ease-in-out"
+            >
+              <AiOutlineHeart size={25} />
+            </Link>
+            <Link
+              to="/shoppingcart"
+              className="p-4 hover:opacity-50 duration-100 ease-in-out"
+            >
+              <FiShoppingCart size={25} />
+            </Link>
+          </div>
+        ) : (
+          <div className="hidden md:flex items-center">
+            <Link
+              to="/signin"
+              className="p-4 hover:opacity-50 duration-100 ease-in-out"
+            >
+              Sign In
+            </Link>
+            <Link
+              to="/signup"
+              className="bg-button text-button px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
+            >
+              Sign Up
+            </Link>
+            <Link
+              to="/favourites"
+              className="p-4 hover:opacity-50 duration-100 ease-in-out"
+            >
+              <AiOutlineHeart size={25} />
+            </Link>
+            <Link
+              to="/shoppingcart"
+              className="p-4 hover:opacity-50 duration-100 ease-in-out"
+            >
+              <FiShoppingCart size={25} />
+            </Link>
+          </div>
+        )}
 
         {/* Menu Icon */}
         <div
