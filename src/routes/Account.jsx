@@ -1,25 +1,48 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 const Account = () => {
+  const { user, logOut } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = async (e) => {
+    try {
+      await logOut();
+      navigate("/");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   return (
     <div className="max-w-[1140px] mx-auto mb-4 mt-28">
       <div className="flex flex-col justify-center items-center my-12 py-8 main-div">
         <div className="flex flex-col justify-center items-center gap-2">
           <h1 className="text-2xl font-bold text-primary">Account</h1>
           <div className="text-primary">
-            <p>Welcome, user</p>
+            <p>Welcome, {user?.email}</p>
           </div>
         </div>
         <div className="flex flex-col">
-          <button className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center">
+          <Link
+            to="/favourites"
+            className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center"
+          >
             <AiOutlineHeart size={20} />
-          </button>
-          <button className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center">
+          </Link>
+          <Link
+            to="/shoppingcart"
+            className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center"
+          >
             <FiShoppingCart size={20} />
-          </button>
-          <button className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold">
+          </Link>
+          <button
+            onClick={handleSignOut}
+            className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold"
+          >
             Sign Out
           </button>
         </div>
