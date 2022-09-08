@@ -29,11 +29,13 @@ const ShoppingCartItems = () => {
     }
   };
 
-  const numberOfUnits = async (numberOfUnits) => {
+  const numberOfUnitsAdd = async (product) => {
+    const exists = items.find((x) => x.id === product.id);
+
     try {
       const result = items.map((item) =>
-        numberOfUnits.id === item.id
-          ? { numberOfUnits: numberOfUnits + 1 }
+        item.id === product.id
+          ? { ...exists, numberOfUnits: exists.numberOfUnits + 1 }
           : item
       );
 
@@ -42,6 +44,25 @@ const ShoppingCartItems = () => {
       });
     } catch (e) {
       console.log(e.message);
+    }
+  };
+
+  const numberOfUnitsRemove = async (product) => {
+    const exists = items.find((x) => x.id === product.id);
+    if (exists.numberOfUnits >= 2) {
+      try {
+        const result = items.map((item) =>
+          item.id === product.id
+            ? { ...exists, numberOfUnits: exists.numberOfUnits - 1 }
+            : item
+        );
+
+        await updateDoc(itemPath, {
+          shoppingCart: result,
+        });
+      } catch (e) {
+        console.log(e.message);
+      }
     }
   };
 
@@ -74,7 +95,8 @@ const ShoppingCartItems = () => {
           key={item.id}
           item={item}
           deleteItem={deleteItem}
-          numberOfUnits={numberOfUnits}
+          numberOfUnitsAdd={numberOfUnitsAdd}
+          numberOfUnitsRemove={numberOfUnitsRemove}
         />
       ))}
     </div>
