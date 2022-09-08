@@ -9,7 +9,12 @@ import { UserAuth } from "../context/AuthContext";
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../firebase";
 
-const FavouritesItem = ({ item, deleteItem, numberOfUnits }) => {
+const FavouritesItem = ({
+  item,
+  deleteItem,
+  numberOfUnitsAdd,
+  numberOfUnitsRemove,
+}) => {
   const [savedItemFavourites, setSavedItemFavourites] = useState(false);
   const { user } = UserAuth();
 
@@ -45,13 +50,13 @@ const FavouritesItem = ({ item, deleteItem, numberOfUnits }) => {
         <h3 className="mb-10">{item.price.toLocaleString()} USD</h3>
         <div className="inline-flex gap-4 mb-8 items-center">
           <AiOutlineMinusCircle
-            onClick={() => numberOfUnits(item.numberOfUnits--)}
+            onClick={() => numberOfUnitsRemove(item)}
             size={20}
             className="hover:opacity-50"
           />
           <h3>{item.numberOfUnits}</h3>
           <AiOutlinePlusCircle
-            onClick={() => numberOfUnits(item.numberOfUnits++)}
+            onClick={() => numberOfUnitsAdd(item)}
             size={20}
             className="hover:opacity-50"
           />
