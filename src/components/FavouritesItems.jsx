@@ -3,6 +3,7 @@ import FavouritesItem from "./FavouritesItem";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 const FavouritesItems = () => {
   const [items, setItems] = useState([]);
@@ -26,29 +27,33 @@ const FavouritesItems = () => {
     }
   };
 
-  return (
-    <div className="w-full flex flex-col m-auto">
-      <div className="py-24 mb-16 flex flex-col justify-center items-center main-div">
-        <div>
-          <h2 className="text-2xl font-bold text-primary">Favourites</h2>
+  if (user) {
+    return (
+      <div className="w-full flex flex-col m-auto">
+        <div className="py-24 mb-16 flex flex-col justify-center items-center main-div">
+          <div>
+            <h2 className="text-2xl font-bold text-primary">Favourites</h2>
+          </div>
+          <div className="flex mt-4 gap-4 -mb-40">
+            <h3 className="text-xl font-semibold text-primary opacity-80">
+              {items?.length === 0 ? (
+                <p>0 items</p>
+              ) : (
+                <p>{items?.length} items</p>
+              )}
+            </h3>
+          </div>
         </div>
-        <div className="flex mt-4 gap-4 -mb-40">
-          <h3 className="text-xl font-semibold text-primary opacity-80">
-            {items?.length === 0 ? (
-              <p>0 items</p>
-            ) : (
-              <p>{items?.length} items</p>
-            )}
-          </h3>
-        </div>
-      </div>
 
-      <div className="w-full flex flex-col main-div justify-center items-center text-primary "></div>
-      {items?.map((item) => (
-        <FavouritesItem key={item.id} item={item} deleteItem={deleteItem} />
-      ))}
-    </div>
-  );
+        <div className="w-full flex flex-col main-div justify-center items-center text-primary "></div>
+        {items?.map((item) => (
+          <FavouritesItem key={item.id} item={item} deleteItem={deleteItem} />
+        ))}
+      </div>
+    );
+  } else {
+    return <Navigate to="/signin" />;
+  }
 };
 
 export default FavouritesItems;
