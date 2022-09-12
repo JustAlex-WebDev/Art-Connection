@@ -105,7 +105,7 @@ const Navbar = ({ navbarShadow }) => {
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-[5.3rem] flex flex-col items-center justify-between w-[50%] h-[91%] bg-secondary shadow-xl z-50 text-lg"
+              ? "md:hidden fixed right-0 top-[5.1rem] flex flex-col items-center justify-between w-[50%] h-[91.5%] bg-secondary shadow-xl z-50 text-lg"
               : "fixed right-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in-out duration-300"
           }
         >
