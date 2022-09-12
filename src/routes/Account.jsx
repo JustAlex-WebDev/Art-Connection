@@ -19,7 +19,7 @@ const Account = () => {
 
   if (user) {
     return (
-      <div className="max-w-[1140px] mx-auto mb-4 mt-28">
+      <div className="main-div mb-56 mt-28">
         <div className="flex flex-col justify-center items-center my-12 py-8 main-div">
           <div className="flex flex-col justify-center items-center gap-2">
             <h1 className="text-2xl font-bold text-primary">Account</h1>
