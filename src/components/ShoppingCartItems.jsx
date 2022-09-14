@@ -69,7 +69,11 @@ const ShoppingCartItems = () => {
 
   if (user) {
     return (
-      <div className="w-full flex flex-col m-auto">
+      <div
+        className={`w-full flex flex-col m-auto ${
+          items?.length > 0 ? `mb-24` : ``
+        }`}
+      >
         <div className="py-24 mb-16 flex flex-col justify-center items-center main-div">
           <div>
             <h2 className="text-2xl font-bold text-primary">Shopping Cart</h2>
@@ -91,16 +95,21 @@ const ShoppingCartItems = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col main-div justify-center items-center text-primary "></div>
-        {items?.map((item) => (
-          <ShoppingCartItem
-            key={item.id}
-            item={item}
-            deleteItem={deleteItem}
-            numberOfUnitsAdd={numberOfUnitsAdd}
-            numberOfUnitsRemove={numberOfUnitsRemove}
-          />
-        ))}
+        <div
+          className={`w-full flex flex-col main-div justify-center items-center text-primary ${
+            totalItems === 0 ? `mb-[23rem]` : ``
+          }`}
+        >
+          {items?.map((item) => (
+            <ShoppingCartItem
+              key={item.id}
+              item={item}
+              deleteItem={deleteItem}
+              numberOfUnitsAdd={numberOfUnitsAdd}
+              numberOfUnitsRemove={numberOfUnitsRemove}
+            />
+          ))}
+        </div>
       </div>
     );
   } else {
