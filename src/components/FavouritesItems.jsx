@@ -29,7 +29,11 @@ const FavouritesItems = () => {
 
   if (user) {
     return (
-      <div className="w-full flex flex-col m-auto">
+      <div
+        className={`w-full flex flex-col m-auto ${
+          items?.length > 0 ? `mb-24` : ``
+        }`}
+      >
         <div className="py-24 mb-16 flex flex-col justify-center items-center main-div">
           <div>
             <h2 className="text-2xl font-bold text-primary">Favourites</h2>
@@ -45,10 +49,15 @@ const FavouritesItems = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col main-div justify-center items-center text-primary "></div>
-        {items?.map((item) => (
-          <FavouritesItem key={item.id} item={item} deleteItem={deleteItem} />
-        ))}
+        <div
+          className={`w-full flex flex-col main-div justify-center items-center text-primary ${
+            items?.length === 0 ? `mb-[23rem]` : ``
+          }`}
+        >
+          {items?.map((item) => (
+            <FavouritesItem key={item.id} item={item} deleteItem={deleteItem} />
+          ))}
+        </div>
       </div>
     );
   } else {
