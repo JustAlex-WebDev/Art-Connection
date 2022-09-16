@@ -19,6 +19,15 @@ module.exports = {
       borderColor: {
         primary: "var(--color-border-primary)",
       },
+      animation: {
+        animateOp: "animateOpacity 1s ease 1",
+      },
+      keyframes: {
+        animateOpacity: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [],

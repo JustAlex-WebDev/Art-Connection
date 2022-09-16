@@ -4,11 +4,14 @@ import { FiShoppingCart } from "react-icons/fi";
 import { UserAuth } from "../context/AuthContext";
 import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { useInView } from "react-intersection-observer";
 
 const Item = ({ item }) => {
   const [savedItemFavourites, setSavedItemFavourites] = useState(false);
   const [savedItemShoppingCart, setSavedItemShoppingCart] = useState(false);
   const { user } = UserAuth();
+
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
 
   const itemPath = doc(db, "users", `${user?.email}`);
   const saveItemFavourites = async () => {
@@ -48,8 +51,13 @@ const Item = ({ item }) => {
 
   return (
     <article
+      ref={myRef}
       key={item.id}
-      className="grid justify-center items-center gap-x-4 gap-y-4"
+      className={`${
+        myElementIsVisible
+          ? "grid justify-center items-center gap-x-4 gap-y-4 animate-animateOp"
+          : "grid justify-center items-center gap-x-4 gap-y-4"
+      }`}
     >
       <div className="image relative w-[10rem] md:w-[11.5rem] lg:w-[13rem]">
         <img
