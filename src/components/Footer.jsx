@@ -66,7 +66,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex py-4 justify-center items-center gap-4">
-        <FaGithub className="hover:opacity-50 cursor-pointer" />
+        <a href="https://github.com/JustAlex-WebDev" target="_blank">
+          <FaGithub className="hover:opacity-50 cursor-pointer" />
+        </a>
         <FaInstagram className="hover:opacity-50 cursor-pointer" />
         <FaFacebook className="hover:opacity-50 cursor-pointer" />
       </div>
