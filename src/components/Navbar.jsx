@@ -146,24 +146,35 @@ const Navbar = ({ navbarShadow }) => {
               <ThemeToggle />
             </li>
           </ul>
-          <div className="flex flex-col w-full p-4">
-            <Link to="/signin" className="hover:opacity-50">
+          {user?.email ? (
+            <div className="flex flex-col w-full p-4">
               <button
-                onClick={handleNav}
-                className="w-full my-2 p-3 border rounded-2xl shadow-md"
+                onClick={handleSignOut}
+                className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"
               >
-                Sign In
+                Sign Out
               </button>
-            </Link>
-            <Link to="/signup" className="hover:opacity-50">
-              <button
-                onClick={handleNav}
-                className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md"
-              >
-                Sign Up
-              </button>
-            </Link>
-          </div>
+            </div>
+          ) : (
+            <div className="flex flex-col w-full p-4">
+              <Link to="/signin" className="hover:opacity-50">
+                <button
+                  onClick={handleNav}
+                  className="w-full my-2 p-3 border rounded-2xl shadow-md"
+                >
+                  Sign In
+                </button>
+              </Link>
+              <Link to="/signup" className="hover:opacity-50">
+                <button
+                  onClick={handleNav}
+                  className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md"
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

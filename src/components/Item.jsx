@@ -7,11 +7,10 @@ import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useInView } from "react-intersection-observer";
 
 const Item = ({ item }) => {
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
   const [savedItemFavourites, setSavedItemFavourites] = useState(false);
   const [savedItemShoppingCart, setSavedItemShoppingCart] = useState(false);
   const { user } = UserAuth();
-
-  const { ref: myRef, inView: myElementIsVisible } = useInView();
 
   const itemPath = doc(db, "users", `${user?.email}`);
   const saveItemFavourites = async () => {
