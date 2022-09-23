@@ -3,6 +3,7 @@ import {
   AiOutlineHeart,
   AiOutlineMinusCircle,
   AiOutlinePlusCircle,
+  AiFillHeart,
 } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { UserAuth } from "../context/AuthContext";
@@ -62,12 +63,19 @@ const FavouritesItem = ({
           />
         </div>
         <div className="inline-flex gap-4 items-center">
-          <AiOutlineHeart
-            onClick={saveItemFavourites}
-            size={22}
-            className="cursor-pointer hover:opacity-50"
-            title="Add to favourites"
-          />
+          {savedItemFavourites ? (
+            <AiFillHeart
+              size={22}
+              className="cursor-pointer hover:opacity-50"
+            />
+          ) : (
+            <AiOutlineHeart
+              size={22}
+              className="cursor-pointer hover:opacity-50"
+              onClick={saveItemFavourites}
+              title="Add to favourites"
+            />
+          )}
           <BsTrash
             onClick={() => deleteItem(item.id)}
             size={20}
