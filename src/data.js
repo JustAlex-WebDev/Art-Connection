@@ -80,3 +80,5 @@ export const paintings = [
     numberOfUnits: 1,
   },
 ];
+
+export const steps = ["Account information", "Personal Details", "Complete"];
