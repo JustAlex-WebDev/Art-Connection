@@ -3,7 +3,7 @@ import ShoppingCartItem from "./ShoppingCartItem";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 
 const ShoppingCartItems = () => {
   const [items, setItems] = useState([]);
@@ -112,9 +112,12 @@ const ShoppingCartItems = () => {
         </div>
         {items?.length === 0 ? null : (
           <div className="flex justify-center items-center my-16 main-div">
-            <button className="p-3 px-6 bg-button text-button hover:opacity-50 font-bold rounded-2xl shadow-md">
+            <Link
+              to="/checkout"
+              className="p-3 px-6 bg-button text-button hover:opacity-50 font-bold rounded-2xl shadow-md"
+            >
               Go to Checkout
-            </button>
+            </Link>
           </div>
         )}
       </div>
