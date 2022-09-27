@@ -39,7 +39,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
   };
 
   useEffect(() => {
-    const stepsState = checkoutSteps.map((step, index) => {
+    const stepsState = checkoutSteps?.map((step, index) =>
       Object.assign(
         {},
         {
@@ -48,8 +48,8 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
           highlighted: index === 0 ? true : false,
           selected: index === 0 ? true : false,
         }
-      );
-    });
+      )
+    );
 
     stepRef.current = stepsState;
     const current = updateStep(currentStep - 1, stepRef.current);
@@ -57,7 +57,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
   }, [checkoutSteps, currentStep]);
 
   return (
-    <div className="mx-4 p-4 flex justify-between items-center">
+    <div className="mx-4 p-4 flex justify-between items-center font-semibold">
       {newStep?.map((step, index) => (
         <div
           key={index}
@@ -69,21 +69,27 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
         >
           <div className="relative flex flex-col items-center">
             <div
-              className={`rounded-full transition duration-500 ease-in-out border-2 border-grey-300 h-12 w-12 flex items-center justify-center py-3 ${
-                step.selected ? "bg-green-600" : ""
+              className={`rounded-full transition duration-500 ease-in-out border-2 border-primary h-12 w-12 flex items-center justify-center py-3 ${
+                step.selected
+                  ? "bg-button text-button"
+                  : "h-10 w-10 opacity-90 border-gray-400"
               }`}
             >
               {step.completed ? <span>&#10003;</span> : index + 1}
             </div>
             <div
-              className={`absolute top-0 text-center mt-16 w-32 uppercase ${
-                step.highlighted ? "text-grey-900" : "text-grey-400"
+              className={`absolute top-0 text-center mt-16 w-32 uppercase text-sm ${
+                step.highlighted ? "" : "opacity-70"
               }`}
             >
-              {step.description}kk
+              {step.description}
             </div>
           </div>
-          <div className="flex-auto border-t-2 transition duration-500 ease-in-out"></div>
+          <div
+            className={`flex-auto border-t-2 transition duration-500 ease-in-out ${
+              step.completed ? "border-primary" : "border-gray-400"
+            }`}
+          ></div>
         </div>
       ))}
     </div>
