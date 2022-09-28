@@ -1,7 +1,7 @@
 import React from "react";
 
 const PaymentStep = () => {
-  return <div>PaymentStep</div>;
+  return <div className="mt-20">PaymentStep</div>;
 };
 
 export default PaymentStep;

@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { CheckoutContext } from "../context/CheckoutContext";
 import CheckoutStepper from "./CheckoutStepper";
 import CheckoutstepperControl from "./CheckoutstepperControl";
+import { UserAuth } from "../context/AuthContext";
 
-const CheckoutForm = ({ checkoutSteps, currentStep }) => {
+const CheckoutForm = ({
+  checkoutSteps,
+  currentStep,
+  handleClick,
+  displayStep,
+}) => {
+  const [userData, setUserData] = useState("");
+  const [finalData, setFinalData] = useState([]);
+  const { user } = UserAuth();
+
   return (
     <div className="main-div mb-24 mt-32 text-primary">
       <CheckoutStepper
         checkoutSteps={checkoutSteps}
         currentStep={currentStep}
       />
-      <CheckoutstepperControl />
+
+      <div>
+        <CheckoutContext.Provider
+          value={{ userData, setUserData, finalData, setFinalData }}
+        >
+          {displayStep(currentStep)}
+        </CheckoutContext.Provider>
+      </div>
+
+      {currentStep !== checkoutSteps?.length && (
+        <CheckoutstepperControl
+          handleClick={handleClick}
+          currentStep={currentStep}
+          checkoutSteps={checkoutSteps}
+        />
+      )}
     </div>
   );
 };
