@@ -18,14 +18,28 @@ const Checkout = () => {
       case 2:
         return <DetailsStep />;
       case 3:
+        return <PaymentStep />;
+      case 4:
         return <FinalStep />;
       default:
     }
   };
 
+  const handleClick = (direction) => {
+    let newStep = currentStep;
+
+    direction === "next" ? newStep++ : newStep--;
+    newStep > 0 && newStep <= checkoutSteps?.length && setCurrentStep(newStep);
+  };
+
   return (
     <div>
-      <CheckoutForm checkoutSteps={checkoutSteps} currentStep={currentStep} />
+      <CheckoutForm
+        checkoutSteps={checkoutSteps}
+        currentStep={currentStep}
+        handleClick={handleClick}
+        displayStep={displayStep}
+      />
     </div>
   );
 };

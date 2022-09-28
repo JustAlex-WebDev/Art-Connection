@@ -72,7 +72,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
               className={`rounded-full transition duration-500 ease-in-out border-2 border-primary h-12 w-12 flex items-center justify-center py-3 ${
                 step.selected
                   ? "bg-button text-button"
-                  : "h-10 w-10 opacity-90 border-gray-400"
+                  : "opacity-90 border-gray-400"
               }`}
             >
               {step.completed ? <span>&#10003;</span> : index + 1}
