@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { CheckoutContext } from "../context/CheckoutContext";
 import CheckoutStepper from "./CheckoutStepper";
 import CheckoutstepperControl from "./CheckoutstepperControl";
-import { UserAuth } from "../context/AuthContext";
 
 const CheckoutForm = ({
   checkoutSteps,
@@ -12,7 +11,6 @@ const CheckoutForm = ({
 }) => {
   const [userData, setUserData] = useState("");
   const [finalData, setFinalData] = useState([]);
-  const { user } = UserAuth();
 
   return (
     <div className="main-div mb-24 mt-32 text-primary">
