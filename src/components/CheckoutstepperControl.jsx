@@ -6,7 +6,7 @@ const CheckoutstepperControl = ({
   handleClick,
 }) => {
   return (
-    <div className="flex justify-around mt-4 mb-8 font-semibold">
+    <div className="flex justify-between m-auto max-w-[380px] my-12 font-semibold">
       <button
         onClick={() => handleClick()}
         className={`bg-button text-button px-6 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out ${

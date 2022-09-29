@@ -69,7 +69,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
         >
           <div className="relative flex flex-col items-center">
             <div
-              className={`rounded-full transition duration-500 ease-in-out border-2 border-primary h-12 w-12 flex items-center justify-center py-3 ${
+              className={`rounded-full transition duration-500 ease-in-out border-2 border-primary h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12 flex items-center justify-center py-3 ${
                 step.selected
                   ? "bg-button text-button"
                   : "opacity-90 border-gray-400"
@@ -78,7 +78,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
               {step.completed ? <span>&#10003;</span> : index + 1}
             </div>
             <div
-              className={`absolute top-0 text-center mt-16 w-32 uppercase text-sm ${
+              className={`absolute top-0 text-center mt-12 sm:mt-14 md:mt-16  uppercase text-xs sm:text-sm ${
                 step.highlighted ? "" : "opacity-70"
               }`}
             >
