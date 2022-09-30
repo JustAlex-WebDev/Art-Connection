@@ -17,20 +17,20 @@ const AccountStep = () => {
         <form>
           <div className="my-4">
             <label className="text-primary">Email</label>
-            <div className="my-2 w-full relative rounded-2xl shadow-xl">
+            <div className="my-2 mb-4 w-full relative rounded-2xl shadow-xl">
               <input
                 className="w-full p-2 border rounded-2xl bg-primary text-primary"
                 type="email"
                 onChange={handleChange}
-                value={userData["username"] || ""}
-                name={"username"}
+                value={userData["email"] || ""}
+                name={"email"}
               />
               <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
           <div className="my-4">
             <label className="text-primary">Password</label>
-            <div className="my-2 w-full relative rounded-2xl shadow-xl">
+            <div className="my-2 mb-4 w-full relative rounded-2xl shadow-xl">
               <input
                 className="w-full p-2 border rounded-2xl bg-primary text-primary"
                 type="password"
