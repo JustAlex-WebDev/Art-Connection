@@ -169,9 +169,11 @@ const Navbar = ({ navbarShadow }) => {
               className="border-b py-6 flex justify-center"
             >
               <Link to="/shoppingcart" className="hover:opacity-50">
-                <span className="absolute pl-8 top-64">
-                  {totalItemsShoppingCart}
-                </span>
+                {user ? (
+                  <span className="absolute pl-8 top-64">
+                    {totalItemsShoppingCart}
+                  </span>
+                ) : null}
                 <FiShoppingCart size={25} />
               </Link>
             </li>
