@@ -13,5 +13,5 @@ https://e-commerce-app-cf00d.web.app
 If you do not want to use your information and sign up in order to see all the functionality of the app, 
 just use these demo email and password to sign in:
 
-Email: demo@demo.com
+Email: `demo@demo.com`
 Password: password
