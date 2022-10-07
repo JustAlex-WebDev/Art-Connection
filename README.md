@@ -10,6 +10,8 @@ This will be the latest and final version of the e-commerce-shop app. All the co
 
 https://e-commerce-app-cf00d.web.app
 
+## Don't want to sign up, but you still want to see all the functionality?
+
 If you do not want to use your information and sign up in order to see all the functionality of the app, 
 just use these demo email and password to sign in:
 
