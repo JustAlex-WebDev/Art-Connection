@@ -8,7 +8,7 @@ This will be the latest and final version of the e-commerce-shop app. All the co
 
 ## Demo Link
 
-[Go to app](https://e-commerce-app-cf00d.web.app)
+[Go to app](https://e-commerce-app-cf00d.web.app)("See the demo")
 
 If you do not want to use your own information just use these demo email and password to sign in:
 
