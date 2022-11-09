@@ -6,12 +6,14 @@ import ThemeToggle from "./ThemeToggle";
 import { UserAuth } from "../context/AuthContext";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
+import { useRef } from "react";
 
 const Navbar = ({ navbarShadow }) => {
   let totalItemsShoppingCart = 0;
   const [itemsShoppingCart, setItemsShoppingCart] = useState([]);
   const [itemsFavourites, setItemsFavourites] = useState([]);
   const [nav, setNav] = useState(false);
+  const navRef = useRef();
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
 
@@ -36,9 +38,18 @@ const Navbar = ({ navbarShadow }) => {
     }
   };
 
-  const handleNav = () => {
-    setNav(!nav);
-  };
+  useEffect(() => {
+    const handleNav = (e) => {
+      console.log(e);
+      if (e.path[1] !== navRef.current) {
+        setNav(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleNav);
+
+    return () => document.body.removeEventListener("click", handleNav);
+  }, []);
 
   return (
     <div
@@ -122,23 +133,24 @@ const Navbar = ({ navbarShadow }) => {
         )}
 
         {/* Menu Icon */}
-        <div
-          onClick={handleNav}
+        <button
+          ref={navRef}
+          onClick={() => setNav(!nav)}
           className="block md:hidden cursor-pointer z-10 hover:opacity-50"
         >
           {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-        </div>
+        </button>
         {/* Mobile Menu */}
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-[5.1rem] flex flex-col items-center justify-between w-[50%] h-[91.5%] bg-secondary shadow-xl z-50 text-lg"
+              ? "md:hidden fixed right-0 top-[5.2rem] flex flex-col items-center justify-between w-[50%] h-[91.8%] bg-secondary shadow-xl z-50 text-lg"
               : "fixed right-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in-out duration-300"
           }
         >
           <ul className="p-4 w-full">
             <li
-              onClick={handleNav}
+              onClick={() => setNav(!nav)}
               className="border-b py-6 flex justify-center"
             >
               <Link to="/" className="hover:opacity-50">
@@ -146,7 +158,7 @@ const Navbar = ({ navbarShadow }) => {
               </Link>
             </li>
             <li
-              onClick={handleNav}
+              onClick={() => setNav(!nav)}
               className="border-b py-6 flex justify-center"
             >
               <Link to="/account" className="hover:opacity-50">
@@ -154,7 +166,7 @@ const Navbar = ({ navbarShadow }) => {
               </Link>
             </li>
             <li
-              onClick={handleNav}
+              onClick={() => setNav(!nav)}
               className="border-b py-6 flex justify-center"
             >
               <Link to="/favourites" className="hover:opacity-50">
@@ -165,7 +177,7 @@ const Navbar = ({ navbarShadow }) => {
               </Link>
             </li>
             <li
-              onClick={handleNav}
+              onClick={() => setNav(!nav)}
               className="border-b py-6 flex justify-center"
             >
               <Link to="/shoppingcart" className="hover:opacity-50">
@@ -184,7 +196,7 @@ const Navbar = ({ navbarShadow }) => {
           {user?.email ? (
             <div className="flex flex-col w-full p-4">
               <button
-                onClick={handleSignOut}
+                onClick={() => setNav(!nav)}
                 className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"
               >
                 Sign Out
@@ -194,7 +206,7 @@ const Navbar = ({ navbarShadow }) => {
             <div className="flex flex-col w-full p-4">
               <Link to="/signin" className="hover:opacity-50">
                 <button
-                  onClick={handleNav}
+                  onClick={() => setNav(!nav)}
                   className="w-full my-2 p-3 border rounded-2xl shadow-md"
                 >
                   Sign In
@@ -202,7 +214,7 @@ const Navbar = ({ navbarShadow }) => {
               </Link>
               <Link to="/signup" className="hover:opacity-50">
                 <button
-                  onClick={handleNav}
+                  onClick={() => setNav(!nav)}
                   className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md"
                 >
                   Sign Up
