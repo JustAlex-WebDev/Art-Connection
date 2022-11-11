@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import Signin from "./routes/Signin";
@@ -10,6 +10,7 @@ import Checkout from "./routes/Checkout";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import AnimationOnLoad from "./components/AnimationOnLoad";
 import { paintings } from "./data";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -18,6 +19,7 @@ function App() {
   const [items, setItems] = useState(paintings);
   const [navbarShadow, setNavbarShadow] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Navbar Shadow on scroll
   const scrollNavbarShadow = () => {
@@ -45,24 +47,38 @@ function App() {
     document.documentElement.scrollTop = 0;
   };
 
+  // Aniamtion on Load
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <ThemeProvider>
       <AuthContextProvider>
-        <Navbar navbarShadow={navbarShadow} />
-        <ScrollToTop
-          scrollToTopIndicator={scrollToTop}
-          scrollToTopFunction={scrollToTopFunction}
-        />
-        <Routes>
-          <Route path="/" element={<Home items={items} />} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="/shoppingcart" element={<ShoppingCart />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-        <Footer />
+        {loading ? (
+          <AnimationOnLoad />
+        ) : (
+          <>
+            <Navbar navbarShadow={navbarShadow} />
+            <ScrollToTop
+              scrollToTopIndicator={scrollToTop}
+              scrollToTopFunction={scrollToTopFunction}
+            />
+            <Routes>
+              <Route path="/" element={<Home items={items} />} />
+              <Route path="/favourites" element={<Favourites />} />
+              <Route path="/shoppingcart" element={<ShoppingCart />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+            <Footer />
+          </>
+        )}
       </AuthContextProvider>
     </ThemeProvider>
   );
