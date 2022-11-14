@@ -11,7 +11,7 @@ const ItemSearch = ({ items }) => {
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right">
         <h1 className="text-2xl font-bold my-2 text-primary">Search Art</h1>
         <form className="relative">
-          <AiOutlineSearch className="absolute top-0 left-0 text-xl rounded-2xl cursor-pointer mt-2 ml-4 text-primary" />
+          <AiOutlineSearch className="absolute top-0 left-0 text-xl rounded-2xl cursor-pointer mt-[0.6rem] ml-4 text-primary" />
           <input
             onChange={(e) => setSearchText(e.target.value)}
             className="w-full bg-secondary placeholder-primary text-primary pl-12 py-2 rounded-2xl shadow-lg outline-none"
