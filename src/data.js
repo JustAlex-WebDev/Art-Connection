@@ -87,3 +87,18 @@ export const steps = [
   "Payment",
   "Complete",
 ];
+
+export const slides = [
+  {
+    title: "firstSlide",
+    img: "/images/image1.jpg",
+  },
+  {
+    title: "secondSlide",
+    img: "/images/image2.jpg",
+  },
+  {
+    title: "thirdSlide",
+    img: "/images/image3.jpg",
+  },
+];
