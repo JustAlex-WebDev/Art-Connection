@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import AnimationOnLoad from "./components/AnimationOnLoad";
+import Slides from "./components/Slides";
 import { paintings } from "./data";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -67,6 +68,7 @@ function App() {
               scrollToTopIndicator={scrollToTop}
               scrollToTopFunction={scrollToTopFunction}
             />
+            <Slides />
             <Routes>
               <Route path="/" element={<Home items={items} />} />
               <Route path="/favourites" element={<Favourites />} />
