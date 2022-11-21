@@ -22,17 +22,17 @@ const Slides = () => {
   //     setCurrentIndex(slideIndex);
   //   };
 
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       const isLastSlide = currentIndex === slides.length - 1;
-  //       const newIndex = isLastSlide ? 0 : currentIndex + 1;
-  //       setCurrentIndex(newIndex);
-  //     }, 5000);
-  //   }, [currentIndex]);
+  useEffect(() => {
+    setTimeout(() => {
+      const isLastSlide = currentIndex === slides.length - 1;
+      const newIndex = isLastSlide ? 0 : currentIndex + 1;
+      setCurrentIndex(newIndex);
+    }, 5000);
+  }, [currentIndex]);
 
   return (
     <div className="w-full bg-secondary">
-      <div className="main-div mt-20 bg-secondary h-16 text-primary text-center overflow-hidden flex flex-col">
+      <div className="main-div mt-20 bg-secondary hidden xxsm:flex h-16 text-primary text-center overflow-hidden flex-col">
         <div className="h-full relative mx-12 flex items-center justify-between font-bold">
           <div
             className="z-10 cursor-pointer hover:opacity-50"
@@ -41,7 +41,19 @@ const Slides = () => {
             <AiOutlineArrowLeft />
           </div>
           <div className="w-[60%] overflow-hidden">
-            <div>{slides[currentIndex].title}</div>
+            {/* <div>{slides[currentIndex].title}</div> */}
+            {slides.map((slide, index) => (
+              <div
+                className={index === currentIndex ? "animate-animateOp" : ""}
+                key={index}
+              >
+                {index === currentIndex && (
+                  <>
+                    <p>{slide.title}</p>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
           <div
             className="z-10 cursor-pointer hover:opacity-50"

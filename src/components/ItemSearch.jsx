@@ -7,7 +7,7 @@ const ItemSearch = ({ items }) => {
   const [searchText, setSearchText] = useState("");
 
   return (
-    <div className="main-div mb-24 mt-8">
+    <div className="main-div mb-24 mt-28 xxsm:mt-8">
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right">
         <h1 className="text-2xl font-bold my-2 text-primary">Search Art</h1>
         <form className="relative">
