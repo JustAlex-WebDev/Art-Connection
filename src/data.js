@@ -90,15 +90,15 @@ export const steps = [
 
 export const slides = [
   {
-    title: "firstSlide",
+    title: "30% Sale On Everything Only NOW",
     img: "/images/image1.jpg",
   },
   {
-    title: "secondSlide",
+    title: "Damien Hirst Special Collection Out NOW",
     img: "/images/image2.jpg",
   },
   {
-    title: "thirdSlide",
+    title: "Save Up To 20% And Become Member",
     img: "/images/image3.jpg",
   },
 ];
