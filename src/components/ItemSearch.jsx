@@ -21,7 +21,7 @@ const ItemSearch = ({ items }) => {
         </form>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
+      <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
         {items
           .filter((value) => {
             if (searchText === "") {

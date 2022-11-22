@@ -28,6 +28,7 @@ const Slides = () => {
       const newIndex = isLastSlide ? 0 : currentIndex + 1;
       setCurrentIndex(newIndex);
     }, 5000);
+    return () => clearTimeout();
   }, [currentIndex]);
 
   return (

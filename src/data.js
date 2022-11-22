@@ -2,7 +2,7 @@ export const paintings = [
   {
     id: 1,
     name: "The price of Love",
-    author: "Christopher Wool",
+    author: "Chris Wool",
     price: 1500,
     img: "/images/image1.jpg",
     numberOfUnits: 1,
