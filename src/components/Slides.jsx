@@ -18,18 +18,25 @@ const Slides = () => {
     setCurrentIndex(newIndex);
   };
 
+  //  Automated the slider
+  const autoScroll = true;
+  let slideInterval;
+
+  function auto() {
+    slideInterval = setInterval(goToNext, 5000);
+  }
+
+  useEffect(() => {
+    if (autoScroll) {
+      auto();
+    }
+    return () => clearInterval(slideInterval);
+  }, [currentIndex]);
+
+  //  Check out a particular slide
   //   const goToSlide = (slideIndex) => {
   //     setCurrentIndex(slideIndex);
   //   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      const isLastSlide = currentIndex === slides.length - 1;
-      const newIndex = isLastSlide ? 0 : currentIndex + 1;
-      setCurrentIndex(newIndex);
-    }, 5000);
-    return () => clearTimeout();
-  }, [currentIndex]);
 
   return (
     <div className="w-full bg-secondary">

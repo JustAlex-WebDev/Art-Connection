@@ -79,7 +79,7 @@ const PaymentStep = () => {
         </div>
         <div className="my-4">
           <label className="text-primary font-semibold">Payment Method</label>
-          <div className="dropdown border my-2 mb-4 w-full relative rounded-2xl shadow-xl z-10">
+          <div className="dropdown border my-2 mb-4 w-full relative rounded-2xl h-10 shadow-xl z-10">
             <div
               onClick={() => setIsActive(!isActive)}
               className="dropdown-btn py-2 px-3 flex items-center justify-between font-semibold cursor-pointer ease-in-out duration-300 relative"
