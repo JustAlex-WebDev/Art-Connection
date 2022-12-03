@@ -31,6 +31,7 @@ module.exports = {
       animation: {
         animateOp: "animateOpacity 1s ease 1",
         animateOp2: "animateOpacity 2s ease",
+        animateOp3: "animateOpacity 0.3s ease-in-out",
       },
       keyframes: {
         animateOpacity: {
