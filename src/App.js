@@ -30,7 +30,6 @@ function App() {
       setNavbarShadow(false);
     }
   };
-  // console.log(navbarShadow);
   window.addEventListener("scroll", scrollNavbarShadow);
 
   // Scroll To Top Functions
@@ -41,14 +40,13 @@ function App() {
       setScrollToTop(false);
     }
   };
-  // console.log(scrollToTop);
   window.addEventListener("scroll", scrollToTopIndicator);
 
   const scrollToTopFunction = () => {
     document.documentElement.scrollTop = 0;
   };
 
-  // Aniamtion on Load
+  // Animation on Load
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {

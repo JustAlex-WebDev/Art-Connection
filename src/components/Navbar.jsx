@@ -40,7 +40,7 @@ const Navbar = ({ navbarShadow }) => {
 
   useEffect(() => {
     const handleNav = (e) => {
-      console.log(e);
+      // console.log(e);
       if (e.path[1] !== navRef.current) {
         setNav(false);
       }
