@@ -6,6 +6,7 @@ export const paintings = [
     price: 1500,
     img: "/images/image1.jpg",
     numberOfUnits: 1,
+    styleId: [0, 1],
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const paintings = [
     price: 200,
     img: "/images/image2.jpg",
     numberOfUnits: 1,
+    styleId: [0, 2],
   },
   {
     id: 3,
