@@ -6,7 +6,7 @@ export const paintings = [
     price: 1500,
     img: "/images/image1.jpg",
     numberOfUnits: 1,
-    styleId: [0, 1],
+    category: "Modern Art",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const paintings = [
     price: 200,
     img: "/images/image2.jpg",
     numberOfUnits: 1,
-    styleId: [0, 2],
+    category: "Surrealism",
   },
   {
     id: 3,
@@ -24,6 +24,7 @@ export const paintings = [
     price: 2450,
     img: "/images/image3.jpg",
     numberOfUnits: 1,
+    category: "Modern Art",
   },
   {
     id: 4,
@@ -32,6 +33,7 @@ export const paintings = [
     price: 100,
     img: "/images/image4.jpg",
     numberOfUnits: 1,
+    category: "Abstract",
   },
   {
     id: 5,
@@ -40,6 +42,7 @@ export const paintings = [
     price: 190,
     img: "/images/image5.jpg",
     numberOfUnits: 1,
+    category: "Surrealism",
   },
   {
     id: 6,
@@ -48,6 +51,7 @@ export const paintings = [
     price: 500,
     img: "/images/image6.jpg",
     numberOfUnits: 1,
+    category: "Abstract",
   },
   {
     id: 7,
@@ -56,6 +60,7 @@ export const paintings = [
     price: 175,
     img: "/images/image7.jpg",
     numberOfUnits: 1,
+    category: "Surrealism",
   },
   {
     id: 8,
@@ -64,6 +69,7 @@ export const paintings = [
     price: 450,
     img: "/images/image8.jpg",
     numberOfUnits: 1,
+    category: "Modern Art",
   },
   {
     id: 9,
@@ -72,6 +78,7 @@ export const paintings = [
     price: 1200,
     img: "/images/image9.jpg",
     numberOfUnits: 1,
+    category: "Abstract",
   },
   {
     id: 10,
@@ -80,6 +87,7 @@ export const paintings = [
     price: 80,
     img: "/images/image10.jpg",
     numberOfUnits: 1,
+    category: "Abstract",
   },
 ];
 
