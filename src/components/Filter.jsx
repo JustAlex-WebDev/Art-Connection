@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-const Filter = ({
-  items,
-  setFilteredItems,
-  activeArtStyle,
-  setActiveArtStyle,
-}) => {
+const Filter = ({ items, setFilteredItems }) => {
   const [filterMenu, setFilterMenu] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  useEffect(() => {
-    if (activeArtStyle === 0) {
-      setFilteredItems(items);
-      return;
+  const handleFilter = (category) => {
+    const filtered = items.filter((item) => {
+      return item.category === category;
+    });
+    if (category === "Modern Art") {
+      setActiveCategory("Modern Art");
+    } else if (category === "Abstract") {
+      setActiveCategory("Abstract");
+    } else if (category === "Surrealism") {
+      setActiveCategory("Surrealism");
     }
-    const filteredItems = items.filter((item) =>
-      item.styleId.includes(activeArtStyle)
-    );
-    setFilteredItems(filteredItems);
-  }, [activeArtStyle]);
+    setFilteredItems(filtered);
+  };
 
   return (
     <div className="hidden md:block text-primary">
@@ -39,22 +38,44 @@ const Filter = ({
           }
         >
           <div
-            onClick={() => setActiveArtStyle(0)}
-            className="cursor-pointer hover:opacity-50"
+            onClick={() => setFilteredItems(items) & setActiveCategory("All")}
+            className={`${
+              activeCategory === "All"
+                ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
+                : "cursor-pointer opacity-90 hover:opacity-50"
+            }`}
           >
             All
           </div>
           <div
-            onClick={() => setActiveArtStyle(2)}
-            className="cursor-pointer hover:opacity-50"
+            onClick={() => handleFilter("Surrealism")}
+            className={`${
+              activeCategory === "Surrealism"
+                ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
+                : "cursor-pointer opacity-90 hover:opacity-50"
+            }`}
           >
             Surrealism
           </div>
           <div
-            onClick={() => setActiveArtStyle(1)}
-            className="cursor-pointer hover:opacity-50"
+            onClick={() => handleFilter("Abstract")}
+            className={`${
+              activeCategory === "Abstract"
+                ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
+                : "cursor-pointer opacity-90 hover:opacity-50"
+            }`}
           >
             Abstract
+          </div>
+          <div
+            onClick={() => handleFilter("Modern Art")}
+            className={`${
+              activeCategory === "Modern Art"
+                ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
+                : "cursor-pointer opacity-90 hover:opacity-50"
+            }`}
+          >
+            Modern Art
           </div>
         </div>
         <FiFilter
