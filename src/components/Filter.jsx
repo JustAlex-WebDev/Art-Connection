@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-const Filter = ({ items, setFilteredItems }) => {
-  const [filterMenu, setFilterMenu] = useState(false);
+const Filter = ({
+  items,
+  setFilteredItems,
+  filterMenu,
+  setFilterMenu,
+  setSortMenu,
+}) => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const handleFilter = (category) => {
@@ -25,7 +30,7 @@ const Filter = ({ items, setFilteredItems }) => {
       <div
         className={
           filterMenu
-            ? "flex justify-center items-center gap-4"
+            ? "flex justify-center items-center gap-2"
             : "flex justify-center items-center"
         }
       >
@@ -79,7 +84,7 @@ const Filter = ({ items, setFilteredItems }) => {
           </div>
         </div>
         <FiFilter
-          onClick={() => setFilterMenu(!filterMenu)}
+          onClick={() => setFilterMenu(!filterMenu) & setSortMenu(false)}
           title={filterMenu ? "Close Categories" : "Open Categories"}
           className="cursor-pointer hover:opacity-50"
         />
