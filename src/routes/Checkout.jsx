@@ -16,13 +16,13 @@ const Checkout = () => {
 
   const displayStep = (step) => {
     switch (step) {
+      // case 1:
+      //   return <AccountStep />;
       case 1:
-        return <AccountStep />;
-      case 2:
         return <DetailsStep />;
-      case 3:
+      case 2:
         return <PaymentStep />;
-      case 4:
+      case 3:
         return <FinalStep />;
       default:
     }

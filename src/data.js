@@ -92,7 +92,7 @@ export const paintings = [
 ];
 
 export const steps = [
-  "Account information",
+  // "Account information",
   "Personal Details",
   "Payment",
   "Complete",
