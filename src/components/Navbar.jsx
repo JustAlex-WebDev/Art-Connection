@@ -8,7 +8,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 import { useRef } from "react";
 
-const Navbar = ({ navbarShadow }) => {
+const Navbar = ({ navbarShadow, setSignedUp }) => {
   let totalItemsShoppingCart = 0;
   const [itemsShoppingCart, setItemsShoppingCart] = useState([]);
   const [itemsFavourites, setItemsFavourites] = useState([]);
@@ -32,6 +32,7 @@ const Navbar = ({ navbarShadow }) => {
   const handleSignOut = async (e) => {
     try {
       await logOut();
+      setSignedUp(false);
       navigate("/");
     } catch (e) {
       console.log(e.message);
@@ -196,7 +197,7 @@ const Navbar = ({ navbarShadow }) => {
           {user?.email ? (
             <div className="flex flex-col w-full p-4">
               <button
-                onClick={() => setNav(!nav)}
+                onClick={handleSignOut}
                 className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"
               >
                 Sign Out

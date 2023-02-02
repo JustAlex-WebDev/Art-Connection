@@ -4,20 +4,21 @@ import { FiShoppingCart } from "react-icons/fi";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
-const Account = () => {
+const Account = ({ signedUp, setSignedUp }) => {
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
 
   const handleSignOut = async (e) => {
     try {
       await logOut();
+      setSignedUp(false);
       navigate("/");
     } catch (e) {
       console.log(e.message);
     }
   };
 
-  if (user) {
+  if (signedUp) {
     return (
       <div className="main-div mb-56 mt-28">
         <div className="flex flex-col justify-center items-center my-12 py-8 main-div">
