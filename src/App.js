@@ -21,6 +21,7 @@ function App() {
   const [navbarShadow, setNavbarShadow] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [signedUp, setSignedUp] = useState(false);
 
   // Navbar Shadow on scroll
   const scrollNavbarShadow = () => {
@@ -61,7 +62,7 @@ function App() {
           <AnimationOnLoad />
         ) : (
           <>
-            <Navbar navbarShadow={navbarShadow} />
+            <Navbar navbarShadow={navbarShadow} setSignedUp={setSignedUp} />
             <ScrollToTop
               scrollToTopIndicator={scrollToTop}
               scrollToTopFunction={scrollToTopFunction}
@@ -72,8 +73,16 @@ function App() {
               <Route path="/favourites" element={<Favourites />} />
               <Route path="/shoppingcart" element={<ShoppingCart />} />
               <Route path="/signin" element={<Signin />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/account" element={<Account />} />
+              <Route
+                path="/signup"
+                element={<Signup setSignedUp={setSignedUp} />}
+              />
+              <Route
+                path="/account"
+                element={
+                  <Account signedUp={signedUp} setSignedUp={setSignedUp} />
+                }
+              />
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
             <Footer />
