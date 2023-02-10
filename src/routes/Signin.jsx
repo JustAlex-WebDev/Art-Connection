@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
 import { UserAuth } from "../context/AuthContext";
 
-const Signin = () => {
+const Signin = ({ setSignedUp }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +15,7 @@ const Signin = () => {
     setError("");
     try {
       await signIn(email, password);
+      setSignedUp(true);
       navigate("/account");
     } catch (e) {
       setError(e.message);

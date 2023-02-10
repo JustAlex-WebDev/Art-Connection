@@ -72,7 +72,10 @@ function App() {
               <Route path="/" element={<Home items={items} />} />
               <Route path="/favourites" element={<Favourites />} />
               <Route path="/shoppingcart" element={<ShoppingCart />} />
-              <Route path="/signin" element={<Signin />} />
+              <Route
+                path="/signin"
+                element={<Signin setSignedUp={setSignedUp} />}
+              />
               <Route
                 path="/signup"
                 element={<Signup setSignedUp={setSignedUp} />}

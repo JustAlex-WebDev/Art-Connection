@@ -53,13 +53,13 @@ const FavouritesItem = ({
           <AiOutlineMinusCircle
             onClick={() => numberOfUnitsRemove(item)}
             size={20}
-            className="hover:opacity-50"
+            className="hover:opacity-50 cursor-pointer"
           />
           <h3>{item.numberOfUnits}</h3>
           <AiOutlinePlusCircle
             onClick={() => numberOfUnitsAdd(item)}
             size={20}
-            className="hover:opacity-50"
+            className="hover:opacity-50 cursor-pointer"
           />
         </div>
         <div className="inline-flex gap-4 items-center">
