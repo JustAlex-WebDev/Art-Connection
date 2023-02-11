@@ -1,6 +1,7 @@
 import React from "react";
 import ThemeToggle from "./ThemeToggle";
 import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="grid md:grid-cols-2">
         <div className="flex justify-evenly w-full md:max-w-[300px] uppercase">
           <div>
-            <h2 className="font-bold cursor-pointer">Support</h2>
+            <h2 className="font-bold">Support</h2>
             <ul>
               <li className="text-sm py-2 hover:opacity-50 cursor-pointer">
                 Help Center
@@ -25,7 +26,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="font-bold cursor-pointer">Info</h2>
+            <h2 className="font-bold">Info</h2>
             <ul>
               <li className="text-sm py-2 hover:opacity-50 cursor-pointer">
                 About Us
@@ -66,14 +67,24 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex py-4 justify-center items-center gap-4">
-        <a href="https://github.com/JustAlex-WebDev" target="_blank">
+        <a
+          href="https://github.com/JustAlex-WebDev"
+          rel="noreferrer"
+          target="_blank"
+        >
           <FaGithub className="hover:opacity-50 cursor-pointer" />
         </a>
         <FaInstagram className="hover:opacity-50 cursor-pointer" />
         <FaFacebook className="hover:opacity-50 cursor-pointer" />
       </div>
       <p className="text-center py-4">
-        © 2022 Art Connection, Inc. All Rights Reserved
+        © 2022{" "}
+        <Link to="/">
+          <span className="hover:opacity-50 cursor-pointer">
+            Art Connection
+          </span>
+        </Link>
+        , Inc. All Rights Reserved
       </p>
     </div>
   );
