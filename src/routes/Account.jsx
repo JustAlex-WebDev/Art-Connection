@@ -18,7 +18,7 @@ const Account = ({ signedUp, setSignedUp }) => {
     }
   };
 
-  if (signedUp) {
+  if (user) {
     return (
       <div className="main-div mb-56 mt-28">
         <div className="flex flex-col justify-center items-center my-12 py-8 main-div">
