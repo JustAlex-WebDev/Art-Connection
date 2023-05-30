@@ -62,7 +62,9 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
     >
       <div className="main-div flex items-center justify-between h-20 font-bold text-primary">
         <Link to="/">
-          <h1 className="text-xl hover:opacity-50">Art Connection</h1>
+          <h1 title="Home" className="text-xl hover:opacity-50">
+            Art Connection
+          </h1>
         </Link>
         <div className="hidden md:block">
           <ThemeToggle />
@@ -88,7 +90,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
               <span className="absolute pt-5 pl-7 top-0">
                 {itemsFavourites?.length}
               </span>
-              <AiOutlineHeart size={25} />
+              <AiOutlineHeart title="Favourites" size={25} />
             </Link>
             <Link
               to="/shoppingcart"
@@ -101,7 +103,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 )}
                 {totalItemsShoppingCart}
               </span>
-              <FiShoppingCart size={25} />
+              <FiShoppingCart title="Shopping Cart" size={25} />
             </Link>
           </div>
         ) : (
@@ -122,13 +124,13 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
               to="/favourites"
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
-              <AiOutlineHeart size={25} />
+              <AiOutlineHeart title="Favourites" size={25} />
             </Link>
             <Link
               to="/shoppingcart"
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
-              <FiShoppingCart size={25} />
+              <FiShoppingCart title="Shopping Cart" size={25} />
             </Link>
           </div>
         )}
@@ -139,7 +141,11 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
           onClick={() => setNav(!nav)}
           className="block md:hidden cursor-pointer z-10 hover:opacity-50"
         >
-          {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+          {nav ? (
+            <AiOutlineClose title="Close Menu" size={20} />
+          ) : (
+            <AiOutlineMenu title="Open Menu" size={20} />
+          )}
         </button>
         {/* Mobile Menu */}
         <div
@@ -174,7 +180,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 <span className="absolute pl-7 top-44">
                   {itemsFavourites?.length}
                 </span>
-                <AiOutlineHeart size={25} />
+                <AiOutlineHeart title="Favourites" size={25} />
               </Link>
             </li>
             <li
@@ -187,7 +193,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                     {totalItemsShoppingCart}
                   </span>
                 ) : null}
-                <FiShoppingCart size={25} />
+                <FiShoppingCart title="Shopping Cart" size={25} />
               </Link>
             </li>
             <li className="py-6 flex justify-center">

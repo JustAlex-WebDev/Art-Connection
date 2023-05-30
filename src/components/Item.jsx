@@ -92,14 +92,20 @@ const Item = ({ item }) => {
         <h3>{item.name}</h3>
         <h3 className="opacity-60">{item.author}</h3>
         <h3 className="pt-4">{item.price.toLocaleString()} USD</h3>
-        <div
-          onClick={saveItemFavourites}
-          className="flex text-primary justify-end ml-32 md:ml-36 lg:ml-40 absolute"
-        >
+        <div className="flex text-primary justify-end ml-32 md:ml-36 lg:ml-40 absolute">
           {savedItemFavourites ? (
-            <AiFillHeart size={25} className="cursor-pointer" />
+            <AiFillHeart
+              title="Remove Item"
+              size={25}
+              className="cursor-pointer"
+            />
           ) : (
-            <AiOutlineHeart size={25} className="cursor-pointer" />
+            <AiOutlineHeart
+              onClick={saveItemFavourites}
+              title="Save Item"
+              size={25}
+              className="cursor-pointer"
+            />
           )}
         </div>
       </div>
