@@ -151,32 +151,53 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-[5.2rem] flex flex-col items-center justify-between w-[50%] h-[91.8%] bg-secondary shadow-xl z-50 text-lg"
-              : "fixed right-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in-out duration-300"
+              ? "md:hidden fixed right-0 top-20 flex flex-col items-center justify-between w-[50%] h-[91.8vh] h-[91.8svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-500 border-l"
+              : "fixed w-[50%] right-[-100%] top-20 h-[91.8vh] h-[91.8svh] flex flex-col items-center justify-between transition-all ease-in-out duration-500"
           }
         >
           <ul className="p-4 w-full">
             <li
               onClick={() => setNav(!nav)}
-              className="border-b py-6 flex justify-center"
+              className="border-b py-6 flex justify-center overflow-hidden"
             >
-              <Link to="/" className="hover:opacity-50">
+              <Link
+                to="/"
+                className={
+                  nav
+                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-300"
+                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-300"
+                }
+              >
                 Home
               </Link>
             </li>
             <li
               onClick={() => setNav(!nav)}
-              className="border-b py-6 flex justify-center"
+              className="border-b py-6 flex justify-center overflow-hidden"
             >
-              <Link to="/account" className="hover:opacity-50">
+              <Link
+                to="/account"
+                className={
+                  nav
+                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[350ms]"
+                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[350ms]"
+                }
+              >
                 Account
               </Link>
             </li>
             <li
               onClick={() => setNav(!nav)}
-              className="border-b py-6 flex justify-center"
+              className="border-b py-6 flex justify-center overflow-hidden"
             >
-              <Link to="/favourites" className="hover:opacity-50">
+              <Link
+                to="/favourites"
+                className={
+                  nav
+                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[400ms]"
+                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[400ms]"
+                }
+              >
                 <span className="absolute pl-7 top-44">
                   {itemsFavourites?.length}
                 </span>
@@ -185,9 +206,16 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
             </li>
             <li
               onClick={() => setNav(!nav)}
-              className="border-b py-6 flex justify-center"
+              className="border-b py-6 flex justify-center overflow-hidden"
             >
-              <Link to="/shoppingcart" className="hover:opacity-50">
+              <Link
+                to="/shoppingcart"
+                className={
+                  nav
+                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[450ms]"
+                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[450ms]"
+                }
+              >
                 {user ? (
                   <span className="absolute pl-8 top-64">
                     {totalItemsShoppingCart}
@@ -196,12 +224,26 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 <FiShoppingCart title="Shopping Cart" size={25} />
               </Link>
             </li>
-            <li className="py-6 flex justify-center">
-              <ThemeToggle />
+            <li className="py-6 flex justify-center overflow-hidden">
+              <div
+                className={
+                  nav
+                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[500ms]"
+                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[500ms]"
+                }
+              >
+                <ThemeToggle />
+              </div>
             </li>
           </ul>
           {user?.email ? (
-            <div className="flex flex-col w-full p-4">
+            <div
+              className={
+                nav
+                  ? "flex flex-col w-full p-4 opacity-100 transition-all duration-300 delay-[600ms] ease-in-out"
+                  : "flex flex-col w-full p-4 opacity-0 transition-all duration-300 delay-[600ms] ease-in-out"
+              }
+            >
               <button
                 onClick={handleSignOut}
                 className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"

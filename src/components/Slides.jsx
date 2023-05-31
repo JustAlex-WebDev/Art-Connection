@@ -5,20 +5,23 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Slides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [arrow, setArrow] = useState("");
 
   const goToPrev = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
+    setArrow("left");
   };
 
   const goToNext = () => {
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
+    setArrow("right");
   };
 
-  //  Automated the slider
+  //  Automated slider
   const autoScroll = true;
   let slideInterval;
 
@@ -52,7 +55,15 @@ const Slides = () => {
             {/* <div>{slides[currentIndex].title}</div> */}
             {slides.map((slide, index) => (
               <div
-                className={index === currentIndex ? "animate-animateOp" : ""}
+                className={
+                  index === currentIndex
+                    ? "animate-animateOp translate-x-0 transition-all duration-500 ease-in-out"
+                    : `${
+                        arrow === "right"
+                          ? "-translate-x-full"
+                          : "translate-x-full"
+                      } transition-all duration-500 ease-in-out`
+                }
                 key={index}
               >
                 {index === currentIndex && (
