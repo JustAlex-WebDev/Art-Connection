@@ -63,13 +63,13 @@ const Item = ({ item }) => {
           <div></div>
         </div>
       </div> */}
-      <div className="image relative w-[10rem] md:w-[11.5rem] lg:w-[13rem]">
+      <div className="group relative w-[10rem] md:w-[11.5rem] lg:w-[13rem]">
         <img
           src={item.img}
           alt="painting"
           className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-xl bg-secondary"
         />
-        <div className="overlay absolute hidden justify-center items-center w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] top-0 hover:backdrop-brightness-75 hover:backdrop-blur-sm ease-in-out duration-100">
+        <div className="group-hover:flex absolute hidden justify-center items-center w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] top-0 hover:backdrop-brightness-75 hover:backdrop-blur-sm ease-in-out duration-100">
           {savedItemShoppingCart ? (
             <button
               onClick={saveItemShoppingCart}

@@ -38,6 +38,32 @@ body {
   background-color: var(--color-bg-primary);
 }
 
-.image:hover .overlay {
-  display: flex;
+/* Underline effect */
+
+/* .min-nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black;
+  transition: all 0.3s ease;
+  display: none;
 }
+
+.min-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 0%;
+  left: 50%;
+  height: 2px;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+.min-nav-link:hover::after {
+  left: 0;
+  width: 100%;
+} */
