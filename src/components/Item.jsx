@@ -58,6 +58,11 @@ const Item = ({ item }) => {
           : "grid justify-center items-center gap-x-4 gap-y-4"
       }`}
     >
+      {/* <div className="bg-secondary flex justify-center items-center">
+        <div className="w-[10rem] h-[13rem] bg-red-300">
+          <div></div>
+        </div>
+      </div> */}
       <div className="image relative w-[10rem] md:w-[11.5rem] lg:w-[13rem]">
         <img
           src={item.img}

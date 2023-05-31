@@ -30,22 +30,28 @@ const Signup = ({ setSignedUp }) => {
         {error ? <p className="bg-red-300 p-3 my-2">{error}</p> : null}
         <form onSubmit={handleSubmit}>
           <div className="my-4">
-            <label className="text-primary">Email</label>
+            <label for="email" className="text-primary cursor-pointer">
+              Email
+            </label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-2 border rounded-2xl bg-primary text-primary"
+                id="email"
                 type="email"
               />
               <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
           <div className="my-4">
-            <label className="text-primary">Password</label>
+            <label for="password" className="text-primary cursor-pointer">
+              Password
+            </label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-2 border rounded-2xl bg-primary text-primary"
+                id="password"
                 type="password"
               />
               <AiFillLock className="absolute right-2 top-3 text-gray-400" />

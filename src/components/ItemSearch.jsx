@@ -92,12 +92,18 @@ const ItemSearch = ({ items }) => {
             setSortMenu={setSortMenu}
           />
           <form className="relative ml-4">
-            <AiOutlineSearch className="absolute top-0 left-0 text-xl rounded-2xl cursor-pointer mt-[0.6rem] ml-4 text-primary" />
+            <label for="search">
+              <AiOutlineSearch
+                title="Search"
+                className="absolute top-0 left-0 text-xl rounded-2xl cursor-pointer mt-[0.6rem] ml-4 text-primary"
+              />
+            </label>
             <input
               onChange={(e) => setSearchText(e.target.value)}
               className="w-full bg-secondary placeholder-primary text-primary pl-12 py-2 rounded-2xl shadow-lg outline-none"
               type="text"
               placeholder="Search a painting"
+              id="search"
             />
           </form>
         </div>
