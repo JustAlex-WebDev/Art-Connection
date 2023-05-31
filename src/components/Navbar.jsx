@@ -164,11 +164,11 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 to="/"
                 className={
                   nav
-                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-300"
-                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-300"
+                    ? "translate-y-0 transition-all duration-300 delay-300"
+                    : "translate-y-[200%] transition-all duration-300 delay-300"
                 }
               >
-                Home
+                <div className="hover:opacity-50 before:absolute">Home</div>
               </Link>
             </li>
             <li
@@ -179,11 +179,11 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 to="/account"
                 className={
                   nav
-                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[350ms]"
-                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[350ms]"
+                    ? "translate-y-0 transition-all duration-300 delay-[350ms]"
+                    : "translate-y-[200%] transition-all duration-300 delay-[350ms]"
                 }
               >
-                Account
+                <div className="hover:opacity-50">Account</div>
               </Link>
             </li>
             <li
@@ -194,14 +194,16 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 to="/favourites"
                 className={
                   nav
-                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[400ms]"
-                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[400ms]"
+                    ? "translate-y-0 transition-all duration-300 delay-[400ms]"
+                    : "translate-y-[200%] transition-all duration-300 delay-[400ms]"
                 }
               >
-                <span className="absolute pl-7 top-44">
-                  {itemsFavourites?.length}
-                </span>
-                <AiOutlineHeart title="Favourites" size={25} />
+                <div className="hover:opacity-50">
+                  <span className="absolute pl-7 -top-2">
+                    {itemsFavourites?.length}
+                  </span>
+                  <AiOutlineHeart title="Favourites" size={25} />
+                </div>
               </Link>
             </li>
             <li
@@ -212,27 +214,31 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                 to="/shoppingcart"
                 className={
                   nav
-                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[450ms]"
-                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[450ms]"
+                    ? "translate-y-0 transition-all duration-300 delay-[450ms]"
+                    : "translate-y-[200%] transition-all duration-300 delay-[450ms]"
                 }
               >
-                {user ? (
-                  <span className="absolute pl-8 top-64">
-                    {totalItemsShoppingCart}
-                  </span>
-                ) : null}
-                <FiShoppingCart title="Shopping Cart" size={25} />
+                <div className="hover:opacity-50">
+                  {user ? (
+                    <span className="absolute pl-8 -top-2">
+                      {totalItemsShoppingCart}
+                    </span>
+                  ) : null}
+                  <FiShoppingCart title="Shopping Cart" size={25} />
+                </div>
               </Link>
             </li>
             <li className="py-6 flex justify-center overflow-hidden">
               <div
                 className={
                   nav
-                    ? "hover:opacity-50 translate-y-0 transition-all duration-300 delay-[500ms]"
-                    : "hover:opacity-50 translate-y-[200%] transition-all duration-300 delay-[500ms]"
+                    ? "translate-y-0 transition-all duration-300 delay-[500ms]"
+                    : "translate-y-[200%] transition-all duration-300 delay-[500ms]"
                 }
               >
-                <ThemeToggle />
+                <div className="hover:opacity-50">
+                  <ThemeToggle />
+                </div>
               </div>
             </li>
           </ul>
@@ -253,18 +259,32 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
             </div>
           ) : (
             <div className="flex flex-col w-full p-4">
-              <Link to="/signin" className="hover:opacity-50">
+              <Link
+                to="/signin"
+                className={
+                  nav
+                    ? "opacity-100 transition-all duration-300 delay-[600ms] ease-in-out"
+                    : "opacity-0 transition-all duration-300 delay-[600ms] ease-in-out"
+                }
+              >
                 <button
                   onClick={() => setNav(!nav)}
-                  className="w-full my-2 p-3 border rounded-2xl shadow-md"
+                  className="w-full my-2 p-3 border rounded-2xl shadow-md hover:opacity-50"
                 >
                   Sign In
                 </button>
               </Link>
-              <Link to="/signup" className="hover:opacity-50">
+              <Link
+                to="/signup"
+                className={
+                  nav
+                    ? "opacity-100 transition-all duration-300 delay-[650ms] ease-in-out"
+                    : "opacity-0 transition-all duration-300 delay-[650ms] ease-in-out"
+                }
+              >
                 <button
                   onClick={() => setNav(!nav)}
-                  className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md"
+                  className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"
                 >
                   Sign Up
                 </button>
