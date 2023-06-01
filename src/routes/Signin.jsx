@@ -29,7 +29,7 @@ const Signin = ({ setSignedUp }) => {
         <h1 className="text-2xl font-bold text-primary">Sign In</h1>
         <form onSubmit={handleSubmit}>
           <div className="my-4">
-            <label for="email" className="text-primary cursor-pointer">
+            <label htmlFor="email" className="text-primary cursor-pointer">
               Email
             </label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
@@ -43,7 +43,7 @@ const Signin = ({ setSignedUp }) => {
             </div>
           </div>
           <div className="my-4">
-            <label for="password" className="text-primary cursor-pointer">
+            <label htmlFor="password" className="text-primary cursor-pointer">
               Password
             </label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
