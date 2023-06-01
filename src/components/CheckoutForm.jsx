@@ -13,7 +13,7 @@ const CheckoutForm = ({
   const [finalData, setFinalData] = useState([]);
 
   return (
-    <div className="main-div mb-24 mt-32 text-primary">
+    <div className="main-div mb-24 mt-16 text-primary">
       <CheckoutStepper
         checkoutSteps={checkoutSteps}
         currentStep={currentStep}

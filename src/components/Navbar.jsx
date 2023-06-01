@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
@@ -6,14 +6,13 @@ import ThemeToggle from "./ThemeToggle";
 import { UserAuth } from "../context/AuthContext";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import { useRef } from "react";
 
 const Navbar = ({ navbarShadow, setSignedUp }) => {
   let totalItemsShoppingCart = 0;
   const [itemsShoppingCart, setItemsShoppingCart] = useState([]);
   const [itemsFavourites, setItemsFavourites] = useState([]);
   const [nav, setNav] = useState(false);
-  const navRef = useRef();
+  // const navRef = useRef();
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
 
@@ -39,18 +38,18 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
     }
   };
 
-  useEffect(() => {
-    const handleNav = (e) => {
-      // console.log(e);
-      if (e.path[1] !== navRef.current) {
-        setNav(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleNav = (e) => {
+  //     // console.log(e);
+  //     if (e.path[1] !== navRef.current) {
+  //       setNav(false);
+  //     }
+  //   };
 
-    document.body.addEventListener("click", handleNav);
+  //   document.body.addEventListener("click", handleNav);
 
-    return () => document.body.removeEventListener("click", handleNav);
-  }, []);
+  //   return () => document.body.removeEventListener("click", handleNav);
+  // }, []);
 
   return (
     <div
@@ -137,7 +136,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
 
         {/* Menu Icon */}
         <button
-          ref={navRef}
+          // ref={navRef}
           onClick={() => setNav(!nav)}
           className="block md:hidden cursor-pointer z-10 hover:opacity-50"
         >

@@ -74,7 +74,7 @@ const ShoppingCartItems = () => {
           items?.length > 0 ? `mb-24` : ``
         }`}
       >
-        <div className="py-24 mb-16 flex flex-col justify-center items-center main-div">
+        <div className="mb-24 mt-6 pb-12 flex flex-col justify-center items-center main-div">
           <div>
             <h2 className="text-2xl font-bold text-primary">Shopping Cart</h2>
           </div>
@@ -111,7 +111,7 @@ const ShoppingCartItems = () => {
           ))}
         </div>
         {items?.length === 0 ? null : (
-          <div className="flex justify-center items-center my-16 main-div">
+          <div className="flex justify-center items-center mt-12 main-div">
             <Link
               to="/checkout"
               className="p-3 px-6 bg-button text-button hover:opacity-50 font-bold rounded-2xl shadow-md"

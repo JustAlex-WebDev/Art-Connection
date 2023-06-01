@@ -16,8 +16,6 @@ const Checkout = () => {
 
   const displayStep = (step) => {
     switch (step) {
-      // case 1:
-      //   return <AccountStep />;
       case 1:
         return <DetailsStep />;
       case 2:

@@ -14,8 +14,8 @@ const ItemSearch = ({ items }) => {
   const [sortedNone, setSortedNone] = useState(true);
 
   return (
-    <div className="main-div mb-24 mt-28 xxsm:mt-8">
-      <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right">
+    <div className="main-div mb-24 mt-8">
+      <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 text-center md:text-right">
         <h1 className="text-2xl font-bold my-2 text-primary">Search Art</h1>
         <div className="flex justify-center items-center">
           <div className="hidden md:block text-primary">
@@ -92,7 +92,7 @@ const ItemSearch = ({ items }) => {
             setSortMenu={setSortMenu}
           />
           <form className="relative ml-4">
-            <label for="search">
+            <label htmlFor="search">
               <AiOutlineSearch
                 title="Search"
                 className="absolute top-0 left-0 text-xl rounded-2xl cursor-pointer mt-[0.6rem] ml-4 text-primary"
