@@ -58,61 +58,67 @@ const Item = ({ item }) => {
           : "grid justify-center items-center gap-x-4 gap-y-4"
       }`}
     >
-      {/* <div className="bg-secondary flex justify-center items-center">
-        <div className="w-[10rem] h-[13rem] bg-red-300">
-          <div></div>
-        </div>
-      </div> */}
-      <div className="group relative w-[10rem] md:w-[11.5rem] lg:w-[13rem]">
-        <img
-          src={item.img}
-          alt="painting"
-          className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-xl bg-secondary"
-        />
-        <div className="group-hover:flex absolute hidden justify-center items-center w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] top-0 hover:backdrop-brightness-75 hover:backdrop-blur-sm ease-in-out duration-100">
-          {savedItemShoppingCart ? (
-            <button
-              onClick={saveItemShoppingCart}
-              className="bg-primary text-primary px-2 md:px-8 py-2 mx-2 rounded-2xl border-2 border-primary shadow-lg hover:scale-105 duration-100 ease-in-out"
-            >
-              <div className="flex gap-2 font-bold md:text-lg justify-center items-center">
-                <FiShoppingCart size={22} />
-                <span>Add to cart</span>
-              </div>
-            </button>
-          ) : (
-            <button
-              onClick={saveItemShoppingCart}
-              className="bg-primary text-primary px-2 md:px-8 py-2 mx-2 rounded-2xl shadow-lg hover:scale-105 duration-100 ease-in-out"
-            >
-              <div className="flex gap-2 font-bold md:text-lg justify-center items-center">
-                <FiShoppingCart size={22} />
-                <span>Add to cart</span>
-              </div>
-            </button>
-          )}
+      <div className="relative w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] hover:z-20 ">
+        <div className="overflow-hidden group">
+          <img
+            src={item.img}
+            alt="painting"
+            className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage"
+          />
+          <div className="flex flex-col gap-4 items-center group-hover:translate-y-0 translate-y-[200%] bg-primary w-full mt-4 h-28 duration-300 ease-in-out text-primary">
+            <div className="flex gap-4 opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500">
+              {savedItemShoppingCart ? (
+                <div
+                  onClick={saveItemShoppingCart}
+                  title="Remove from shopping cart"
+                  className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
+                >
+                  <FiShoppingCart
+                    size={22}
+                    className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500"
+                  />
+                  <div>Remove from cart</div>
+                </div>
+              ) : (
+                <div
+                  onClick={saveItemShoppingCart}
+                  title="Add to shopping cart"
+                  className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
+                >
+                  <FiShoppingCart
+                    size={22}
+                    className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500"
+                  />
+                  <div>Add to cart</div>
+                </div>
+              )}
+            </div>
+            <div className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-700">
+              <div className="hover:opacity-50 cursor-pointer">Learn more</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex w-[7rem] md:w-[10rem] lg:w-[13rem] justify-start flex-col relative text-primary mb-8">
-        <h3>{item.name}</h3>
-        <h3 className="opacity-60">{item.author}</h3>
-        <h3 className="pt-4">{item.price.toLocaleString()} USD</h3>
-        <div className="flex text-primary justify-end ml-32 md:ml-36 lg:ml-40 absolute">
-          {savedItemFavourites ? (
-            <AiFillHeart
-              title="Remove Item"
-              size={25}
-              className="cursor-pointer"
-            />
-          ) : (
-            <AiOutlineHeart
-              onClick={saveItemFavourites}
-              title="Save Item"
-              size={25}
-              className="cursor-pointer"
-            />
-          )}
+      <div className="w-full flex justify-between mb-8 h-28 z-10 bg-primary text-primary">
+        <div className="w-[80%]">
+          <h3>{item.name}</h3>
+          <h3 className="opacity-60">{item.author}</h3>
+          <h3 className="pt-4">{item.price.toLocaleString()} USD</h3>
         </div>
+        {savedItemFavourites ? (
+          <AiFillHeart
+            title="Remove Item"
+            size={24}
+            className="cursor-pointer"
+          />
+        ) : (
+          <AiOutlineHeart
+            onClick={saveItemFavourites}
+            title="Save Item"
+            size={24}
+            className="cursor-pointer"
+          />
+        )}
       </div>
     </article>
   );
