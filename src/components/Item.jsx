@@ -5,6 +5,7 @@ import { UserAuth } from "../context/AuthContext";
 import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
@@ -54,17 +55,19 @@ const Item = ({ item }) => {
       key={item.id}
       className={`${
         myElementIsVisible
-          ? "grid justify-center items-center gap-x-4 gap-y-4 animate-animateOp"
-          : "grid justify-center items-center gap-x-4 gap-y-4"
+          ? "grid items-center justify-center gap-4 animate-animateOp"
+          : "grid items-center justify-center gap-4"
       }`}
     >
-      <div className="relative w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] hover:z-20 ">
-        <div className="overflow-hidden group">
-          <img
-            src={item.img}
-            alt="painting"
-            className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage"
-          />
+      <div className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] hover:z-20">
+        <div className="overflow-hidden group w-full">
+          <Link to="">
+            <img
+              src={item.img}
+              alt="painting"
+              className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer"
+            />
+          </Link>
           <div className="flex flex-col gap-4 items-center group-hover:translate-y-0 translate-y-[200%] bg-primary w-full mt-4 h-28 duration-300 ease-in-out text-primary">
             <div className="flex gap-4 opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500">
               {savedItemShoppingCart ? (
@@ -99,7 +102,7 @@ const Item = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between mb-8 h-28 z-10 bg-primary text-primary">
+      <div className="flex justify-between mb-8 w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-28 z-10 bg-primary text-primary">
         <div className="w-[80%]">
           <h3>{item.name}</h3>
           <h3 className="opacity-60">{item.author}</h3>
