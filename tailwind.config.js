@@ -32,11 +32,18 @@ module.exports = {
         animateOp: "animateOpacity 1s ease 1",
         animateOp2: "animateOpacity 2s ease",
         animateOp3: "animateOpacity 0.3s ease-in-out",
+        panImage: "panImage 15s linear infinite",
       },
       keyframes: {
         animateOpacity: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        panImage: {
+          "0%": { objectFit: "cover", objectPosition: "bottom" },
+          "50%": { objectFit: "cover", objectPosition: "top" },
+          "50.0001%": { objectFit: "cover", objectPosition: "top" },
+          "100%": { objectFit: "cover", objectPosition: "bottom" },
         },
       },
     },

@@ -150,8 +150,8 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
         <div
           className={
             nav
-              ? "md:hidden fixed right-0 top-20 flex flex-col items-center justify-between w-[50%] h-[91.8vh] h-[91.8svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-500 border-l"
-              : "fixed w-[50%] right-[-100%] top-20 h-[91.8vh] h-[91.8svh] flex flex-col items-center justify-between transition-all ease-in-out duration-500"
+              ? "md:hidden fixed right-0 top-20 flex flex-col items-center justify-between w-full xxsm:w-[50%] h-[91.8vh] h-[91.8svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-500 border-l"
+              : "fixed w-full xxsm:w-[50%] right-[-100%] top-20 h-[91.8vh] h-[91.8svh] flex flex-col items-center justify-between transition-all ease-in-out duration-500"
           }
         >
           <ul className="p-4 w-full">
@@ -235,9 +235,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
                     : "translate-y-[200%] transition-all duration-300 delay-[500ms]"
                 }
               >
-                <div className="hover:opacity-50">
-                  <ThemeToggle />
-                </div>
+                <ThemeToggle />
               </div>
             </li>
           </ul>
