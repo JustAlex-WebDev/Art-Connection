@@ -1,6 +1,8 @@
 import React from "react";
 import ThemeToggle from "./ThemeToggle";
-import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import { BsGithub } from "react-icons/bs";
+import { AiFillLinkedin } from "react-icons/ai";
+import { SiGmail } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -49,12 +51,18 @@ const Footer = () => {
               <div className="flex justify-center md:justify-end py-4 md:py-0 md:pb-4 mt-[-1rem]">
                 <ThemeToggle />
               </div>
-              <p className="text-center md:text-right">Sign up for art news</p>
+              <label
+                htmlFor="news"
+                className="text-center md:text-right hover:cursor-pointer"
+              >
+                Sign up for art news
+              </label>
               <div className="py-4">
                 <form>
                   <input
                     className="bg-primary border text-primary py-2 pl-4 mr-2 w-full shadow-lg rounded-2xl md:w-auto placeholder-primary"
                     type="email"
+                    id="news"
                     placeholder="Enter your email"
                   />
                   <button className="bg-button text-button px-4 p-2 w-full rounded-2xl shadow-xl hover:shadow-2xl md:w-auto my-2 font-semibold hover:opacity-50">
@@ -72,13 +80,22 @@ const Footer = () => {
           rel="noreferrer"
           target="_blank"
         >
-          <FaGithub className="hover:opacity-50 cursor-pointer" />
+          <BsGithub size={15} className="cursor-pointer hover:opacity-50" />
         </a>
-        <FaInstagram className="hover:opacity-50 cursor-pointer" />
-        <FaFacebook className="hover:opacity-50 cursor-pointer" />
+        <SiGmail size={15} className="cursor-pointer hover:opacity-50" />
+        <a
+          href="https://www.linkedin.com/in/alexandar-valov-667567242"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <AiFillLinkedin
+            size={20}
+            className="cursor-pointer hover:opacity-50"
+          />
+        </a>
       </div>
       <p className="text-center py-4">
-        © 2022{" "}
+        © 2023{" "}
         <Link to="/">
           <span className="hover:opacity-50 cursor-pointer">
             Art Connection
