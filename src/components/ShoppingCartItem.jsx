@@ -39,32 +39,34 @@ const FavouritesItem = ({
   };
 
   return (
-    <div className="group my-8 flex justify-center items-center gap-8">
+    <div className="group my-8 flex flex-col xxxsm:flex-row justify-center items-center gap-4 xxxsm:gap-8">
       <img
         className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer"
         src={item.img}
         alt={item.name}
       />
-      <div className="flex flex-col font-semibold text-lg text-primary">
-        <h3>{item.name}</h3>
-        <h3 className="opacity-60">{item.author}</h3>
-        <h3 className="mb-10">{item.price.toLocaleString()} USD</h3>
-        <div className="inline-flex gap-4 items-center">
+      <div className="flex flex-col justify-between font-semibold text-base xxxsm:text-lg text-primary w-full xxxsm:w-44 h-[10rem] xxxsm:h-[13rem]">
+        <div>
+          <h3>{item.name}</h3>
+          <h3 className="opacity-60">{item.author}</h3>
+          <h3>{item.price.toLocaleString()} USD</h3>
+        </div>
+        <div className="flex gap-4 items-center">
           <AiOutlineMinusCircle
-            title="Remove Item"
+            title="Decrease"
             onClick={() => numberOfUnitsRemove(item)}
             size={20}
             className="hover:opacity-50 cursor-pointer"
           />
           <h3>{item.numberOfUnits}</h3>
           <AiOutlinePlusCircle
-            title="Add Item"
+            title="Increase"
             onClick={() => numberOfUnitsAdd(item)}
             size={20}
             className="hover:opacity-50 cursor-pointer"
           />
         </div>
-        <div className="inline-flex gap-4 mt-8 items-center">
+        <div className="flex gap-4 items-center">
           {savedItemFavourites ? (
             <AiFillHeart
               title="Item Saved"

@@ -34,7 +34,7 @@ const FavouritesItems = () => {
           items?.length > 0 ? `mb-24` : ``
         }`}
       >
-        <div className="mb-24 mt-6 pb-12 flex flex-col justify-center items-center main-div">
+        <div className="mb-24 mt-20 xxsm:mt-6 pb-12 flex flex-col justify-center items-center main-div">
           <div>
             <h2 className="text-2xl font-bold text-primary">Favourites</h2>
           </div>

@@ -29,17 +29,19 @@ const FavouritesItem = ({ item, deleteItem }) => {
   };
 
   return (
-    <div className="py-8 inline-flex m-auto gap-4 relative ">
+    <div className="group my-8 flex flex-col xxxsm:flex-row justify-center items-center gap-4 xxxsm:gap-8">
       <img
-        className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary"
+        className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer"
         src={item.img}
-        alt={item.img}
+        alt={item.name}
       />
-      <div className="flex flex-col px-4 font-semibold text-lg w-[13rem] md:w-[14.5rem] lg:w-[17rem] h-[11rem] text-primary">
-        <h3>{item.name}</h3>
-        <h3 className="opacity-60">{item.author}</h3>
-        <h3 className="mb-[6.3rem]">{item.price.toLocaleString()} USD</h3>
-        <div className="inline-flex gap-4 items-center">
+      <div className="flex flex-col justify-between font-semibold text-base xxxsm:text-lg text-primary w-full xxxsm:w-44 h-[8rem] xxxsm:h-[13rem]">
+        <div>
+          <h3>{item.name}</h3>
+          <h3 className="opacity-60">{item.author}</h3>
+          <h3>{item.price.toLocaleString()} USD</h3>
+        </div>
+        <div className="flex gap-4 items-center">
           <FiShoppingCart
             onClick={saveItemShoppingCart}
             size={20}
