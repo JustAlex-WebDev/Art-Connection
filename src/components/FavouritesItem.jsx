@@ -31,7 +31,7 @@ const FavouritesItem = ({ item, deleteItem }) => {
   return (
     <div className="py-8 inline-flex m-auto gap-4 relative ">
       <img
-        className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-xl bg-secondary"
+        className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary"
         src={item.img}
         alt={item.img}
       />

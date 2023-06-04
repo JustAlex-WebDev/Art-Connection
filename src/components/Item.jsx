@@ -64,7 +64,7 @@ const Item = ({ item }) => {
           <Link to="">
             <img
               src={item.img}
-              alt="painting"
+              alt={item.name}
               className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer"
             />
           </Link>
