@@ -23,27 +23,29 @@ const Account = ({ signedUp, setSignedUp }) => {
       <div className="main-div mb-56 mt-28">
         <div className="flex flex-col justify-center items-center my-12 py-8 main-div">
           <div className="flex flex-col justify-center items-center gap-2">
-            <h1 className="text-2xl font-bold text-primary">Account</h1>
-            <div className="text-primary">
+            <h1 className="text-2xl font-bold text-primary duration-300">
+              Account
+            </h1>
+            <div className="text-primary duration-300">
               <p>Welcome, {user?.email}</p>
             </div>
           </div>
           <div className="flex flex-col">
             <Link
               to="/favourites"
-              className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center"
+              className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center duration-300"
             >
               <AiOutlineHeart size={20} />
             </Link>
             <Link
               to="/shoppingcart"
-              className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center"
+              className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center duration-300"
             >
               <FiShoppingCart size={20} />
             </Link>
             <button
               onClick={handleSignOut}
-              className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold"
+              className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold duration-300"
             >
               Sign Out
             </button>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { AiOutlineSearch, AiOutlineArrowLeft } from "react-icons/ai";
-import { BiSortAlt2 } from "react-icons/bi";
+import { AiOutlineSearch } from "react-icons/ai";
 import Item from "./Item";
 import Filter from "./Filter";
+import Sort from "./Sort";
 
 const ItemSearch = ({ items }) => {
   const [searchText, setSearchText] = useState("");
@@ -16,74 +16,21 @@ const ItemSearch = ({ items }) => {
   return (
     <div className="main-div mb-24 mt-24 xxsm:mt-8">
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 text-center md:text-right">
-        <h1 className="text-2xl font-bold my-2 text-primary">Search Art</h1>
+        <h1 className="text-2xl font-bold my-2 text-primary duration-300">
+          Search Art
+        </h1>
         <div className="flex justify-center items-center">
-          <div className="hidden md:block text-primary">
-            <div
-              className={
-                sortMenu
-                  ? "flex justify-center items-center gap-2"
-                  : "flex justify-center items-center"
-              }
-            >
-              <AiOutlineArrowLeft size={10} className="animate-animateOp3" />
-              <div
-                className={
-                  sortMenu
-                    ? "flex font-semibold gap-4 ease-in-out duration-300"
-                    : "flex font-semibold gap-4 ease-in-out duration-300 fixed right-[-100%] opacity-0"
-                }
-              >
-                <div
-                  onClick={() =>
-                    setSortedHighLow(false) &
-                    setSortedLowHigh(false) &
-                    setSortedNone(true)
-                  }
-                  className={`${
-                    sortedNone
-                      ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
-                      : "cursor-pointer opacity-90 hover:opacity-50"
-                  }`}
-                >
-                  None
-                </div>
-                <div
-                  onClick={() =>
-                    setSortedHighLow(!sortedHighLow) &
-                    setSortedLowHigh(false) &
-                    setSortedNone(false)
-                  }
-                  className={`${
-                    sortedHighLow
-                      ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
-                      : "cursor-pointer opacity-90 hover:opacity-50"
-                  }`}
-                >
-                  Price: High-Low
-                </div>
-                <div
-                  onClick={() =>
-                    setSortedLowHigh(!sortedLowHigh) &
-                    setSortedHighLow(false) &
-                    setSortedNone(false)
-                  }
-                  className={`${
-                    sortedLowHigh
-                      ? "cursor-pointer opacity-100 hover:opacity-50 font-bold"
-                      : "cursor-pointer opacity-90 hover:opacity-50"
-                  }`}
-                >
-                  Price: Low-High
-                </div>
-              </div>
-              <BiSortAlt2
-                onClick={() => setSortMenu(!sortMenu) & setFilterMenu(false)}
-                title="Sort By"
-                className="mr-4 cursor-pointer"
-              />
-            </div>
-          </div>
+          <Sort
+            sortMenu={sortMenu}
+            setSortMenu={setSortMenu}
+            sortedHighLow={sortedHighLow}
+            setSortedHighLow={setSortedHighLow}
+            sortedLowHigh={sortedLowHigh}
+            setSortedLowHigh={setSortedLowHigh}
+            sortedNone={sortedNone}
+            setSortedNone={setSortedNone}
+            setFilterMenu={setFilterMenu}
+          />
           <Filter
             items={items}
             setFilteredItems={setFilteredItems}
@@ -100,7 +47,7 @@ const ItemSearch = ({ items }) => {
             </label>
             <input
               onChange={(e) => setSearchText(e.target.value)}
-              className="w-full bg-secondary placeholder-primary text-primary pl-12 py-2 rounded-2xl shadow-lg outline-none"
+              className="w-full bg-secondary placeholder-primary text-primary pl-12 py-2 rounded-2xl shadow-lg outline-none duration-300"
               type="text"
               placeholder="Search a painting"
               id="search"
@@ -111,7 +58,7 @@ const ItemSearch = ({ items }) => {
 
       <div>
         {sortedNone ? (
-          <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center  items-center font-semibold">
+          <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
             {filteredItems
               .filter((value) => {
                 if (searchText === "") {
@@ -129,7 +76,7 @@ const ItemSearch = ({ items }) => {
         ) : (
           <div>
             {sortedHighLow ? (
-              <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center items-center font-semibold">
+              <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
                 {filteredItems
                   .filter((value) => {
                     if (searchText === "") {
@@ -150,7 +97,7 @@ const ItemSearch = ({ items }) => {
             ) : (
               <div>
                 {sortedLowHigh ? (
-                  <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center items-center font-semibold">
+                  <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
                     {filteredItems
                       .filter((value) => {
                         if (searchText === "") {
@@ -169,7 +116,7 @@ const ItemSearch = ({ items }) => {
                       ))}
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center items-center font-semibold">
+                  <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
                     {filteredItems
                       .filter((value) => {
                         if (searchText === "") {

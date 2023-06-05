@@ -7,7 +7,7 @@ const ScrollToTop = ({ scrollToTopIndicator, scrollToTopFunction }) => {
       onClick={scrollToTopFunction}
       className={
         scrollToTopIndicator
-          ? "flex bg-transperant fixed h-12 w-12 bottom-5 right-3 z-40 rounded-full justify-center items-center border-solid border-2 border-primary cursor-pointer hover:opacity-50"
+          ? "flex bg-transperant fixed h-12 w-12 bottom-5 right-3 z-40 rounded-full justify-center items-center border-solid border-2 border-primary cursor-pointer hover:opacity-50 duration-300"
           : "hidden bg-transperant fixed h-12 w-12 bottom-5 right-3 z-40 rounded-full justify-center items-center border-solid border-2 border-primary cursor-pointer hover:opacity-50"
       }
     >

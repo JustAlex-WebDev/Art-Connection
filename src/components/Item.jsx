@@ -65,7 +65,7 @@ const Item = ({ item }) => {
             <img
               src={item.img}
               alt={item.name}
-              className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer"
+              className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer duration-300"
             />
           </Link>
           <div className="flex flex-col gap-4 items-center group-hover:translate-y-0 translate-y-[200%] bg-primary w-full mt-4 h-28 duration-300 ease-in-out text-primary">
@@ -102,7 +102,7 @@ const Item = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mb-8 w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-28 z-10 bg-primary text-primary">
+      <div className="flex justify-between mb-8 w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-28 z-10 text-primary">
         <div className="w-[80%]">
           <h3>{item.name}</h3>
           <h3 className="opacity-60">{item.author}</h3>
