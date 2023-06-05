@@ -55,8 +55,8 @@ const Item = ({ item }) => {
       key={item.id}
       className={`${
         myElementIsVisible
-          ? "grid items-center justify-center gap-4 animate-animateOp"
-          : "grid items-center justify-center gap-4"
+          ? "grid items-center justify-center animate-animateOp"
+          : "grid items-center justify-center"
       }`}
     >
       <div className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] hover:z-20">
@@ -102,7 +102,7 @@ const Item = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mb-8 w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-28 z-10 text-primary">
+      <div className="flex justify-between mb-8 py-4 w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-32 z-10 bg-primary text-primary duration-300">
         <div className="w-[80%]">
           <h3>{item.name}</h3>
           <h3 className="opacity-60">{item.author}</h3>
