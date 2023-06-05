@@ -26,16 +26,21 @@ const Signin = ({ setSignedUp }) => {
   return (
     <div>
       <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-36">
-        <h1 className="text-2xl font-bold text-primary">Sign In</h1>
+        <h1 className="text-2xl font-bold text-primary duration-300">
+          Sign In
+        </h1>
         <form onSubmit={handleSubmit}>
           <div className="my-4">
-            <label htmlFor="email" className="text-primary cursor-pointer">
+            <label
+              htmlFor="email"
+              className="text-primary cursor-pointer duration-300"
+            >
               Email
             </label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-2 border rounded-2xl bg-primary text-primary"
+                className="w-full p-2 border rounded-2xl bg-primary text-primary duration-300"
                 id="email"
                 type="email"
               />
@@ -43,24 +48,27 @@ const Signin = ({ setSignedUp }) => {
             </div>
           </div>
           <div className="my-4">
-            <label htmlFor="password" className="text-primary cursor-pointer">
+            <label
+              htmlFor="password"
+              className="text-primary cursor-pointer duration-300"
+            >
               Password
             </label>
             <div className="my-2 w-full relative rounded-2xl shadow-xl">
               <input
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 border rounded-2xl bg-primary text-primary"
+                className="w-full p-2 border rounded-2xl bg-primary text-primary duration-300"
                 id="password"
                 type="password"
               />
               <AiFillLock className="absolute right-2 top-3 text-gray-400" />
             </div>
           </div>
-          <button className="w-full my-2 p-3 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold">
+          <button className="w-full my-2 p-3 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold duration-300">
             Sign In
           </button>
         </form>
-        <p className="my-4 text-center text-primary">
+        <p className="my-4 text-center text-primary duration-300">
           Don't have an account?<span> </span>
           <Link className="hover:opacity-50 font-bold" to="/signup">
             Sign Up

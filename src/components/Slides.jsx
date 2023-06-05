@@ -42,8 +42,8 @@ const Slides = () => {
   //   };
 
   return (
-    <div className="w-full bg-secondary">
-      <div className="main-div mt-20 bg-secondary hidden xxsm:flex h-16 text-primary text-center overflow-hidden flex-col">
+    <div className="w-full bg-secondary duration-300">
+      <div className="main-div mt-20 bg-secondary hidden xxsm:flex h-16 text-primary text-center overflow-hidden flex-col duration-300">
         <div className="h-full relative mx-12 flex items-center justify-between font-bold">
           <div
             className="z-10 cursor-pointer hover:opacity-50"

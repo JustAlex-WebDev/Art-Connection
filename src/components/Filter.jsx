@@ -26,7 +26,7 @@ const Filter = ({
   };
 
   return (
-    <div className="hidden md:block text-primary">
+    <div className="hidden md:block text-primary duration-300">
       <div
         className={
           filterMenu

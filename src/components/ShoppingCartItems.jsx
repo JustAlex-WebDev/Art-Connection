@@ -76,15 +76,17 @@ const ShoppingCartItems = () => {
       >
         <div className="mb-24 mt-20 xxsm:mt-6 pb-12 flex flex-col justify-center items-center main-div">
           <div>
-            <h2 className="text-2xl font-bold text-primary">Shopping Cart</h2>
+            <h2 className="text-2xl font-bold text-primary duration-300">
+              Shopping Cart
+            </h2>
           </div>
           <div className="flex mt-4 -mb-40 justify-center items-center">
-            <h3 className="text-xl font-semibold text-primary opacity-80">
+            <h3 className="text-xl font-semibold text-primary opacity-80 duration-300">
               &nbsp;
               {items?.forEach((item) => (totalItems += item.numberOfUnits), 0)}
               {totalItems} items&nbsp; |
             </h3>
-            <span className="text-xl font-bold text-primary opacity-90">
+            <span className="text-xl font-bold text-primary opacity-90 duration-300">
               &nbsp; USD{" "}
               {items?.forEach(
                 (item) => (totalPrice += item.price * item.numberOfUnits),

@@ -54,11 +54,9 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
 
   return (
     <div
-      className={
-        navbarShadow
-          ? "bg-secondary w-full shadow-md fixed top-0 z-50"
-          : "bg-secondary w-full shadow-sm fixed top-0 z-50"
-      }
+      className={`bg-secondary w-full fixed top-0 z-50 duration-300 ${
+        navbarShadow ? "shadow-md" : "shadow-sm"
+      }`}
     >
       <div className="main-div flex items-center justify-between h-20 font-bold text-primary">
         <Link to="/">

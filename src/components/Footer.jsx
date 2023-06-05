@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="main-div pt-4 text-primary mb-4">
+    <div className="main-div pt-4 text-primary mb-4 duration-300">
       <div className="grid md:grid-cols-2">
         <div className="flex justify-evenly w-full md:max-w-[300px] uppercase">
           <div>

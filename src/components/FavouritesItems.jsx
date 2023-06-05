@@ -36,10 +36,12 @@ const FavouritesItems = () => {
       >
         <div className="mb-24 mt-20 xxsm:mt-6 pb-12 flex flex-col justify-center items-center main-div">
           <div>
-            <h2 className="text-2xl font-bold text-primary">Favourites</h2>
+            <h2 className="text-2xl font-bold text-primary duration-300">
+              Favourites
+            </h2>
           </div>
           <div className="flex mt-4 gap-4 -mb-40">
-            <h3 className="text-xl font-semibold text-primary opacity-80">
+            <h3 className="text-xl font-semibold text-primary opacity-80 duration-300">
               {items?.length === 0 ? (
                 <p>0 items</p>
               ) : (
@@ -50,7 +52,7 @@ const FavouritesItems = () => {
         </div>
 
         <div
-          className={`w-full flex flex-col main-div justify-center items-center text-primary ${
+          className={`w-full flex flex-col main-div justify-center items-center text-primary duration-300 ${
             items?.length === 0 ? `mb-[23rem]` : ``
           }`}
         >

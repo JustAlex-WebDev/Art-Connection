@@ -78,7 +78,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
               {step.completed ? <span>&#10003;</span> : index + 1}
             </div>
             <div
-              className={`absolute top-0 text-center mt-12 sm:mt-14 md:mt-16  uppercase text-xs sm:text-sm ${
+              className={`absolute top-0 text-center mt-12 sm:mt-14 md:mt-16 uppercase text-xs sm:text-sm ${
                 step.highlighted ? "" : "opacity-70"
               }`}
             >

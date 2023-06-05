@@ -33,7 +33,7 @@ const MobileMenu = ({
                 : "translate-y-[200%] transition-all duration-300 delay-300"
             }
           >
-            <div className="hover:opacity-50 before:absolute">Home</div>
+            <div className="hover:opacity-50">Home</div>
           </Link>
         </li>
         <li
@@ -137,17 +137,10 @@ const MobileMenu = ({
               Sign In
             </button>
           </Link>
-          <Link
-            to="/signup"
-            className={
-              nav
-                ? "opacity-100 transition-all duration-300 delay-[650ms] ease-in-out"
-                : "opacity-0 transition-all duration-300 delay-[650ms] ease-in-out"
-            }
-          >
+          <Link to="/signup">
             <button
               onClick={() => setNav(!nav)}
-              className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"
+              className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50 duration-300 delay-700"
             >
               Sign Up
             </button>
