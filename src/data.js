@@ -10,7 +10,7 @@ export const paintings = [
   },
   {
     id: 2,
-    name: "Lost in my thoughts",
+    name: "Lost in thoughts",
     author: "Peter Doig",
     price: 200,
     img: "/images/image2.jpg",
