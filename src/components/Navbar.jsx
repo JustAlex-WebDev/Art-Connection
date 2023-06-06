@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
@@ -13,7 +13,6 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
   const [itemsShoppingCart, setItemsShoppingCart] = useState([]);
   const [itemsFavourites, setItemsFavourites] = useState([]);
   const [nav, setNav] = useState(false);
-  // const navRef = useRef();
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
 
@@ -38,19 +37,6 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
       console.log(e.message);
     }
   };
-
-  // useEffect(() => {
-  //   const handleNav = (e) => {
-  //     // console.log(e);
-  //     if (e.path[1] !== navRef.current) {
-  //       setNav(false);
-  //     }
-  //   };
-
-  //   document.body.addEventListener("click", handleNav);
-
-  //   return () => document.body.removeEventListener("click", handleNav);
-  // }, []);
 
   return (
     <div
@@ -137,7 +123,6 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
 
         {/* Icon */}
         <button
-          // ref={navRef}
           onClick={() => setNav(!nav)}
           className="block md:hidden cursor-pointer z-10 hover:opacity-50"
         >
