@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 const MobileMenu = ({
   nav,
   setNav,
-  itemsFavourites,
+  favouritesSection,
   user,
   totalItemsShoppingCart,
   handleSignOut,
@@ -69,7 +69,7 @@ const MobileMenu = ({
             >
               <div onClick={() => setNav(!nav)} className="hover:opacity-50">
                 <span className="absolute pl-7 -top-2">
-                  {itemsFavourites?.length}
+                  {favouritesSection?.length}
                 </span>
                 <AiOutlineHeart title="Favourites" size={25} />
               </div>

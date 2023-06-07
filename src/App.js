@@ -15,6 +15,7 @@ import Slides from "./components/Slides";
 import { paintings } from "./data";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
+import FavouritesContextProvider from "./context/FavouritesContext";
 
 function App() {
   const [items, setItems] = useState(paintings);
@@ -58,39 +59,41 @@ function App() {
   return (
     <ThemeProvider>
       <AuthContextProvider>
-        {loading ? (
-          <AnimationOnLoad />
-        ) : (
-          <>
-            <Navbar navbarShadow={navbarShadow} setSignedUp={setSignedUp} />
-            <ScrollToTop
-              scrollToTopIndicator={scrollToTop}
-              scrollToTopFunction={scrollToTopFunction}
-            />
-            <Slides />
-            <Routes>
-              <Route path="/" element={<Home items={items} />} />
-              <Route path="/favourites" element={<Favourites />} />
-              <Route path="/shoppingcart" element={<ShoppingCart />} />
-              <Route
-                path="/signin"
-                element={<Signin setSignedUp={setSignedUp} />}
+        <FavouritesContextProvider>
+          {loading ? (
+            <AnimationOnLoad />
+          ) : (
+            <>
+              <Navbar navbarShadow={navbarShadow} setSignedUp={setSignedUp} />
+              <ScrollToTop
+                scrollToTopIndicator={scrollToTop}
+                scrollToTopFunction={scrollToTopFunction}
               />
-              <Route
-                path="/signup"
-                element={<Signup setSignedUp={setSignedUp} />}
-              />
-              <Route
-                path="/account"
-                element={
-                  <Account signedUp={signedUp} setSignedUp={setSignedUp} />
-                }
-              />
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-            <Footer />
-          </>
-        )}
+              <Slides />
+              <Routes>
+                <Route path="/" element={<Home items={items} />} />
+                <Route path="/favourites" element={<Favourites />} />
+                <Route path="/shoppingcart" element={<ShoppingCart />} />
+                <Route
+                  path="/signin"
+                  element={<Signin setSignedUp={setSignedUp} />}
+                />
+                <Route
+                  path="/signup"
+                  element={<Signup setSignedUp={setSignedUp} />}
+                />
+                <Route
+                  path="/account"
+                  element={
+                    <Account signedUp={signedUp} setSignedUp={setSignedUp} />
+                  }
+                />
+                <Route path="/checkout" element={<Checkout />} />
+              </Routes>
+              <Footer />
+            </>
+          )}
+        </FavouritesContextProvider>
       </AuthContextProvider>
     </ThemeProvider>
   );

@@ -3,6 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import Item from "./Item";
 import Filter from "./Filter";
 import Sort from "./Sort";
+import { useFavouritesSection } from "../context/FavouritesContext";
 
 const ItemSearch = ({ items }) => {
   const [searchText, setSearchText] = useState("");
@@ -12,6 +13,7 @@ const ItemSearch = ({ items }) => {
   const [sortedHighLow, setSortedHighLow] = useState(false);
   const [sortedLowHigh, setSortedLowHigh] = useState(false);
   const [sortedNone, setSortedNone] = useState(true);
+  const { favouritesSection, addItem, removeItem } = useFavouritesSection();
 
   return (
     <div className="main-div mb-24 mt-24 xxsm:mt-8">
@@ -69,9 +71,20 @@ const ItemSearch = ({ items }) => {
                   return value;
                 }
               })
-              .map((item) => (
-                <Item item={item} key={item.id} />
-              ))}
+              .map((item) => {
+                const isInFavouritesSection = favouritesSection.some(
+                  (i) => i.id === item.id
+                );
+                return (
+                  <Item
+                    item={item}
+                    key={item.id}
+                    isInFavouritesSection={isInFavouritesSection}
+                    addItem={addItem}
+                    removeItem={removeItem}
+                  />
+                );
+              })}
           </div>
         ) : (
           <div>
@@ -90,9 +103,20 @@ const ItemSearch = ({ items }) => {
                     }
                   })
                   .sort((a, b) => (a.price > b.price ? -1 : 1))
-                  .map((item) => (
-                    <Item item={item} key={item.id} />
-                  ))}
+                  .map((item) => {
+                    const isInFavouritesSection = favouritesSection.some(
+                      (i) => i.id === item.id
+                    );
+                    return (
+                      <Item
+                        item={item}
+                        key={item.id}
+                        isInFavouritesSection={isInFavouritesSection}
+                        addItem={addItem}
+                        removeItem={removeItem}
+                      />
+                    );
+                  })}
               </div>
             ) : (
               <div>
@@ -111,9 +135,20 @@ const ItemSearch = ({ items }) => {
                         }
                       })
                       .sort((a, b) => (a.price > b.price ? 1 : -1))
-                      .map((item) => (
-                        <Item item={item} key={item.id} />
-                      ))}
+                      .map((item) => {
+                        const isInFavouritesSection = favouritesSection.some(
+                          (i) => i.id === item.id
+                        );
+                        return (
+                          <Item
+                            item={item}
+                            key={item.id}
+                            isInFavouritesSection={isInFavouritesSection}
+                            addItem={addItem}
+                            removeItem={removeItem}
+                          />
+                        );
+                      })}
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 xxxsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-4 justify-center font-semibold">
@@ -129,9 +164,20 @@ const ItemSearch = ({ items }) => {
                           return value;
                         }
                       })
-                      .map((item) => (
-                        <Item item={item} key={item.id} />
-                      ))}
+                      .map((item) => {
+                        const isInFavouritesSection = favouritesSection.some(
+                          (i) => i.id === item.id
+                        );
+                        return (
+                          <Item
+                            item={item}
+                            key={item.id}
+                            isInFavouritesSection={isInFavouritesSection}
+                            addItem={addItem}
+                            removeItem={removeItem}
+                          />
+                        );
+                      })}
                   </div>
                 )}
               </div>

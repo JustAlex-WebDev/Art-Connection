@@ -6,7 +6,7 @@ import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../firebase";
 import { Link } from "react-router-dom";
 
-const FavouritesItem = ({ item, deleteItem }) => {
+const FavouritesItem = ({ item, removeItem, isInFavouritesSection }) => {
   const [savedItemShoppingCart, setSavedItemShoppingCart] = useState(false);
   const { user } = UserAuth();
 
@@ -52,7 +52,7 @@ const FavouritesItem = ({ item, deleteItem }) => {
             title="Add to shopping cart"
           />
           <BsTrash
-            onClick={() => deleteItem(item.id)}
+            onClick={() => removeItem(item.id)}
             size={20}
             className="cursor-pointer hover:opacity-50"
             title="Delete from favourites"
