@@ -1,37 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FavouritesItem from "./FavouritesItem";
-import { doc, onSnapshot, updateDoc } from "firebase/firestore";
-import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import { useFavouritesSection } from "../context/FavouritesContext";
 
 const FavouritesItems = () => {
-  const [items, setItems] = useState([]);
+  const { favouritesSection, removeItem } = useFavouritesSection();
   const { user } = UserAuth();
-
-  useEffect(() => {
-    onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-      setItems(doc.data()?.favourites);
-    });
-  }, [user?.email]);
-
-  const itemPath = doc(db, "users", `${user?.email}`);
-  const deleteItem = async (passedId) => {
-    try {
-      const result = items.filter((item) => item.id !== passedId);
-      await updateDoc(itemPath, {
-        favourites: result,
-      });
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
 
   if (user) {
     return (
       <div
         className={`w-full flex flex-col m-auto ${
-          items?.length > 0 ? `mb-24` : ``
+          favouritesSection?.length > 0 ? `mb-24` : ``
         }`}
       >
         <div className="mb-24 mt-20 xxsm:mt-6 pb-12 flex flex-col justify-center items-center main-div">
@@ -42,10 +23,10 @@ const FavouritesItems = () => {
           </div>
           <div className="flex mt-4 gap-4 -mb-40">
             <h3 className="text-xl font-semibold text-primary opacity-80 duration-300">
-              {items?.length === 0 ? (
+              {favouritesSection?.length === 0 ? (
                 <p>0 items</p>
               ) : (
-                <p>{items?.length} items</p>
+                <p>{favouritesSection?.length} items</p>
               )}
             </h3>
           </div>
@@ -53,12 +34,22 @@ const FavouritesItems = () => {
 
         <div
           className={`w-full flex flex-col main-div justify-center items-center text-primary duration-300 ${
-            items?.length === 0 ? `mb-[23rem]` : ``
+            favouritesSection?.length === 0 ? `mb-[23rem]` : ``
           }`}
         >
-          {items?.map((item) => (
-            <FavouritesItem key={item.id} item={item} deleteItem={deleteItem} />
-          ))}
+          {favouritesSection?.map((item) => {
+            const isInFavouritesSection = favouritesSection.some(
+              (i) => i.id === item.id
+            );
+            return (
+              <FavouritesItem
+                key={item.id}
+                item={item}
+                isInFavouritesSection={isInFavouritesSection}
+                removeItem={removeItem}
+              />
+            );
+          })}
         </div>
       </div>
     );

@@ -7,30 +7,12 @@ import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
-const Item = ({ item }) => {
+const Item = ({ item, isInFavouritesSection, addItem, removeItem }) => {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
-  const [savedItemFavourites, setSavedItemFavourites] = useState(false);
   const [savedItemShoppingCart, setSavedItemShoppingCart] = useState(false);
   const { user } = UserAuth();
 
   const itemPath = doc(db, "users", `${user?.email}`);
-  const saveItemFavourites = async () => {
-    if (user?.email) {
-      setSavedItemFavourites(true);
-      await updateDoc(itemPath, {
-        favourites: arrayUnion({
-          id: item.id,
-          name: item.name,
-          author: item.author,
-          price: item.price,
-          img: item.img,
-          numberOfUnits: item.numberOfUnits,
-        }),
-      });
-    } else {
-      alert("Please sign in to save an item to your favourites");
-    }
-  };
   const saveItemShoppingCart = async () => {
     if (user?.email) {
       setSavedItemShoppingCart(true);
@@ -108,15 +90,16 @@ const Item = ({ item }) => {
           <h3 className="opacity-60">{item.author}</h3>
           <h3 className="pt-4">{item.price.toLocaleString()} USD</h3>
         </div>
-        {savedItemFavourites ? (
+        {isInFavouritesSection ? (
           <AiFillHeart
+            onClick={() => removeItem(item.id)}
             title="Remove Item"
             size={24}
             className="cursor-pointer"
           />
         ) : (
           <AiOutlineHeart
-            onClick={saveItemFavourites}
+            onClick={() => addItem(item)}
             title="Save Item"
             size={24}
             className="cursor-pointer"
