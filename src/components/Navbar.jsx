@@ -1,34 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 import { UserAuth } from "../context/AuthContext";
-import { doc, onSnapshot } from "firebase/firestore";
-import { db } from "../firebase";
 import MobileMenu from "./MobileMenu";
 import { useFavouritesSection } from "../context/FavouritesContext";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const Navbar = ({ navbarShadow, setSignedUp }) => {
   let totalItemsShoppingCart = 0;
-  const [itemsShoppingCart, setItemsShoppingCart] = useState([]);
-  const [itemsFavourites, setItemsFavourites] = useState([]);
   const { favouritesSection } = useFavouritesSection();
+  const { shoppingCart } = useShoppingCart();
   const [nav, setNav] = useState(false);
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-  //     setItemsShoppingCart(doc.data()?.shoppingCart);
-  //   });
-  // }, [user?.email]);
-
-  // useEffect(() => {
-  //   onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-  //     setItemsFavourites(doc.data()?.favourites);
-  //   });
-  // }, [user?.email]);
 
   const handleSignOut = async (e) => {
     try {
@@ -83,7 +69,7 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               <span className="absolute pt-5 pl-8 top-0">
-                {itemsShoppingCart?.forEach(
+                {shoppingCart?.forEach(
                   (item) => (totalItemsShoppingCart += item.numberOfUnits),
                   0
                 )}
@@ -140,7 +126,6 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
           nav={nav}
           setNav={setNav}
           favouritesSection={favouritesSection}
-          // itemsFavourites={itemsFavourites}
           user={user}
           totalItemsShoppingCart={totalItemsShoppingCart}
           handleSignOut={handleSignOut}

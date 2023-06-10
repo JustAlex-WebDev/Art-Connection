@@ -1,40 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ShoppingCartItem from "./ShoppingCartItem";
-import { doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
 import { Navigate, Link } from "react-router-dom";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const ShoppingCartItems = () => {
-  const [items, setItems] = useState([]);
+  const { shoppingCart, removeItemShoppingCart } = useShoppingCart();
   const { user } = UserAuth();
 
   let totalPrice = 0;
   let totalItems = 0;
 
-  useEffect(() => {
-    onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-      setItems(doc.data()?.shoppingCart);
-    });
-  }, [user?.email]);
-
   const itemPath = doc(db, "users", `${user?.email}`);
-  const deleteItem = async (passedId) => {
-    try {
-      const result = items.filter((item) => item.id !== passedId);
-      await updateDoc(itemPath, {
-        shoppingCart: result,
-      });
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
 
   const numberOfUnitsAdd = async (product) => {
-    const exists = items.find((x) => x.id === product.id);
+    const exists = shoppingCart.find((x) => x.id === product.id);
 
     try {
-      const result = items.map((item) =>
+      const result = shoppingCart.map((item) =>
         item.id === product.id
           ? { ...exists, numberOfUnits: exists.numberOfUnits + 1 }
           : item
@@ -49,10 +34,10 @@ const ShoppingCartItems = () => {
   };
 
   const numberOfUnitsRemove = async (product) => {
-    const exists = items.find((x) => x.id === product.id);
+    const exists = shoppingCart.find((x) => x.id === product.id);
     if (exists.numberOfUnits >= 2) {
       try {
-        const result = items.map((item) =>
+        const result = shoppingCart.map((item) =>
           item.id === product.id
             ? { ...exists, numberOfUnits: exists.numberOfUnits - 1 }
             : item
@@ -71,7 +56,7 @@ const ShoppingCartItems = () => {
     return (
       <div
         className={`w-full flex flex-col m-auto ${
-          items?.length > 0 ? `mb-24` : ``
+          shoppingCart?.length > 0 ? `mb-24` : ``
         }`}
       >
         <div className="mb-24 mt-20 xxsm:mt-6 pb-12 flex flex-col justify-center items-center main-div">
@@ -83,12 +68,15 @@ const ShoppingCartItems = () => {
           <div className="flex mt-4 -mb-40 justify-center items-center">
             <h3 className="text-xl font-semibold text-primary opacity-80 duration-300">
               &nbsp;
-              {items?.forEach((item) => (totalItems += item.numberOfUnits), 0)}
+              {shoppingCart?.forEach(
+                (item) => (totalItems += item.numberOfUnits),
+                0
+              )}
               {totalItems} items&nbsp; |
             </h3>
             <span className="text-xl font-bold text-primary opacity-90 duration-300">
               &nbsp; USD{" "}
-              {items?.forEach(
+              {shoppingCart?.forEach(
                 (item) => (totalPrice += item.price * item.numberOfUnits),
                 0
               )}
@@ -102,17 +90,22 @@ const ShoppingCartItems = () => {
             totalItems === 0 ? `mb-[23rem]` : ``
           }`}
         >
-          {items?.map((item) => (
-            <ShoppingCartItem
-              key={item.id}
-              item={item}
-              deleteItem={deleteItem}
-              numberOfUnitsAdd={numberOfUnitsAdd}
-              numberOfUnitsRemove={numberOfUnitsRemove}
-            />
-          ))}
+          {shoppingCart?.map((item) => {
+            const isInShoppingCart = shoppingCart.some((i) => i.id === item.id);
+            return (
+              <ShoppingCartItem
+                key={item.id}
+                item={item}
+                shoppingCart={shoppingCart}
+                isInShoppingCart={isInShoppingCart}
+                removeItemShoppingCart={removeItemShoppingCart}
+                numberOfUnitsAdd={numberOfUnitsAdd}
+                numberOfUnitsRemove={numberOfUnitsRemove}
+              />
+            );
+          })}
         </div>
-        {items?.length === 0 ? null : (
+        {shoppingCart?.length === 0 ? null : (
           <div className="flex justify-center items-center mt-12 main-div">
             <Link
               to="/checkout"
