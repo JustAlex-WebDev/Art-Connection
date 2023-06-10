@@ -4,6 +4,7 @@ import Item from "./Item";
 import Filter from "./Filter";
 import Sort from "./Sort";
 import { useFavouritesSection } from "../context/FavouritesContext";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const ItemSearch = ({ items }) => {
   const [searchText, setSearchText] = useState("");
@@ -14,6 +15,8 @@ const ItemSearch = ({ items }) => {
   const [sortedLowHigh, setSortedLowHigh] = useState(false);
   const [sortedNone, setSortedNone] = useState(true);
   const { favouritesSection, addItem, removeItem } = useFavouritesSection();
+  const { shoppingCart, addItemShoppingCart, removeItemShoppingCart } =
+    useShoppingCart();
 
   return (
     <div className="main-div mb-24 mt-24 xxsm:mt-8">
@@ -75,6 +78,10 @@ const ItemSearch = ({ items }) => {
                 const isInFavouritesSection = favouritesSection.some(
                   (i) => i.id === item.id
                 );
+
+                const isInShoppingCart = shoppingCart.some(
+                  (i) => i.id === item.id
+                );
                 return (
                   <Item
                     item={item}
@@ -82,6 +89,9 @@ const ItemSearch = ({ items }) => {
                     isInFavouritesSection={isInFavouritesSection}
                     addItem={addItem}
                     removeItem={removeItem}
+                    isInShoppingCart={isInShoppingCart}
+                    addItemShoppingCart={addItemShoppingCart}
+                    removeItemShoppingCart={removeItemShoppingCart}
                   />
                 );
               })}
@@ -107,6 +117,9 @@ const ItemSearch = ({ items }) => {
                     const isInFavouritesSection = favouritesSection.some(
                       (i) => i.id === item.id
                     );
+                    const isInShoppingCart = shoppingCart.some(
+                      (i) => i.id === item.id
+                    );
                     return (
                       <Item
                         item={item}
@@ -114,6 +127,9 @@ const ItemSearch = ({ items }) => {
                         isInFavouritesSection={isInFavouritesSection}
                         addItem={addItem}
                         removeItem={removeItem}
+                        isInShoppingCart={isInShoppingCart}
+                        addItemShoppingCart={addItemShoppingCart}
+                        removeItemShoppingCart={removeItemShoppingCart}
                       />
                     );
                   })}
@@ -139,6 +155,9 @@ const ItemSearch = ({ items }) => {
                         const isInFavouritesSection = favouritesSection.some(
                           (i) => i.id === item.id
                         );
+                        const isInShoppingCart = shoppingCart.some(
+                          (i) => i.id === item.id
+                        );
                         return (
                           <Item
                             item={item}
@@ -146,6 +165,9 @@ const ItemSearch = ({ items }) => {
                             isInFavouritesSection={isInFavouritesSection}
                             addItem={addItem}
                             removeItem={removeItem}
+                            isInShoppingCart={isInShoppingCart}
+                            addItemShoppingCart={addItemShoppingCart}
+                            removeItemShoppingCart={removeItemShoppingCart}
                           />
                         );
                       })}
@@ -168,6 +190,9 @@ const ItemSearch = ({ items }) => {
                         const isInFavouritesSection = favouritesSection.some(
                           (i) => i.id === item.id
                         );
+                        const isInShoppingCart = shoppingCart.some(
+                          (i) => i.id === item.id
+                        );
                         return (
                           <Item
                             item={item}
@@ -175,6 +200,9 @@ const ItemSearch = ({ items }) => {
                             isInFavouritesSection={isInFavouritesSection}
                             addItem={addItem}
                             removeItem={removeItem}
+                            isInShoppingCart={isInShoppingCart}
+                            addItemShoppingCart={addItemShoppingCart}
+                            removeItemShoppingCart={removeItemShoppingCart}
                           />
                         );
                       })}

@@ -1,35 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
-import { UserAuth } from "../context/AuthContext";
-import { db } from "../firebase";
-import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
-const Item = ({ item, isInFavouritesSection, addItem, removeItem }) => {
+const Item = ({
+  item,
+  isInFavouritesSection,
+  addItem,
+  removeItem,
+  isInShoppingCart,
+  addItemShoppingCart,
+  removeItemShoppingCart,
+}) => {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
-  const [savedItemShoppingCart, setSavedItemShoppingCart] = useState(false);
-  const { user } = UserAuth();
-
-  const itemPath = doc(db, "users", `${user?.email}`);
-  const saveItemShoppingCart = async () => {
-    if (user?.email) {
-      setSavedItemShoppingCart(true);
-      await updateDoc(itemPath, {
-        shoppingCart: arrayUnion({
-          id: item.id,
-          name: item.name,
-          author: item.author,
-          price: item.price,
-          img: item.img,
-          numberOfUnits: item.numberOfUnits,
-        }),
-      });
-    } else {
-      alert("Please sign in to save an item to your shopping cart");
-    }
-  };
 
   return (
     <article
@@ -52,9 +36,9 @@ const Item = ({ item, isInFavouritesSection, addItem, removeItem }) => {
           </Link>
           <div className="flex flex-col gap-4 items-center group-hover:translate-y-0 translate-y-[200%] bg-primary w-full mt-4 h-28 duration-300 ease-in-out text-primary">
             <div className="flex gap-4 opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500">
-              {savedItemShoppingCart ? (
+              {isInShoppingCart ? (
                 <div
-                  onClick={saveItemShoppingCart}
+                  onClick={() => removeItemShoppingCart(item.id)}
                   title="Remove from shopping cart"
                   className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
                 >
@@ -66,7 +50,7 @@ const Item = ({ item, isInFavouritesSection, addItem, removeItem }) => {
                 </div>
               ) : (
                 <div
-                  onClick={saveItemShoppingCart}
+                  onClick={() => addItemShoppingCart(item)}
                   title="Add to shopping cart"
                   className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
                 >
