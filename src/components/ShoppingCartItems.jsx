@@ -1,56 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import ShoppingCartItem from "./ShoppingCartItem";
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase";
 import { UserAuth } from "../context/AuthContext";
 import { Navigate, Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const ShoppingCartItems = () => {
-  const { shoppingCart, removeItemShoppingCart } = useShoppingCart();
+  const {
+    shoppingCart,
+    removeItemShoppingCart,
+    numberOfUnitsAdd,
+    numberOfUnitsRemove,
+  } = useShoppingCart();
   const { user } = UserAuth();
 
   let totalPrice = 0;
   let totalItems = 0;
-
-  const itemPath = doc(db, "users", `${user?.email}`);
-
-  const numberOfUnitsAdd = async (product) => {
-    const exists = shoppingCart.find((x) => x.id === product.id);
-
-    try {
-      const result = shoppingCart.map((item) =>
-        item.id === product.id
-          ? { ...exists, numberOfUnits: exists.numberOfUnits + 1 }
-          : item
-      );
-
-      await updateDoc(itemPath, {
-        shoppingCart: result,
-      });
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
-
-  const numberOfUnitsRemove = async (product) => {
-    const exists = shoppingCart.find((x) => x.id === product.id);
-    if (exists.numberOfUnits >= 2) {
-      try {
-        const result = shoppingCart.map((item) =>
-          item.id === product.id
-            ? { ...exists, numberOfUnits: exists.numberOfUnits - 1 }
-            : item
-        );
-
-        await updateDoc(itemPath, {
-          shoppingCart: result,
-        });
-      } catch (e) {
-        console.log(e.message);
-      }
-    }
-  };
 
   if (user) {
     return (
@@ -96,7 +60,6 @@ const ShoppingCartItems = () => {
               <ShoppingCartItem
                 key={item.id}
                 item={item}
-                shoppingCart={shoppingCart}
                 isInShoppingCart={isInShoppingCart}
                 removeItemShoppingCart={removeItemShoppingCart}
                 numberOfUnitsAdd={numberOfUnitsAdd}

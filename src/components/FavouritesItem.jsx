@@ -38,7 +38,7 @@ const FavouritesItem = ({ item, removeItem, isInFavouritesSection }) => {
           alt={item.name}
         />
       </Link>
-      <div className="flex flex-col justify-between font-semibold text-base xxxsm:text-lg text-primary w-full xxxsm:w-44 h-[8rem] xxxsm:h-[13rem] duration-300">
+      <div className="flex flex-col justify-between font-semibold text-base xxxsm:text-lg text-primary w-full xxxsm:w-44 h-[7.5rem] xxxsm:h-[13rem] duration-300">
         <div>
           <h3>{item.name}</h3>
           <h3 className="opacity-60">{item.author}</h3>

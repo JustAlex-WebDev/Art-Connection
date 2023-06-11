@@ -62,47 +62,51 @@ const ShoppingCartContextProvider = (props) => {
     }
   };
 
-  //   const numberOfUnitsAdd = async (product) => {
-  //     const exists = shoppingCart.find((x) => x.id === product.id);
-  //     try {
-  //       const result = shoppingCart.map((item) =>
-  //         item.id === product.id
-  //           ? { ...exists, numberOfUnits: exists.numberOfUnits + 1 }
-  //           : item
-  //       );
-  //       await updateDoc(itemPath, {
-  //         shoppingCart: result,
-  //       });
-  //     } catch (e) {
-  //       console.log(e.message);
-  //     }
-  //   };
+  const numberOfUnitsAdd = async (product) => {
+    setShoppingCart((prev) => ({
+      ...prev,
+      shoppingCart: prev.shoppingCart.map((p) =>
+        p.id === product.id
+          ? { ...p, numberOfUnits: product.numberOfUnits + 1 }
+          : p
+      ),
+    }));
+    try {
+      await updateDoc(itemPath, {
+        shoppingCart: shoppingCart,
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
-  //   const numberOfUnitsRemove = async (product) => {
-  //     if (product.numberOfUnits >= 2) {
-  //       try {
-  //         shoppingCart.map((item) =>
-  //           item.id === product.id
-  //             ? { ...product, numberOfUnits: product.numberOfUnits - 1 }
-  //             : item
-  //         );
-
-  //         await updateDoc(itemPath, {
-  //           shoppingCart: shoppingCart,
-  //         });
-  //       } catch (e) {
-  //         console.log(e.message);
-  //       }
-  //     }
-  //   };
+  const numberOfUnitsRemove = async (product) => {
+    if (product.numberOfUnits >= 2) {
+      setShoppingCart((prev) => ({
+        ...prev,
+        shoppingCart: prev.shoppingCart.map((p) =>
+          p.id === product.id
+            ? { ...p, numberOfUnits: product.numberOfUnits - 1 }
+            : p
+        ),
+      }));
+    }
+    try {
+      await updateDoc(itemPath, {
+        shoppingCart: shoppingCart,
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
 
   return (
     <ShoppingCartContext.Provider
       value={{
         addItemShoppingCart,
         removeItemShoppingCart,
-        // numberOfUnitsAdd,
-        // numberOfUnitsRemove,
+        numberOfUnitsAdd,
+        numberOfUnitsRemove,
         ...shoppingCart,
       }}
     >

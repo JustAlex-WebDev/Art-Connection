@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <div className="text-right">
           <div className="w-full flex justify-end">
-            <div className="w-full md:w-[310px] py-4 relative">
+            <div className="w-full md:w-[310px] py-4 relative text-center md:text-right">
               <div className="flex justify-center md:justify-end py-4 md:py-0 md:pb-4 mt-[-1rem]">
                 <ThemeToggle />
               </div>

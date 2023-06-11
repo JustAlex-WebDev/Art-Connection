@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
+import { FaShoppingCart } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
@@ -39,10 +40,10 @@ const Item = ({
               {isInShoppingCart ? (
                 <div
                   onClick={() => removeItemShoppingCart(item.id)}
-                  title="Remove from shopping cart"
-                  className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
+                  title="Remove from cart"
+                  className="flex md:flex-row md:gap-4 gap-2 flex-col justify-center items-center cursor-pointer hover:opacity-50 text-center"
                 >
-                  <FiShoppingCart
+                  <FaShoppingCart
                     size={22}
                     className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500"
                   />
@@ -51,7 +52,7 @@ const Item = ({
               ) : (
                 <div
                   onClick={() => addItemShoppingCart(item)}
-                  title="Add to shopping cart"
+                  title="Add to cart"
                   className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
                 >
                   <FiShoppingCart

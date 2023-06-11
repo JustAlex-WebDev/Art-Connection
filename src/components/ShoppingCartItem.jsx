@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 
 const FavouritesItem = ({
   item,
-  shoppingCart,
   removeItemShoppingCart,
   numberOfUnitsRemove,
   numberOfUnitsAdd,
@@ -23,38 +22,6 @@ const FavouritesItem = ({
   const { user } = UserAuth();
 
   const itemPath = doc(db, "users", `${user?.email}`);
-
-  // const numberOfUnitsAdd = async (product) => {
-  //   try {
-  //     await updateDoc(itemPath, {
-  //       shoppingCart: {
-  //         numberOfUnits: item.numberOfUnits + 1,
-  //       },
-  //     });
-  //     console.log(product.numberOfUnits++);
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  // };
-
-  // const numberOfUnitsRemove = async (product) => {
-  //   const exists = shoppingCart.find((x) => x.id === product.id);
-  //   if (exists.numberOfUnits >= 2) {
-  //     try {
-  //       const result = shoppingCart.map((item) =>
-  //         item.id === product.id
-  //           ? { ...exists, numberOfUnits: exists.numberOfUnits - 1 }
-  //           : item
-  //       );
-
-  //       await updateDoc(itemPath, {
-  //         shoppingCart: result,
-  //       });
-  //     } catch (e) {
-  //       console.log(e.message);
-  //     }
-  //   }
-  // };
 
   const saveItemFavourites = async () => {
     if (user?.email) {
