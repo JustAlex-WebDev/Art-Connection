@@ -11,7 +11,7 @@ import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../firebase";
 import { Link } from "react-router-dom";
 
-const FavouritesItem = ({
+const ShoppingCartItem = ({
   item,
   removeItemShoppingCart,
   numberOfUnitsRemove,
@@ -98,4 +98,4 @@ const FavouritesItem = ({
   );
 };
 
-export default FavouritesItem;
+export default ShoppingCartItem;

@@ -3,22 +3,22 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { UserAuth } from "../../context/AuthContext";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 const PaymentStep = () => {
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState("");
   const options = ["Cash", "Credit Card"];
-  const [items, setItems] = useState([]);
+  const {
+    shoppingCart,
+    removeItemShoppingCart,
+    numberOfUnitsAdd,
+    numberOfUnitsRemove,
+  } = useShoppingCart();
   const { user } = UserAuth();
 
   let totalPrice = 0;
   let totalItems = 0;
-
-  useEffect(() => {
-    onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-      setItems(doc.data()?.shoppingCart);
-    });
-  }, [user?.email]);
 
   useEffect(() => {
     const localData = localStorage.getItem("PaymentMethod");
@@ -38,7 +38,7 @@ const PaymentStep = () => {
           <label className="text-primary font-semibold">Order Summary</label>
           <div className="my-2 mb-4 w-full relative">
             <div className="flex flex-col gap-8 bg-primary">
-              {items?.map((item) => (
+              {shoppingCart?.map((item) => (
                 <div className="inline-flex" key={item.id}>
                   <img
                     className="w-[5rem] md:w-[6.5rem] lg:w-[8rem] object-scale-down h-[8rem] md:h-[9.5] lg:h-[11] shadow-xl bg-secondary"
@@ -55,7 +55,7 @@ const PaymentStep = () => {
             </div>
             <div className="flex flex-col my-6">
               <h3 className="text-base lg:text-lg font-semibold text-primary opacity-80">
-                {items?.forEach(
+                {shoppingCart?.forEach(
                   (item) => (totalItems += item.numberOfUnits),
                   0
                 )}
@@ -65,7 +65,7 @@ const PaymentStep = () => {
                 </span>
               </h3>
               <span className="text-base lg:text-lg font-semibold text-primary opacity-90">
-                {items?.forEach(
+                {shoppingCart?.forEach(
                   (item) => (totalPrice += item.price * item.numberOfUnits),
                   0
                 )}
