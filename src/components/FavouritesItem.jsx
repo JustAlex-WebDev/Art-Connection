@@ -1,34 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import { FaShoppingCart } from "react-icons/fa";
 import { BsTrash } from "react-icons/bs";
-import { UserAuth } from "../context/AuthContext";
-import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import { db } from "../firebase";
 import { Link } from "react-router-dom";
 
-const FavouritesItem = ({ item, removeItem, isInFavouritesSection }) => {
-  const [savedItemShoppingCart, setSavedItemShoppingCart] = useState(false);
-  const { user } = UserAuth();
-
-  const itemPath = doc(db, "users", `${user?.email}`);
-  const saveItemShoppingCart = async () => {
-    if (user?.email) {
-      setSavedItemShoppingCart(true);
-      await updateDoc(itemPath, {
-        shoppingCart: arrayUnion({
-          id: item.id,
-          name: item.name,
-          author: item.author,
-          price: item.price,
-          img: item.img,
-          numberOfUnits: item.numberOfUnits,
-        }),
-      });
-    } else {
-      alert("Please sign in to save an item to your shopping cart");
-    }
-  };
-
+const FavouritesItem = ({
+  item,
+  removeItemFavouritesSection,
+  addItemShoppingCart,
+  removeItemShoppingCart,
+  isInShoppingCart,
+}) => {
   return (
     <div className="group my-8 flex flex-col xxxsm:flex-row justify-center items-center gap-4 xxxsm:gap-8">
       <Link to="">
@@ -45,14 +27,24 @@ const FavouritesItem = ({ item, removeItem, isInFavouritesSection }) => {
           <h3>{item.price.toLocaleString()} USD</h3>
         </div>
         <div className="flex gap-4 items-center">
-          <FiShoppingCart
-            onClick={saveItemShoppingCart}
-            size={20}
-            className="cursor-pointer hover:opacity-50"
-            title="Add to shopping cart"
-          />
+          {isInShoppingCart ? (
+            <FaShoppingCart
+              onClick={() => removeItemShoppingCart(item.id)}
+              size={20}
+              className="cursor-pointer hover:opacity-50"
+              title="Remove from cart"
+            />
+          ) : (
+            <FiShoppingCart
+              onClick={() => addItemShoppingCart(item)}
+              size={20}
+              className="cursor-pointer hover:opacity-50"
+              title="Add to cart"
+            />
+          )}
+
           <BsTrash
-            onClick={() => removeItem(item.id)}
+            onClick={() => removeItemFavouritesSection(item.id)}
             size={20}
             className="cursor-pointer hover:opacity-50"
             title="Delete from favourites"

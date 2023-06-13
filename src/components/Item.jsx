@@ -4,17 +4,19 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 const Item = ({
   item,
   isInFavouritesSection,
-  addItem,
-  removeItem,
+  addItemFavouritesSection,
+  removeItemFavouritesSection,
   isInShoppingCart,
   addItemShoppingCart,
   removeItemShoppingCart,
 }) => {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
+  const { user } = UserAuth();
 
   return (
     <article
@@ -36,20 +38,36 @@ const Item = ({
             />
           </Link>
           <div className="flex flex-col gap-4 items-center group-hover:translate-y-0 translate-y-[200%] bg-primary w-full mt-4 h-28 duration-300 ease-in-out text-primary">
-            <div className="flex gap-4 opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500">
-              {isInShoppingCart ? (
-                <div
-                  onClick={() => removeItemShoppingCart(item.id)}
-                  title="Remove from cart"
-                  className="flex md:flex-row md:gap-4 gap-2 flex-col justify-center items-center cursor-pointer hover:opacity-50 text-center"
-                >
-                  <FaShoppingCart
-                    size={22}
-                    className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500"
-                  />
-                  <div>Remove from cart</div>
-                </div>
-              ) : (
+            {user?.email ? (
+              <div className="flex gap-4 opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500">
+                {isInShoppingCart ? (
+                  <div
+                    onClick={() => removeItemShoppingCart(item.id)}
+                    title="Remove from cart"
+                    className="flex md:flex-row md:gap-4 gap-2 flex-col justify-center items-center cursor-pointer hover:opacity-50 text-center"
+                  >
+                    <FaShoppingCart
+                      size={22}
+                      className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500"
+                    />
+                    <div>Remove from cart</div>
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => addItemShoppingCart(item)}
+                    title="Add to cart"
+                    className="flex gap-4 justify-center items-center cursor-pointer hover:opacity-50"
+                  >
+                    <FiShoppingCart
+                      size={22}
+                      className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500"
+                    />
+                    <div>Add to cart</div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="flex gap-4 opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-500">
                 <div
                   onClick={() => addItemShoppingCart(item)}
                   title="Add to cart"
@@ -61,8 +79,8 @@ const Item = ({
                   />
                   <div>Add to cart</div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
             <div className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-700">
               <div className="hover:opacity-50 cursor-pointer">Learn more</div>
             </div>
@@ -75,20 +93,33 @@ const Item = ({
           <h3 className="opacity-60">{item.author}</h3>
           <h3 className="pt-4">{item.price.toLocaleString()} USD</h3>
         </div>
-        {isInFavouritesSection ? (
-          <AiFillHeart
-            onClick={() => removeItem(item.id)}
-            title="Remove Item"
-            size={24}
-            className="cursor-pointer"
-          />
+        {user?.email ? (
+          <div>
+            {isInFavouritesSection ? (
+              <AiFillHeart
+                onClick={() => removeItemFavouritesSection(item.id)}
+                title="Remove from favourites"
+                size={24}
+                className="cursor-pointer"
+              />
+            ) : (
+              <AiOutlineHeart
+                onClick={() => addItemFavouritesSection(item)}
+                title="Save to favourites"
+                size={24}
+                className="cursor-pointer"
+              />
+            )}
+          </div>
         ) : (
-          <AiOutlineHeart
-            onClick={() => addItem(item)}
-            title="Save Item"
-            size={24}
-            className="cursor-pointer"
-          />
+          <div>
+            <AiOutlineHeart
+              onClick={() => addItemFavouritesSection(item)}
+              title="Save to favourites"
+              size={24}
+              className="cursor-pointer"
+            />
+          </div>
         )}
       </div>
     </article>

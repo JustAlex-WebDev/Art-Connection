@@ -28,7 +28,7 @@ const FavouritesContextProvider = (props) => {
     );
   }, [favouritesSection]);
 
-  const addItem = async (item) => {
+  const addItemFavouritesSection = async (item) => {
     if (user?.email) {
       setFavouritesSection((prev) => {
         const newFavourtiesSection = {
@@ -56,7 +56,7 @@ const FavouritesContextProvider = (props) => {
     }
   };
 
-  const removeItem = async (itemId) => {
+  const removeItemFavouritesSection = async (itemId) => {
     setFavouritesSection((prev) => ({
       ...prev,
       favouritesSection: prev.favouritesSection.filter((p) => p.id !== itemId),
@@ -72,7 +72,11 @@ const FavouritesContextProvider = (props) => {
 
   return (
     <FavouritesContext.Provider
-      value={{ addItem, removeItem, ...favouritesSection }}
+      value={{
+        addItemFavouritesSection,
+        removeItemFavouritesSection,
+        ...favouritesSection,
+      }}
     >
       {props.children}
     </FavouritesContext.Provider>

@@ -14,7 +14,11 @@ const ItemSearch = ({ items }) => {
   const [sortedHighLow, setSortedHighLow] = useState(false);
   const [sortedLowHigh, setSortedLowHigh] = useState(false);
   const [sortedNone, setSortedNone] = useState(true);
-  const { favouritesSection, addItem, removeItem } = useFavouritesSection();
+  const {
+    favouritesSection,
+    addItemFavouritesSection,
+    removeItemFavouritesSection,
+  } = useFavouritesSection();
   const { shoppingCart, addItemShoppingCart, removeItemShoppingCart } =
     useShoppingCart();
 
@@ -87,8 +91,8 @@ const ItemSearch = ({ items }) => {
                     item={item}
                     key={item.id}
                     isInFavouritesSection={isInFavouritesSection}
-                    addItem={addItem}
-                    removeItem={removeItem}
+                    addItemFavouritesSection={addItemFavouritesSection}
+                    removeItemFavouritesSection={removeItemFavouritesSection}
                     isInShoppingCart={isInShoppingCart}
                     addItemShoppingCart={addItemShoppingCart}
                     removeItemShoppingCart={removeItemShoppingCart}
@@ -125,8 +129,10 @@ const ItemSearch = ({ items }) => {
                         item={item}
                         key={item.id}
                         isInFavouritesSection={isInFavouritesSection}
-                        addItem={addItem}
-                        removeItem={removeItem}
+                        addItemFavouritesSection={addItemFavouritesSection}
+                        removeItemFavouritesSection={
+                          removeItemFavouritesSection
+                        }
                         isInShoppingCart={isInShoppingCart}
                         addItemShoppingCart={addItemShoppingCart}
                         removeItemShoppingCart={removeItemShoppingCart}
@@ -163,8 +169,10 @@ const ItemSearch = ({ items }) => {
                             item={item}
                             key={item.id}
                             isInFavouritesSection={isInFavouritesSection}
-                            addItem={addItem}
-                            removeItem={removeItem}
+                            addItemFavouritesSection={addItemFavouritesSection}
+                            removeItemFavouritesSection={
+                              removeItemFavouritesSection
+                            }
                             isInShoppingCart={isInShoppingCart}
                             addItemShoppingCart={addItemShoppingCart}
                             removeItemShoppingCart={removeItemShoppingCart}
@@ -198,8 +206,10 @@ const ItemSearch = ({ items }) => {
                             item={item}
                             key={item.id}
                             isInFavouritesSection={isInFavouritesSection}
-                            addItem={addItem}
-                            removeItem={removeItem}
+                            addItemFavouritesSection={addItemFavouritesSection}
+                            removeItemFavouritesSection={
+                              removeItemFavouritesSection
+                            }
                             isInShoppingCart={isInShoppingCart}
                             addItemShoppingCart={addItemShoppingCart}
                             removeItemShoppingCart={removeItemShoppingCart}

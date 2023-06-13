@@ -3,9 +3,13 @@ import FavouritesItem from "./FavouritesItem";
 import { UserAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 import { useFavouritesSection } from "../context/FavouritesContext";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const FavouritesItems = () => {
-  const { favouritesSection, removeItem } = useFavouritesSection();
+  const { favouritesSection, removeItemFavouritesSection } =
+    useFavouritesSection();
+  const { shoppingCart, addItemShoppingCart, removeItemShoppingCart } =
+    useShoppingCart();
   const { user } = UserAuth();
 
   if (user) {
@@ -38,15 +42,15 @@ const FavouritesItems = () => {
           }`}
         >
           {favouritesSection?.map((item) => {
-            const isInFavouritesSection = favouritesSection.some(
-              (i) => i.id === item.id
-            );
+            const isInShoppingCart = shoppingCart.some((i) => i.id === item.id);
             return (
               <FavouritesItem
                 key={item.id}
                 item={item}
-                isInFavouritesSection={isInFavouritesSection}
-                removeItem={removeItem}
+                removeItemFavouritesSection={removeItemFavouritesSection}
+                addItemShoppingCart={addItemShoppingCart}
+                removeItemShoppingCart={removeItemShoppingCart}
+                isInShoppingCart={isInShoppingCart}
               />
             );
           })}
