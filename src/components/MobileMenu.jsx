@@ -68,9 +68,11 @@ const MobileMenu = ({
               }
             >
               <div onClick={() => setNav(!nav)} className="hover:opacity-50">
-                <span className="absolute pl-7 -top-2">
-                  {favouritesSection?.length}
-                </span>
+                {user ? (
+                  <span className="absolute pl-7 -top-2">
+                    {favouritesSection?.length}
+                  </span>
+                ) : null}
                 <AiOutlineHeart title="Favourites" size={25} />
               </div>
             </Link>

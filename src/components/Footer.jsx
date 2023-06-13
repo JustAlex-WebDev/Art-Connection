@@ -60,12 +60,12 @@ const Footer = () => {
               <div className="py-4">
                 <form>
                   <input
-                    className="bg-primary border text-primary py-2 pl-4 mr-2 w-full shadow-lg rounded-2xl md:w-auto placeholder-primary"
+                    className="bg-primary border text-primary py-2 pl-4 mr-2 w-full shadow-lg rounded-2xl md:w-auto placeholder-primary duration-300"
                     type="email"
                     id="news"
                     placeholder="Enter your email"
                   />
-                  <button className="bg-button text-button px-4 p-2 w-full rounded-2xl shadow-xl hover:shadow-2xl md:w-auto my-2 font-semibold hover:opacity-50">
+                  <button className="bg-button text-button px-4 p-2 w-full rounded-2xl shadow-xl hover:shadow-2xl md:w-auto my-2 font-semibold hover:opacity-50 duration-300">
                     Sign Up
                   </button>
                 </form>

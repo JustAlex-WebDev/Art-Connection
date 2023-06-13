@@ -3,6 +3,7 @@ import ShoppingCartItem from "./ShoppingCartItem";
 import { UserAuth } from "../context/AuthContext";
 import { Navigate, Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useFavouritesSection } from "../context/FavouritesContext";
 
 const ShoppingCartItems = () => {
   const {
@@ -11,6 +12,11 @@ const ShoppingCartItems = () => {
     numberOfUnitsAdd,
     numberOfUnitsRemove,
   } = useShoppingCart();
+  const {
+    favouritesSection,
+    addItemFavouritesSection,
+    removeItemFavouritesSection,
+  } = useFavouritesSection();
   const { user } = UserAuth();
 
   let totalPrice = 0;
@@ -55,15 +61,19 @@ const ShoppingCartItems = () => {
           }`}
         >
           {shoppingCart?.map((item) => {
-            const isInShoppingCart = shoppingCart.some((i) => i.id === item.id);
+            const isInFavouritesSection = favouritesSection.some(
+              (i) => i.id === item.id
+            );
             return (
               <ShoppingCartItem
                 key={item.id}
                 item={item}
-                isInShoppingCart={isInShoppingCart}
                 removeItemShoppingCart={removeItemShoppingCart}
                 numberOfUnitsAdd={numberOfUnitsAdd}
                 numberOfUnitsRemove={numberOfUnitsRemove}
+                addItemFavouritesSection={addItemFavouritesSection}
+                removeItemFavouritesSection={removeItemFavouritesSection}
+                isInFavouritesSection={isInFavouritesSection}
               />
             );
           })}

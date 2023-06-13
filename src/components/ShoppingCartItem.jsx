@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   AiOutlineHeart,
   AiOutlineMinusCircle,
@@ -6,9 +6,6 @@ import {
   AiFillHeart,
 } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
-import { UserAuth } from "../context/AuthContext";
-import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import { db } from "../firebase";
 import { Link } from "react-router-dom";
 
 const ShoppingCartItem = ({
@@ -16,31 +13,10 @@ const ShoppingCartItem = ({
   removeItemShoppingCart,
   numberOfUnitsRemove,
   numberOfUnitsAdd,
-  isInShoppingCart,
+  addItemFavouritesSection,
+  removeItemFavouritesSection,
+  isInFavouritesSection,
 }) => {
-  const [savedItemFavourites, setSavedItemFavourites] = useState(false);
-  const { user } = UserAuth();
-
-  const itemPath = doc(db, "users", `${user?.email}`);
-
-  const saveItemFavourites = async () => {
-    if (user?.email) {
-      setSavedItemFavourites(true);
-      await updateDoc(itemPath, {
-        favourites: arrayUnion({
-          id: item.id,
-          name: item.name,
-          author: item.author,
-          price: item.price,
-          img: item.img,
-          numberOfUnits: item.numberOfUnits,
-        }),
-      });
-    } else {
-      alert("Please sign in to save an item to your favourites");
-    }
-  };
-
   return (
     <div className="group my-8 flex flex-col xxxsm:flex-row justify-center items-center gap-4 xxxsm:gap-8">
       <Link to="">
@@ -72,25 +48,26 @@ const ShoppingCartItem = ({
           />
         </div>
         <div className="flex gap-4 items-center">
-          {savedItemFavourites ? (
+          {isInFavouritesSection ? (
             <AiFillHeart
-              title="Item Saved"
-              size={22}
-              className="cursor-pointer hover:opacity-50"
+              onClick={() => removeItemFavouritesSection(item.id)}
+              title="Remove from favourites"
+              size={24}
+              className="cursor-pointer"
             />
           ) : (
             <AiOutlineHeart
-              title="Save Item"
-              size={22}
-              className="cursor-pointer hover:opacity-50"
-              onClick={saveItemFavourites}
+              onClick={() => addItemFavouritesSection(item)}
+              title="Save to favourites"
+              size={24}
+              className="cursor-pointer"
             />
           )}
           <BsTrash
             onClick={() => removeItemShoppingCart(item.id)}
             size={20}
             className="cursor-pointer hover:opacity-50"
-            title="Delete Item"
+            title="Delete from cart"
           />
         </div>
       </div>
