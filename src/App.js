@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Home from "./routes/Home";
 import Signin from "./routes/Signin";
 import Signup from "./routes/Signup";
@@ -23,6 +24,7 @@ function App() {
   const [navbarShadow, setNavbarShadow] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
   const [signedUp, setSignedUp] = useState(false);
 
   // Navbar Shadow on scroll
@@ -54,7 +56,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 5000);
   }, []);
 
   return (
@@ -72,26 +74,31 @@ function App() {
                   scrollToTopFunction={scrollToTopFunction}
                 />
                 <Slides />
-                <Routes>
-                  <Route path="/" element={<Home items={items} />} />
-                  <Route path="/favourites" element={<Favourites />} />
-                  <Route path="/shoppingcart" element={<ShoppingCart />} />
-                  <Route
-                    path="/signin"
-                    element={<Signin setSignedUp={setSignedUp} />}
-                  />
-                  <Route
-                    path="/signup"
-                    element={<Signup setSignedUp={setSignedUp} />}
-                  />
-                  <Route
-                    path="/account"
-                    element={
-                      <Account signedUp={signedUp} setSignedUp={setSignedUp} />
-                    }
-                  />
-                  <Route path="/checkout" element={<Checkout />} />
-                </Routes>
+                <AnimatePresence initial={false}>
+                  <Routes location={location} key={location.pathName}>
+                    <Route path="/" element={<Home items={items} />} />
+                    <Route path="/favourites" element={<Favourites />} />
+                    <Route path="/shoppingcart" element={<ShoppingCart />} />
+                    <Route
+                      path="/signin"
+                      element={<Signin setSignedUp={setSignedUp} />}
+                    />
+                    <Route
+                      path="/signup"
+                      element={<Signup setSignedUp={setSignedUp} />}
+                    />
+                    <Route
+                      path="/account"
+                      element={
+                        <Account
+                          signedUp={signedUp}
+                          setSignedUp={setSignedUp}
+                        />
+                      }
+                    />
+                    <Route path="/checkout" element={<Checkout />} />
+                  </Routes>
+                </AnimatePresence>
                 <Footer />
               </>
             )}

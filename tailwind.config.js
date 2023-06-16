@@ -33,6 +33,7 @@ module.exports = {
         animateOp2: "animateOpacity 2s ease",
         animateOp3: "animateOpacity 0.3s ease-in-out",
         panImage: "panImage 15s linear infinite",
+        onLoadAnimation: "onLoadAnimation 3s linear infinite",
       },
       keyframes: {
         animateOpacity: {
@@ -44,6 +45,12 @@ module.exports = {
           "50%": { objectFit: "cover", objectPosition: "top" },
           "50.0001%": { objectFit: "cover", objectPosition: "top" },
           "100%": { objectFit: "cover", objectPosition: "bottom" },
+        },
+        onLoadAnimation: {
+          "0%": { transform: "translateY(0%)" },
+          "50%": { transform: "translateY(5%)" },
+          "50.0001%": { transform: "translateY(5%)" },
+          "100%": { transform: "translateY(0%)" },
         },
       },
     },
