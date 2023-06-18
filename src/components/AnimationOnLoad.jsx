@@ -56,25 +56,180 @@ const AnimationOnLoad = () => {
             art
           </m.div>
         </div>
-        <div className="overflow-hidden w-40 h-40 rounded-full text-xs font-bold z-10 absolute animate-animateOp2 uppercase flex flex-col justify-center items-center">
-          <div className="animate-onLoadAnimation">
+        <div className="overflow-hidden w-40 h-40 rounded-full text-xs font-bold absolute animate-animateOp2 uppercase flex flex-col justify-center items-center gap-1">
+          <div className="animate-onLoadAnimation1">
             <m.div
               initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
               animate={{ y: "200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 1 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-between gap-2 overflow-hidden"
             >
-              connection connection connection connection connection connection
-              connection connection connection connection connection connection
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
             </m.div>
           </div>
-          <div className="animate-onLoadAnimation">
+          <div className="animate-onLoadAnimation2">
             <m.div
-              initial={{ y: "0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "-200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 1 }}
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "200%", x: "10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-evenly gap-2 overflow-hidden"
             >
-              connection connection connection connection connection connection
-              connection connection connection connection connection connection
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation1">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "200%", x: "10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-between gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation2">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "200%", x: "10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-evenly gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation1">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "200%", x: "10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-between gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation2">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-evenly gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation1">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-between gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation2">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-evenly gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation1">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-between gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+            </m.div>
+          </div>
+          <div className="animate-onLoadAnimation2">
+            <m.div
+              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
+              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
+              transition={{ delay: 3.25, duration: 0.5 }}
+              className="w-40 flex justify-evenly gap-2 overflow-hidden"
+            >
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
+              <div>connection</div>
             </m.div>
           </div>
         </div>
