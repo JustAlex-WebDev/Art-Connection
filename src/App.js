@@ -21,21 +21,10 @@ import ShoppingCartContextProvider from "./context/ShoppingCartContext";
 
 function App() {
   const [items, setItems] = useState(paintings);
-  const [navbarShadow, setNavbarShadow] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const [signedUp, setSignedUp] = useState(false);
-
-  // Navbar Shadow on scroll
-  const scrollNavbarShadow = () => {
-    if (window.scrollY >= 15) {
-      setNavbarShadow(true);
-    } else {
-      setNavbarShadow(false);
-    }
-  };
-  window.addEventListener("scroll", scrollNavbarShadow);
 
   // Scroll To Top Functions
   const scrollToTopIndicator = () => {
@@ -56,7 +45,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 4500);
   }, []);
 
   return (
@@ -68,13 +57,13 @@ function App() {
               <AnimationOnLoad />
             ) : (
               <>
-                <Navbar navbarShadow={navbarShadow} setSignedUp={setSignedUp} />
+                <Navbar setSignedUp={setSignedUp} />
                 <ScrollToTop
                   scrollToTopIndicator={scrollToTop}
                   scrollToTopFunction={scrollToTopFunction}
                 />
                 <Slides />
-                <AnimatePresence initial={false}>
+                <AnimatePresence>
                   <Routes location={location} key={location.pathName}>
                     <Route path="/" element={<Home items={items} />} />
                     <Route path="/favourites" element={<Favourites />} />

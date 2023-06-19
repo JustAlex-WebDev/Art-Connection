@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { slides } from "../data";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 // import { BsDot } from "react-icons/bs";
+import { motion as m } from "framer-motion";
 
 const Slides = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,8 +43,18 @@ const Slides = () => {
   //   };
 
   return (
-    <div className="w-full bg-secondary duration-300">
-      <div className="main-div mt-20 bg-secondary hidden xxsm:flex h-16 text-primary text-center overflow-hidden flex-col duration-300">
+    <m.div
+      initial={{ y: "-200%" }}
+      animate={{ y: "0%" }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      className="w-full bg-secondary duration-300"
+    >
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="main-div mt-20 bg-secondary hidden xxsm:flex h-16 text-primary text-center overflow-hidden flex-col duration-300"
+      >
         <div className="h-full relative mx-12 flex items-center justify-between font-bold">
           <div
             className="z-10 cursor-pointer hover:opacity-50"
@@ -94,8 +105,8 @@ const Slides = () => {
           </div>
         ))}
       </div> */}
-      </div>
-    </div>
+      </m.div>
+    </m.div>
   );
 };
 
