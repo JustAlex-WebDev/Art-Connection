@@ -4,11 +4,17 @@ import { BsGithub } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { motion as m } from "framer-motion";
 
 const Footer = () => {
   return (
     <div className="main-div pt-4 text-primary mb-4 duration-300">
-      <div className="grid md:grid-cols-2">
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.75, duration: 0.5 }}
+        className="grid md:grid-cols-2"
+      >
         <div className="flex justify-evenly w-full md:max-w-[300px] uppercase">
           <div>
             <h2 className="font-bold">Support</h2>
@@ -73,8 +79,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex py-4 justify-center items-center gap-4">
+      </m.div>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 0.5 }}
+        className="flex py-4 justify-center items-center gap-4"
+      >
         <a
           href="https://github.com/JustAlex-WebDev"
           rel="noreferrer"
@@ -93,8 +104,13 @@ const Footer = () => {
             className="cursor-pointer hover:opacity-50"
           />
         </a>
-      </div>
-      <p className="text-center py-4">
+      </m.div>
+      <m.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 0.5 }}
+        className="text-center py-4"
+      >
         © 2023{" "}
         <Link to="/">
           <span className="hover:opacity-50 cursor-pointer">
@@ -102,7 +118,7 @@ const Footer = () => {
           </span>
         </Link>
         , Inc. All Rights Reserved
-      </p>
+      </m.p>
     </div>
   );
 };

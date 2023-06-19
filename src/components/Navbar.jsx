@@ -7,12 +7,14 @@ import { UserAuth } from "../context/AuthContext";
 import MobileMenu from "./MobileMenu";
 import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { motion as m } from "framer-motion";
 
-const Navbar = ({ navbarShadow, setSignedUp }) => {
+const Navbar = ({ setSignedUp }) => {
   let totalItemsShoppingCart = 0;
   const { favouritesSection } = useFavouritesSection();
   const { shoppingCart } = useShoppingCart();
   const [nav, setNav] = useState(false);
+  const [navbarShadow, setNavbarShadow] = useState(false);
   const { user, logOut } = UserAuth();
   const navigate = useNavigate();
 
@@ -26,13 +28,45 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
     }
   };
 
+  // Navbar Shadow on scroll
+  const scrollNavbarShadow = () => {
+    if (window.scrollY >= 15) {
+      setNavbarShadow(true);
+    } else {
+      setNavbarShadow(false);
+    }
+  };
+  window.addEventListener("scroll", scrollNavbarShadow);
+
   return (
-    <div
+    <m.div
+      initial={{ transform: "scale(0.5)" }}
+      animate={{ transform: "scale(1)" }}
+      transition={{ duration: 0.5 }}
       className={`bg-secondary w-full fixed top-0 z-50 duration-300 ${
         navbarShadow ? "shadow-md" : "shadow-sm"
       }`}
     >
-      <div className="main-div flex items-center justify-between h-20 font-bold text-primary">
+      <div className="flex w-full">
+        <m.div
+          initial={{ width: "50%" }}
+          animate={{ width: "0" }}
+          transition={{ duration: 1 }}
+          className="bg-primary h-20 fixed top-0 right-0"
+        ></m.div>
+        <m.div
+          initial={{ width: "50%" }}
+          animate={{ width: "0" }}
+          transition={{ duration: 1 }}
+          className="bg-primary h-20 fixed top-0 justify-end"
+        ></m.div>
+      </div>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="main-div flex items-center justify-between h-20 font-bold text-primary"
+      >
         <Link to="/">
           <h1 title="Home" className="text-xl hover:opacity-50">
             Art Connection
@@ -130,8 +164,8 @@ const Navbar = ({ navbarShadow, setSignedUp }) => {
           totalItemsShoppingCart={totalItemsShoppingCart}
           handleSignOut={handleSignOut}
         />
-      </div>
-    </div>
+      </m.div>
+    </m.div>
   );
 };
 

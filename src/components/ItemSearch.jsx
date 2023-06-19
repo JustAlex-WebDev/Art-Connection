@@ -5,6 +5,7 @@ import Filter from "./Filter";
 import Sort from "./Sort";
 import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { motion as m } from "framer-motion";
 
 const ItemSearch = ({ items }) => {
   const [searchText, setSearchText] = useState("");
@@ -23,7 +24,12 @@ const ItemSearch = ({ items }) => {
     useShoppingCart();
 
   return (
-    <div className="main-div mb-24 mt-24 xxsm:mt-8">
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.5, duration: 0.5 }}
+      className="main-div mb-24 mt-24 xxsm:mt-8"
+    >
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 text-center md:text-right">
         <h1 className="text-2xl font-bold my-2 text-primary duration-300">
           Search Art
@@ -223,7 +229,7 @@ const ItemSearch = ({ items }) => {
           </div>
         )}
       </div>
-    </div>
+    </m.div>
   );
 };
 
