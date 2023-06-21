@@ -12,7 +12,7 @@ const Footer = () => {
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.75, duration: 0.5 }}
+        transition={{ delay: 1.5, duration: 0.5 }}
         className="grid md:grid-cols-2"
       >
         <div className="flex justify-evenly w-full md:max-w-[300px] uppercase">
@@ -83,7 +83,7 @@ const Footer = () => {
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
+        transition={{ delay: 1.75, duration: 0.5 }}
         className="flex py-4 justify-center items-center gap-4"
       >
         <a
@@ -108,7 +108,7 @@ const Footer = () => {
       <m.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
+        transition={{ delay: 1.75, duration: 0.5 }}
         className="text-center py-4"
       >
         © 2023{" "}

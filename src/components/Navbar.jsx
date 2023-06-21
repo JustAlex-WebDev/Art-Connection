@@ -51,13 +51,13 @@ const Navbar = ({ setSignedUp }) => {
         <m.div
           initial={{ width: "50%" }}
           animate={{ width: "0" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.25 }}
           className="bg-primary h-20 fixed top-0 right-0"
         ></m.div>
         <m.div
           initial={{ width: "50%" }}
           animate={{ width: "0" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.25 }}
           className="bg-primary h-20 fixed top-0 justify-end"
         ></m.div>
       </div>
