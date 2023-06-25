@@ -25,19 +25,15 @@ const MobileMenu = ({
         onClick={(e) => e.stopPropagation()}
         className={
           nav
-            ? "md:hidden fixed right-0 top-[9.5vh] flex flex-col items-center justify-between w-full xxsm:w-[50%] h-[90.5vh] h-[90.5svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-500 border-l"
-            : "fixed w-full xxsm:w-[50%] right-[-100%] top-[9.5vh] h-[90.5vh] h-[90.5svh] flex flex-col items-center justify-between transition-all ease-in-out duration-500"
+            ? "md:hidden fixed right-0 top-[9.5vh] flex flex-col items-center justify-between w-full xxsm:w-[50%] h-[90.5vh] h-[90.5svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-300 border-l"
+            : "fixed w-full xxsm:w-[50%] right-[-100%] top-[9.5vh] h-[90.5vh] h-[90.5svh] flex flex-col items-center justify-between transition-all ease-in-out duration-300"
         }
       >
         <ul className="p-4 w-full">
           <li className="border-b py-6 flex justify-center overflow-hidden">
             <Link
               to="/"
-              className={
-                nav
-                  ? "translate-y-0 transition-all duration-300 delay-300"
-                  : "translate-y-[200%] transition-all duration-300 delay-300"
-              }
+              className={nav ? "translatey-y-0" : "translate-y-[200%]"}
             >
               <div onClick={() => setNav(!nav)} className="hover:opacity-50">
                 Home
@@ -47,11 +43,7 @@ const MobileMenu = ({
           <li className="border-b py-6 flex justify-center overflow-hidden">
             <Link
               to="/account"
-              className={
-                nav
-                  ? "translate-y-0 transition-all duration-300 delay-[350ms]"
-                  : "translate-y-[200%] transition-all duration-300 delay-[350ms]"
-              }
+              className={nav ? "translate-y-0" : "translate-y-[200%]"}
             >
               <div onClick={() => setNav(!nav)} className="hover:opacity-50">
                 Account
@@ -61,11 +53,7 @@ const MobileMenu = ({
           <li className="border-b py-6 flex justify-center overflow-hidden">
             <Link
               to="/favourites"
-              className={
-                nav
-                  ? "translate-y-0 transition-all duration-300 delay-[400ms]"
-                  : "translate-y-[200%] transition-all duration-300 delay-[400ms]"
-              }
+              className={nav ? "translate-y-0" : "translate-y-[200%]"}
             >
               <div onClick={() => setNav(!nav)} className="hover:opacity-50">
                 {user ? (
@@ -80,11 +68,7 @@ const MobileMenu = ({
           <li className="border-b py-6 flex justify-center overflow-hidden">
             <Link
               to="/shoppingcart"
-              className={
-                nav
-                  ? "translate-y-0 transition-all duration-300 delay-[450ms]"
-                  : "translate-y-[200%] transition-all duration-300 delay-[450ms]"
-              }
+              className={nav ? "translate-y-0" : "translate-y-[200%]"}
             >
               <div onClick={() => setNav(!nav)} className="hover:opacity-50">
                 {user ? (
@@ -97,13 +81,7 @@ const MobileMenu = ({
             </Link>
           </li>
           <li className="py-6 flex justify-center overflow-hidden">
-            <div
-              className={
-                nav
-                  ? "translate-y-0 transition-all duration-300 delay-[500ms]"
-                  : "translate-y-[200%] transition-all duration-300 delay-[500ms]"
-              }
-            >
+            <div className={nav ? "translate-y-0" : "translate-y-[200%]"}>
               <ThemeToggle />
             </div>
           </li>
@@ -112,8 +90,8 @@ const MobileMenu = ({
           <div
             className={
               nav
-                ? "flex flex-col w-full p-4 opacity-100 transition-all duration-300 delay-[600ms] ease-in-out"
-                : "flex flex-col w-full p-4 opacity-0 transition-all duration-300 delay-[600ms] ease-in-out"
+                ? "flex flex-col w-full p-4 opacity-100 ease-in-out"
+                : "flex flex-col w-full p-4 opacity-0 ease-in-out"
             }
           >
             <button
@@ -128,9 +106,7 @@ const MobileMenu = ({
             <Link
               to="/signin"
               className={
-                nav
-                  ? "opacity-100 transition-all duration-300 delay-[600ms] ease-in-out"
-                  : "opacity-0 transition-all duration-300 delay-[600ms] ease-in-out"
+                nav ? "opacity-100 ease-in-out" : "opacity-0 ease-in-out"
               }
             >
               <button
@@ -143,9 +119,7 @@ const MobileMenu = ({
             <Link
               to="/signup"
               className={
-                nav
-                  ? "opacity-100 transition-all duration-300 delay-[600ms] ease-in-out"
-                  : "opacity-0 transition-all duration-300 delay-[600ms] ease-in-out"
+                nav ? "opacity-100 ease-in-out" : "opacity-0 ease-in-out"
               }
             >
               <button

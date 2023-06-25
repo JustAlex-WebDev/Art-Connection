@@ -49,16 +49,16 @@ const Navbar = ({ setSignedUp }) => {
     >
       <div className="flex w-full">
         <m.div
-          initial={{ width: "50%" }}
-          animate={{ width: "0" }}
-          transition={{ duration: 1.25 }}
+          initial={{ width: "50%", transform: "scale(0.5)" }}
+          animate={{ width: "0", transform: "scale(1)" }}
+          transition={{ duration: 1 }}
           className="bg-primary h-20 fixed top-0 right-0"
         ></m.div>
         <m.div
-          initial={{ width: "50%" }}
-          animate={{ width: "0" }}
-          transition={{ duration: 1.25 }}
-          className="bg-primary h-20 fixed top-0 justify-end"
+          initial={{ width: "50%", transform: "scale(0.5)" }}
+          animate={{ width: "0", transform: "scale(1)" }}
+          transition={{ duration: 1 }}
+          className="bgprimary h-20 fixed top-0 justify-end"
         ></m.div>
       </div>
       <m.div

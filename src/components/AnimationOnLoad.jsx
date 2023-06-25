@@ -23,10 +23,9 @@ const AnimationOnLoad = () => {
     <div className="w-full h-[100vh] bg-primary flex justify-center items-center animate-animateOp text-primary overflow-hidden">
       <m.div
         initial={{ scale: 1 }}
-        animate={{ scale: 300 }}
-        transition={{ duration: 2, delay: 3, ease: "easeIn" }}
-        exit={{ scale: 1 }}
-        className="w-40 h-40 rounded-full flex justify-center items-center animate-pulse shadow-lg"
+        animate={{ scale: 600 }}
+        transition={{ duration: 5, delay: 3, ease: "easeIn" }}
+        className="w-40 h-40 rounded-full flex justify-center items-center shadow-lg animate-pulse"
       >
         {theme === "dark" ? (
           <Circle
@@ -46,11 +45,11 @@ const AnimationOnLoad = () => {
           />
         )}
 
-        <div className="text-lg font-bold z-10 absolute animate-animateOp2 uppercase">
+        <div className="text-lg font-bold z-10 absolute animate-animateOp2 uppercase opacity-100">
           <m.div
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
-            transition={{ delay: 3.25, duration: 1 }}
+            transition={{ delay: 3.5, duration: 1 }}
             className="overflow-hidden"
           >
             art
@@ -59,9 +58,9 @@ const AnimationOnLoad = () => {
         <div className="overflow-hidden w-40 h-40 rounded-full text-xs font-bold absolute animate-animateOp2 uppercase flex flex-col justify-center items-center gap-1">
           <div className="animate-onLoadAnimation1">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-between gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -73,9 +72,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation2">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-evenly gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -92,9 +91,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation1">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-between gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -106,9 +105,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation2">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-evenly gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -125,9 +124,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation1">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "200%", x: "10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-between gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -139,9 +138,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation2">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-evenly gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -158,9 +157,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation1">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-between gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -177,9 +176,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation2">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-evenly gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -196,9 +195,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation1">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-between gap-2 overflow-hidden"
             >
               <div>connection</div>
@@ -215,9 +214,9 @@ const AnimationOnLoad = () => {
           </div>
           <div className="animate-onLoadAnimation2">
             <m.div
-              initial={{ y: "-0%", x: "0%", opacity: 0.3 }}
-              animate={{ y: "-200%", x: "-10%", opacity: 0 }}
-              transition={{ delay: 3.25, duration: 0.5 }}
+              initial={{ opacity: 0.3 }}
+              animate={{ opacity: 0 }}
+              transition={{ delay: 3.5, duration: 0.5 }}
               className="w-40 flex justify-evenly gap-2 overflow-hidden"
             >
               <div>connection</div>
