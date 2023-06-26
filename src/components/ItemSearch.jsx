@@ -6,8 +6,10 @@ import Sort from "./Sort";
 import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { motion as m } from "framer-motion";
+import { paintings } from "../data";
 
-const ItemSearch = ({ items }) => {
+const ItemSearch = () => {
+  const [items, setItems] = useState(paintings);
   const [searchText, setSearchText] = useState("");
   const [filterMenu, setFilterMenu] = useState(false);
   const [filteredItems, setFilteredItems] = useState(items);

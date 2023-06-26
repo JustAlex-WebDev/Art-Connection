@@ -14,7 +14,7 @@ const PageTransition = () => {
           initial={{ height: "0%" }}
           animate={{ height: "100%" }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="h-[50%] border-r-2 border-r-zinc-300 w-full"
+          className="border-r-2 border-r-zinc-300 w-full"
         ></m.div>
       </m.div>
       <m.div className="h-full  flex justify-center items-center bg-primary animate-pageTransition">
@@ -22,7 +22,7 @@ const PageTransition = () => {
           initial={{ height: "0%" }}
           animate={{ height: "100%" }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="h-[50%] border-l-2 border-l-zinc-300 w-full"
+          className="border-l-2 border-l-zinc-300 w-full"
         ></m.div>
       </m.div>
     </m.div>
