@@ -49,7 +49,7 @@ const AnimationOnLoad = () => {
           <m.div
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
-            transition={{ delay: 3.5, duration: 1 }}
+            transition={{ delay: 3.75, duration: 0.5 }}
             className="overflow-hidden"
           >
             art

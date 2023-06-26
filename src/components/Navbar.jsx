@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
@@ -9,24 +9,13 @@ import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { motion as m } from "framer-motion";
 
-const Navbar = ({ setSignedUp }) => {
+const Navbar = () => {
   let totalItemsShoppingCart = 0;
   const { favouritesSection } = useFavouritesSection();
   const { shoppingCart } = useShoppingCart();
   const [nav, setNav] = useState(false);
   const [navbarShadow, setNavbarShadow] = useState(false);
   const { user, logOut } = UserAuth();
-  const navigate = useNavigate();
-
-  const handleSignOut = async (e) => {
-    try {
-      await logOut();
-      setSignedUp(false);
-      navigate("/");
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
 
   // Navbar Shadow on scroll
   const scrollNavbarShadow = () => {
@@ -40,31 +29,31 @@ const Navbar = ({ setSignedUp }) => {
 
   return (
     <m.div
-      initial={{ transform: "scale(0.5)" }}
-      animate={{ transform: "scale(1)" }}
-      transition={{ duration: 0.5 }}
+      initial={{ transform: "scale(0.5)", opacity: "0" }}
+      animate={{ transform: "scale(1)", opacity: "1" }}
+      transition={{ duration: 1, delay: 1 }}
       className={`bg-secondary w-full fixed top-0 z-50 duration-300 ${
         navbarShadow ? "shadow-md" : "shadow-sm"
       }`}
     >
       <div className="flex w-full">
         <m.div
-          initial={{ width: "50%", transform: "scale(0.5)" }}
-          animate={{ width: "0", transform: "scale(1)" }}
-          transition={{ duration: 1 }}
+          initial={{ width: "50%" }}
+          animate={{ width: "0" }}
+          transition={{ duration: 1, delay: 1 }}
           className="bg-primary h-20 fixed top-0 right-0"
         ></m.div>
         <m.div
-          initial={{ width: "50%", transform: "scale(0.5)" }}
-          animate={{ width: "0", transform: "scale(1)" }}
-          transition={{ duration: 1 }}
-          className="bgprimary h-20 fixed top-0 justify-end"
+          initial={{ width: "50%" }}
+          animate={{ width: "0" }}
+          transition={{ duration: 1, delay: 1 }}
+          className="bg-primary h-20 fixed top-0 justify-end"
         ></m.div>
       </div>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
+        transition={{ delay: 2, duration: 0.5 }}
         className="main-div flex items-center justify-between h-20 font-bold text-primary"
       >
         <Link to="/">
@@ -84,7 +73,7 @@ const Navbar = ({ setSignedUp }) => {
               Account
             </Link>
             <button
-              onClick={handleSignOut}
+              onClick={logOut}
               className="bg-button text-button px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
             >
               Sign Out
@@ -162,7 +151,7 @@ const Navbar = ({ setSignedUp }) => {
           favouritesSection={favouritesSection}
           user={user}
           totalItemsShoppingCart={totalItemsShoppingCart}
-          handleSignOut={handleSignOut}
+          logOut={logOut}
         />
       </m.div>
     </m.div>

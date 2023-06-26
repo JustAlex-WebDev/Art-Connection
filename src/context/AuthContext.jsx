@@ -7,11 +7,14 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
+  const [signedUp, setSignedUp] = useState(false);
+  const navigate = useNavigate();
 
   const signUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password);
@@ -25,8 +28,14 @@ export const AuthContextProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logOut = () => {
-    return signOut(auth);
+  const logOut = async (e) => {
+    try {
+      await signOut(auth);
+      setSignedUp(false);
+      navigate("/");
+    } catch (e) {
+      console.log(e.message);
+    }
   };
 
   useEffect(() => {
@@ -39,7 +48,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ signUp, signIn, logOut, user }}>
+    <UserContext.Provider value={{ signUp, signIn, logOut, user, setSignedUp }}>
       {children}
     </UserContext.Provider>
   );

@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
 import { UserAuth } from "../context/AuthContext";
 
-const Signin = ({ setSignedUp }) => {
+const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { signIn } = UserAuth();
+  const { signIn, setSignedUp } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
