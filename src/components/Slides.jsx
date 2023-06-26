@@ -44,15 +44,15 @@ const Slides = () => {
 
   return (
     <m.div
-      initial={{ y: "-200%" }}
+      initial={{ y: "-250%" }}
       animate={{ y: "0%" }}
-      transition={{ delay: 0.5, duration: 0.5 }}
+      transition={{ delay: 1.75, duration: 0.5 }}
       className="w-full bg-secondary duration-300"
     >
       <m.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        initial={{ opacity: "0" }}
+        animate={{ opacity: "1" }}
+        transition={{ delay: 2.25, duration: 0.5 }}
         className="main-div mt-20 bg-secondary hidden xxsm:flex h-16 text-primary text-center overflow-hidden flex-col duration-300"
       >
         <div className="h-full relative mx-12 flex items-center justify-between font-bold">

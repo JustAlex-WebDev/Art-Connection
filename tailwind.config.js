@@ -35,6 +35,7 @@ module.exports = {
         panImage: "panImage 15s linear infinite",
         onLoadAnimation1: "onLoadAnimation1 4s linear infinite",
         onLoadAnimation2: "onLoadAnimation2 4s linear infinite",
+        pageTransition: "pageTransition 2s ease 1",
       },
       keyframes: {
         animateOpacity: {
@@ -58,6 +59,12 @@ module.exports = {
           "50%": { transform: "translateX(-10%)" },
           "50.0001%": { transform: "translateX(-10%)" },
           "100%": { transform: "translateX(0%)" },
+        },
+        pageTransition: {
+          "0%": { width: "0%" },
+          "50%": { width: "50%" },
+          "50.0001%": { width: "50%" },
+          "100%": { width: "0%" },
         },
       },
     },

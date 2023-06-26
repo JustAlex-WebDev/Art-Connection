@@ -8,11 +8,8 @@ import Account from "./routes/Account";
 import Favourites from "./routes/Favourites";
 import ShoppingCart from "./routes/ShoppingCart";
 import Checkout from "./routes/Checkout";
-import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
-import Footer from "./components/Footer";
 import AnimationOnLoad from "./components/AnimationOnLoad";
-import Slides from "./components/Slides";
 import { paintings } from "./data";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -24,7 +21,6 @@ function App() {
   const [scrollToTop, setScrollToTop] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const [signedUp, setSignedUp] = useState(false);
 
   // Scroll To Top Functions
   const scrollToTopIndicator = () => {
@@ -57,38 +53,22 @@ function App() {
               <AnimationOnLoad />
             ) : (
               <>
-                <Navbar setSignedUp={setSignedUp} />
                 <ScrollToTop
                   scrollToTopIndicator={scrollToTop}
                   scrollToTopFunction={scrollToTopFunction}
                 />
-                <Slides />
-                <AnimatePresence>
+
+                <AnimatePresence initial={false}>
                   <Routes location={location} key={location.pathName}>
                     <Route path="/" element={<Home items={items} />} />
                     <Route path="/favourites" element={<Favourites />} />
                     <Route path="/shoppingcart" element={<ShoppingCart />} />
-                    <Route
-                      path="/signin"
-                      element={<Signin setSignedUp={setSignedUp} />}
-                    />
-                    <Route
-                      path="/signup"
-                      element={<Signup setSignedUp={setSignedUp} />}
-                    />
-                    <Route
-                      path="/account"
-                      element={
-                        <Account
-                          signedUp={signedUp}
-                          setSignedUp={setSignedUp}
-                        />
-                      }
-                    />
+                    <Route path="/signin" element={<Signin />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/account" element={<Account />} />
                     <Route path="/checkout" element={<Checkout />} />
                   </Routes>
                 </AnimatePresence>
-                <Footer />
               </>
             )}
           </ShoppingCartContextProvider>

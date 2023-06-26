@@ -10,7 +10,7 @@ const MobileMenu = ({
   favouritesSection,
   user,
   totalItemsShoppingCart,
-  handleSignOut,
+  logOut,
 }) => {
   return (
     <div
@@ -95,7 +95,7 @@ const MobileMenu = ({
             }
           >
             <button
-              onClick={handleSignOut}
+              onClick={logOut}
               className="w-full my-2 p-3 bg-button text-button rounded-2xl shadow-md hover:opacity-50"
             >
               Sign Out
