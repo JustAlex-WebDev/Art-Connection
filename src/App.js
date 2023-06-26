@@ -10,14 +10,12 @@ import ShoppingCart from "./routes/ShoppingCart";
 import Checkout from "./routes/Checkout";
 import ScrollToTop from "./components/ScrollToTop";
 import AnimationOnLoad from "./components/AnimationOnLoad";
-import { paintings } from "./data";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
 import FavouritesContextProvider from "./context/FavouritesContext";
 import ShoppingCartContextProvider from "./context/ShoppingCartContext";
 
 function App() {
-  const [items, setItems] = useState(paintings);
   const [scrollToTop, setScrollToTop] = useState(false);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
@@ -60,7 +58,7 @@ function App() {
 
                 <AnimatePresence initial={false}>
                   <Routes location={location} key={location.pathName}>
-                    <Route path="/" element={<Home items={items} />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/favourites" element={<Favourites />} />
                     <Route path="/shoppingcart" element={<ShoppingCart />} />
                     <Route path="/signin" element={<Signin />} />

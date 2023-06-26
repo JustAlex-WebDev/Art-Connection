@@ -4,6 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { motion as m } from "framer-motion";
 
 const FavouritesItems = () => {
   const { favouritesSection, removeItemFavouritesSection } =
@@ -14,7 +15,10 @@ const FavouritesItems = () => {
 
   if (user) {
     return (
-      <div
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 0.5 }}
         className={`w-full flex flex-col m-auto ${
           favouritesSection?.length > 0 ? `mb-24` : ``
         }`}
@@ -55,7 +59,7 @@ const FavouritesItems = () => {
             );
           })}
         </div>
-      </div>
+      </m.div>
     );
   } else {
     return <Navigate to="/signin" />;

@@ -5,13 +5,13 @@ import Navbar from "../components/Navbar";
 import PageTransition from "../components/PageTransition";
 import Slides from "../components/Slides";
 
-const Home = ({ items }) => {
+const Home = () => {
   return (
     <>
       <PageTransition />
       <Navbar />
       <Slides />
-      <ItemSearch items={items} />
+      <ItemSearch />
       <Footer />
     </>
   );

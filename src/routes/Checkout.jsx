@@ -7,6 +7,11 @@ import PaymentStep from "../components/steps/PaymentStep";
 import { steps } from "../data";
 import { UserAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import PageTransition from "../components/PageTransition";
+import Navbar from "../components/Navbar";
+import Slides from "../components/Slides";
+import Footer from "../components/Footer";
+import { motion as m } from "framer-motion";
 
 const Checkout = () => {
   const { user } = UserAuth();
@@ -34,14 +39,24 @@ const Checkout = () => {
 
   if (user) {
     return (
-      <div>
-        <CheckoutForm
-          checkoutSteps={checkoutSteps}
-          currentStep={currentStep}
-          handleClick={handleClick}
-          displayStep={displayStep}
-        />
-      </div>
+      <>
+        <PageTransition />
+        <Navbar />
+        <Slides />
+        <m.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 0.5 }}
+        >
+          <CheckoutForm
+            checkoutSteps={checkoutSteps}
+            currentStep={currentStep}
+            handleClick={handleClick}
+            displayStep={displayStep}
+          />
+        </m.div>
+        <Footer />
+      </>
     );
   } else {
     return <Navigate to="/signin" />;

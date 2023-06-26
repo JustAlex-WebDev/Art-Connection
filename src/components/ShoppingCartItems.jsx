@@ -4,6 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 import { Navigate, Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useFavouritesSection } from "../context/FavouritesContext";
+import { motion as m } from "framer-motion";
 
 const ShoppingCartItems = () => {
   const {
@@ -24,7 +25,10 @@ const ShoppingCartItems = () => {
 
   if (user) {
     return (
-      <div
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 0.5 }}
         className={`w-full flex flex-col m-auto ${
           shoppingCart?.length > 0 ? `mb-24` : ``
         }`}
@@ -88,7 +92,7 @@ const ShoppingCartItems = () => {
             </Link>
           </div>
         )}
-      </div>
+      </m.div>
     );
   } else {
     return <Navigate to="/signin" />;

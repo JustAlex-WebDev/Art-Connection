@@ -1,11 +1,19 @@
 import React from "react";
 import ShoppingCartItems from "../components/ShoppingCartItems";
+import PageTransition from "../components/PageTransition";
+import Navbar from "../components/Navbar";
+import Slides from "../components/Slides";
+import Footer from "../components/Footer";
 
 const ShoppingCart = () => {
   return (
-    <div>
+    <>
+      <PageTransition />
+      <Navbar />
+      <Slides />
       <ShoppingCartItems />
-    </div>
+      <Footer />
+    </>
   );
 };
 
