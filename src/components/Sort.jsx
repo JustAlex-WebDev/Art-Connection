@@ -76,7 +76,7 @@ const Sort = ({
         <BiSortAlt2
           onClick={() => setSortMenu(!sortMenu) & setFilterMenu(false)}
           title="Sort By"
-          className="mr-4 cursor-pointer"
+          className="mr-4 cursor-pointer hover:opacity-50"
         />
       </div>
     </div>
