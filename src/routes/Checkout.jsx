@@ -12,29 +12,53 @@ import Navbar from "../components/Navbar";
 import Slides from "../components/Slides";
 import Footer from "../components/Footer";
 import { motion as m } from "framer-motion";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Checkout = () => {
   const { user } = UserAuth();
   const [currentStep, setCurrentStep] = useState(1);
   const checkoutSteps = steps;
 
-  const displayStep = (step) => {
-    switch (step) {
-      case 1:
-        return <DetailsStep />;
-      case 2:
-        return <PaymentStep />;
-      case 3:
-        return <FinalStep />;
-      default:
-    }
-  };
+  //  Formik Logics
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      address: "",
+      postalCode: "",
+      city: "",
+      country: "",
+    },
+
+    //  Validate Form
+    validationSchema: Yup.object({
+      name: Yup.string().required("Name is required"),
+      address: Yup.string().required("Address is required"),
+      postalCode: Yup.string().required("PostalCode is required"),
+      city: Yup.string().required("City is required"),
+      country: Yup.string().required("Country is required"),
+    }),
+  });
+
+  // console.log(formik.values);
 
   const handleClick = (direction) => {
     let newStep = currentStep;
 
     direction === "next" ? newStep++ : newStep--;
     newStep > 0 && newStep <= checkoutSteps?.length && setCurrentStep(newStep);
+  };
+
+  const displayStep = (step) => {
+    switch (step) {
+      case 1:
+        return <DetailsStep formik={formik} />;
+      case 2:
+        return <PaymentStep />;
+      case 3:
+        return <FinalStep />;
+      default:
+    }
   };
 
   if (user) {
@@ -53,6 +77,7 @@ const Checkout = () => {
             currentStep={currentStep}
             handleClick={handleClick}
             displayStep={displayStep}
+            formik={formik}
           />
         </m.div>
         <Footer />
