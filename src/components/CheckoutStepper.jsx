@@ -69,7 +69,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
         >
           <div className="relative flex flex-col items-center">
             <div
-              className={`rounded-full transition duration-500 ease-in-out border-2 border-primary h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12 flex items-center justify-center py-3 ${
+              className={`rounded-full duration-300 border-2 border-primary h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12 flex items-center justify-center py-3 ${
                 step.selected
                   ? "bg-button text-button"
                   : "opacity-90 border-gray-400"
@@ -86,7 +86,7 @@ const CheckoutStepper = ({ checkoutSteps, currentStep }) => {
             </div>
           </div>
           <div
-            className={`flex-auto border-t-2 transition duration-500 ease-in-out ${
+            className={`flex-auto border-t-2 transition duration-300 ease-in-out ${
               step.completed ? "border-primary" : "border-gray-400"
             }`}
           ></div>

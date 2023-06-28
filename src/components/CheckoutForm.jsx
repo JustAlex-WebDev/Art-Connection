@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { CheckoutContext } from "../context/CheckoutContext";
+import React from "react";
 import CheckoutStepper from "./CheckoutStepper";
 import CheckoutstepperControl from "./CheckoutstepperControl";
 
@@ -8,10 +7,8 @@ const CheckoutForm = ({
   currentStep,
   handleClick,
   displayStep,
+  formik,
 }) => {
-  const [userData, setUserData] = useState("");
-  const [finalData, setFinalData] = useState([]);
-
   return (
     <div className="main-div mb-24 mt-16 text-primary duration-300">
       <CheckoutStepper
@@ -19,19 +16,14 @@ const CheckoutForm = ({
         currentStep={currentStep}
       />
 
-      <div>
-        <CheckoutContext.Provider
-          value={{ userData, setUserData, finalData, setFinalData }}
-        >
-          {displayStep(currentStep)}
-        </CheckoutContext.Provider>
-      </div>
+      <div>{displayStep(currentStep)}</div>
 
       {currentStep !== checkoutSteps?.length && (
         <CheckoutstepperControl
           handleClick={handleClick}
           currentStep={currentStep}
           checkoutSteps={checkoutSteps}
+          formik={formik}
         />
       )}
     </div>
