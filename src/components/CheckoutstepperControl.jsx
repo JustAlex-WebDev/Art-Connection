@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 const CheckoutstepperControl = ({
   checkoutSteps,
@@ -8,6 +9,7 @@ const CheckoutstepperControl = ({
   formik,
 }) => {
   const [checked, setChecked] = useState(false);
+  const { removeAllItemsShoppingCart } = useShoppingCart();
 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -35,21 +37,41 @@ const CheckoutstepperControl = ({
         ) : (
           <div>
             {checked ? (
-              <button
-                type="submit"
-                onClick={() => handleClick("next")}
-                className="bg-button text-button px-6 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
-              >
-                {currentStep === checkoutSteps?.length - 1 ? "Confirm" : "Next"}
-              </button>
+              <div>
+                {currentStep === checkoutSteps?.length - 1 ? (
+                  <button
+                    type="submit"
+                    onClick={() =>
+                      handleClick("next") & removeAllItemsShoppingCart()
+                    }
+                    className="bg-button text-button px-6 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
+                  >
+                    {currentStep === checkoutSteps?.length - 1
+                      ? "Confirm"
+                      : "Next"}
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    onClick={() => handleClick("next")}
+                    className="bg-button text-button px-6 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
+                  >
+                    {currentStep === checkoutSteps?.length - 1
+                      ? "Confirm"
+                      : "Next"}
+                  </button>
+                )}
+              </div>
             ) : (
-              <button
-                type="submit"
-                onClick={() => setChecked(true)}
-                className="bg-button text-button px-6 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
-              >
-                {currentStep === checkoutSteps?.length - 1 ? "Confirm" : "Next"}
-              </button>
+              <div>
+                <button
+                  type="submit"
+                  onClick={() => setChecked(true)}
+                  className="bg-button text-button px-6 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
+                >
+                  Confirm
+                </button>
+              </div>
             )}
           </div>
         )}

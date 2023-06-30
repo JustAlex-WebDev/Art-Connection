@@ -62,6 +62,17 @@ const ShoppingCartContextProvider = (props) => {
     }
   };
 
+  const removeAllItemsShoppingCart = async () => {
+    setShoppingCart(() => initShoppingCart);
+    try {
+      await updateDoc(itemPath, {
+        shoppingCart: shoppingCart,
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   const numberOfUnitsAdd = async (product) => {
     setShoppingCart((prev) => ({
       ...prev,
@@ -105,6 +116,7 @@ const ShoppingCartContextProvider = (props) => {
       value={{
         addItemShoppingCart,
         removeItemShoppingCart,
+        removeAllItemsShoppingCart,
         numberOfUnitsAdd,
         numberOfUnitsRemove,
         ...shoppingCart,
