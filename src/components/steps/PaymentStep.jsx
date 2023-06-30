@@ -32,28 +32,28 @@ const PaymentStep = () => {
     //   </div>
     // ))}
     //         </div>
-    //         <div className="flex flex-col my-6">
-    //           <h3 className="text-base lg:text-lg font-semibold text-primary opacity-80">
-    //             {shoppingCart?.forEach(
-    //               (item) => (totalItems += item.numberOfUnits),
-    //               0
-    //             )}
-    //             Total items:{" "}
-    //             <span className="font-bold opacity-100">
-    //               {totalItems} items
-    //             </span>
-    //           </h3>
-    //           <span className="text-base lg:text-lg font-semibold text-primary opacity-90">
-    //             {shoppingCart?.forEach(
-    //               (item) => (totalPrice += item.price * item.numberOfUnits),
-    //               0
-    //             )}
-    //             Total price:{" "}
-    //             <span className="font-bold opacity-100">
-    //               {totalPrice.toLocaleString()} USD
-    //             </span>
-    //           </span>
-    //         </div>
+    // <div className="flex flex-col my-6">
+    //   <h3 className="text-base lg:text-lg font-semibold text-primary opacity-80">
+    //     {shoppingCart?.forEach(
+    //       (item) => (totalItems += item.numberOfUnits),
+    //       0
+    //     )}
+    //     Total items:{" "}
+    //     <span className="font-bold opacity-100">
+    //       {totalItems} items
+    //     </span>
+    //   </h3>
+    //   <span className="text-base lg:text-lg font-semibold text-primary opacity-90">
+    //     {shoppingCart?.forEach(
+    //       (item) => (totalPrice += item.price * item.numberOfUnits),
+    //       0
+    //     )}
+    //     Total price:{" "}
+    //     <span className="font-bold opacity-100">
+    //       {totalPrice.toLocaleString()} USD
+    //     </span>
+    //   </span>
+    // </div>
     //       </div>
     //     </div>
     //   </div>
@@ -79,7 +79,7 @@ const PaymentStep = () => {
                 <div>
                   <h3>{item.name}</h3>
                   <h3 className="opacity-60">{item.author}</h3>
-                  <h3>{item.price.toLocaleString()} USD</h3>
+                  <h3 className="mt-2">{item.price.toLocaleString()} USD</h3>
                 </div>
                 <div className="flex gap-4 items-center">
                   <h3>x {item.numberOfUnits}</h3>
@@ -87,6 +87,26 @@ const PaymentStep = () => {
               </div>
             </div>
           ))}
+          <div className="flex flex-col mt-4 gap-2">
+            <h3 className="text-base lg:text-lg font-semibold text-primary opacity-80">
+              {shoppingCart?.forEach(
+                (item) => (totalItems += item.numberOfUnits),
+                0
+              )}
+              Total items:{" "}
+              <span className="font-bold opacity-100">{totalItems} items</span>
+            </h3>
+            <span className="text-base lg:text-lg font-semibold text-primary opacity-90">
+              {shoppingCart?.forEach(
+                (item) => (totalPrice += item.price * item.numberOfUnits),
+                0
+              )}
+              Total price:{" "}
+              <span className="font-bold opacity-100">
+                {totalPrice.toLocaleString()} USD
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
