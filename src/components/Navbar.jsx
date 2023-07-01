@@ -135,7 +135,7 @@ const Navbar = () => {
         {/* Icon */}
         <button
           onClick={() => setNav(!nav)}
-          className="block md:hidden cursor-pointer z-10 hover:opacity-50"
+          className="block md:hidden cursor-pointer z-50 hover:opacity-50"
         >
           {nav ? (
             <AiOutlineClose title="Close Menu" size={20} />
