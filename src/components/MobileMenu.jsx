@@ -17,16 +17,18 @@ const MobileMenu = ({
       onClick={() => setNav(false)}
       className={
         nav
-          ? "md:hidden fixed right-0 top-0 w-full h-[100vh] h-[100svh] z-50"
-          : "md:hidden fixed right-[-100%] top-0 w-full h-[100vh] h-[100svh] z-50"
+          ? "md:hidden fixed right-0 top-0 w-full h-[100vh] h-[100svh] z-40"
+          : "md:hidden fixed right-[-100%] top-0 w-full h-[100vh] h-[100svh] z-40"
       }
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className={
           nav
-            ? "md:hidden fixed right-0 top-[9.5vh] flex flex-col items-center justify-between w-full xxsm:w-[50%] h-[90.5vh] h-[90.5svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-300 border-l"
-            : "fixed w-full xxsm:w-[50%] right-[-100%] top-[9.5vh] h-[90.5vh] h-[90.5svh] flex flex-col items-center justify-between transition-all ease-in-out duration-300"
+            ? // ? "md:hidden fixed right-0 top-[9.5vh] flex flex-col items-center justify-between w-full xxsm:w-[50%] h-[90.5vh] h-[90.5svh] bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-300 border-l"
+              // : "fixed w-full xxsm:w-[50%] right-[-100%] top-[9.5vh] h-[90.5vh] h-[90.5svh] flex flex-col items-center justify-between transition-all ease-in-out duration-300"
+              "md:hidden fixed right-0 top-0 flex flex-col items-center justify-between w-full xxsm:w-[50%] h-screen pt-12 bg-secondary shadow-xl z-50 text-lg transition-all ease-in-out duration-300 border-l"
+            : "fixed w-full xxsm:w-[50%] right-[-100%] 0 h-screen pt-12 flex flex-col items-center justify-between transition-all ease-in-out duration-300"
         }
       >
         <ul className="p-4 w-full">
