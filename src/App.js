@@ -14,6 +14,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
 import FavouritesContextProvider from "./context/FavouritesContext";
 import ShoppingCartContextProvider from "./context/ShoppingCartContext";
+import Painting from "./routes/Painting";
 
 function App() {
   const [scrollToTop, setScrollToTop] = useState(false);
@@ -59,6 +60,7 @@ function App() {
                 <AnimatePresence initial={false}>
                   <Routes location={location} key={location.pathName}>
                     <Route path="/" element={<Home />} />
+                    <Route path="/:id" element={<Painting />} />
                     <Route path="/favourites" element={<Favourites />} />
                     <Route path="/shoppingcart" element={<ShoppingCart />} />
                     <Route path="/signin" element={<Signin />} />
