@@ -39,12 +39,36 @@ const IndividualPainting = ({
           quis, eligendi saepe assumenda.
         </div>
         <div className="px-8 md:px-0 w-full">
-          <div className="shadow-md border-[#f2f2f2] border-2 my-4 md:my-2 lg:my-4 p-4 md:p-3 l:p-4 rounded-2xl flex justify-center items-center text-center font-bold w-full cursor-pointer hover:opacity-50">
-            Add to favourites
-          </div>
-          <div className="bg-button text-button my-4 md:my-2 lg:my-4 p-4 md:p-3 l:p-4 rounded-2xl flex justify-center items-center text-center font-bold w-full cursor-pointer hover:opacity-50">
-            Add to cart
-          </div>
+          {isInFavouritesSection ? (
+            <div
+              onClick={() => removeItemFavouritesSection(item.id)}
+              className="shadow-md border-[#f2f2f2] border-2 my-4 md:my-2 lg:my-4 p-4 md:p-3 l:p-4 rounded-2xl flex justify-center items-center text-center font-bold w-full cursor-pointer hover:opacity-50"
+            >
+              Remove from favourites
+            </div>
+          ) : (
+            <div
+              onClick={() => addItemFavouritesSection(item)}
+              className="shadow-md border-[#f2f2f2] border-2 my-4 md:my-2 lg:my-4 p-4 md:p-3 l:p-4 rounded-2xl flex justify-center items-center text-center font-bold w-full cursor-pointer hover:opacity-50"
+            >
+              Add to favourites
+            </div>
+          )}
+          {isInShoppingCart ? (
+            <div
+              onClick={() => removeItemShoppingCart(item.id)}
+              className="bg-button text-button my-4 md:my-2 lg:my-4 p-4 md:p-3 l:p-4 rounded-2xl flex justify-center items-center text-center font-bold w-full cursor-pointer hover:opacity-50"
+            >
+              Remove from cart
+            </div>
+          ) : (
+            <div
+              onClick={() => addItemShoppingCart(item)}
+              className="bg-button text-button my-4 md:my-2 lg:my-4 p-4 md:p-3 l:p-4 rounded-2xl flex justify-center items-center text-center font-bold w-full cursor-pointer hover:opacity-50"
+            >
+              Add to cart
+            </div>
+          )}
         </div>
       </div>
     </div>
