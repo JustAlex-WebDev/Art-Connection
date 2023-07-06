@@ -40,6 +40,7 @@ const ShoppingCartContextProvider = (props) => {
           author: item.author,
           price: item.price,
           img: item.img,
+          description: item.description,
           numberOfUnits: item.numberOfUnits,
         }),
       });
