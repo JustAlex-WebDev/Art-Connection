@@ -16,10 +16,10 @@ const IndividualPainting = ({
           src={item.img}
           alt={item.name}
           loading="lazy"
-          className="w-[12rem] xxsm:w-[17rem] md:w-[37rem] lg:w-[27rem] object-scale-down h-[15rem] xxsm:h-[20rem] md:h-[30rem] lg:h-[35rem] shadow-lg bg-secondary hover:animate-panImage hover:cursor-pointer duration-300"
+          className="w-[12rem] xxsm:w-[17rem] md:w-[25rem] lg:w-[27rem] object-scale-down h-[15rem] xxsm:h-[20rem] md:h-[30rem] lg:h-[35rem] shadow-lg bg-secondary hover:animate-panImage hover:cursor-pointer duration-300"
         />
       </div>
-      <div className="w-[100%] lg:w-[50%] pt-8 md:pt-0 pl-0 md:pl-8 lg:pl-16 text-primary overflow-hidden md:h-[30rem] lg:h-[40rem] flex flex-col justify-center gap-4 md:gap-2 lg:gap-8 items-center md:items-start text-center  md:text-left">
+      <div className="w-[100%] md:w-[50%] pt-8 md:pt-0 pl-0 md:pl-8 lg:pl-16 text-primary overflow-hidden md:h-[30rem] lg:h-[35rem] flex flex-col justify-center gap-4 md:gap-4 lg:gap-8 items-center md:items-start text-center md:text-left">
         <div className="flex flex-col gap-2 md:gap-2 lg:gap-4">
           <div className="text-2xl md:text-3xl lg:text-4xl">{item.name}</div>
           <div className="text-lg md:text-xl lg:text-2xl opacity-60">
@@ -30,13 +30,7 @@ const IndividualPainting = ({
           {item.price.toLocaleString()} USD
         </div>
         <div className="text-base px-8 md:px-0 text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae placeat
-          inventore dicta quas fugiat ab error nam doloremque minima, cum
-          consequuntur voluptatum iure, illum blanditiis dolorem odit, quasi
-          perspiciatis est. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Magni, totam. Qui eos perferendis voluptas eum sit accusamus
-          consequuntur, ipsam sapiente vitae quasi amet temporibus quos optio
-          quis, eligendi saepe assumenda.
+          {item.description}
         </div>
         <div className="px-8 md:px-0 w-full">
           {isInFavouritesSection ? (
