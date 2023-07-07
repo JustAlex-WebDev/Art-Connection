@@ -1,4 +1,5 @@
 import React from "react";
+import { motion as m } from "framer-motion";
 
 const IndividualPainting = ({
   item,
@@ -10,7 +11,12 @@ const IndividualPainting = ({
   removeItemShoppingCart,
 }) => {
   return (
-    <div className="main-div my-24 xxsm:mt-8 flex flex-col md:flex-row justify-center">
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 2.5, duration: 0.5 }}
+      className="main-div my-24 xxsm:mt-8 flex flex-col md:flex-row justify-center"
+    >
       <div className="flex justify-center items-center">
         <img
           src={item.img}
@@ -65,7 +71,7 @@ const IndividualPainting = ({
           )}
         </div>
       </div>
-    </div>
+    </m.div>
   );
 };
 
