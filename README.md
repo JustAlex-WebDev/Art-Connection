@@ -17,21 +17,17 @@ Password: `password`
 
 [Go to app](https://e-commerce-app-cf00d.web.app/ "See the demo")
 
-## Case Study
+### Case Study
 
-### Summary:
+#### Summary:
 
-Client
-Art Connection
+Client: Art Connection
 
-Country
-USA
+Country: USA
 
-Project scope and technology
-React & Firebase Development, UX/UI Design
+Project scope and technology: React & Firebase Development, UX/UI Design
 
-Industry
-eCommerce, Art / Design
+Industry: eCommerce, Art / Design
 
 
 
@@ -39,7 +35,8 @@ Art Connection is the leading provider of framed art to designers, galleries, an
 
 
 
-### Challenge:
+#### Challenge:
+
 The client came with software that was already in production and wanted to develop new functions and fully transform the way the website felt and looked.
 
 The software was developed from 2016 to 2019 by the client's development team and collected valuable info, including business data. By August 2019 the company's database contained 2000 customer records. Each of these records included information on price, product, services and other related information.
@@ -52,7 +49,8 @@ scalable - ready for the big growth of Art Connection, increasing customer base 
 
 
 
-### Process:
+#### Process:
+
 After analysis of the old code, it turned out that it is of low quality and that adding new functionalities will be difficult and expensive, so my recommendation was to rewrite the application. The client agreed to this solution.
 
 The development was based on the plan created together with the owners, which included adding new features and a redesign and implementation of the new and updated UI/UX of the website.
@@ -69,7 +67,8 @@ The following technologies have been used: React for development, Firebase for h
 The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.
 
 
-### Outcome:
+#### Outcome:
+
 The new application, Art Connection, although still in production, is faster, simpler to maintain the code.
 
 With the rewriting, the application has become scalable and possible to implement and use by other similar businesses.
