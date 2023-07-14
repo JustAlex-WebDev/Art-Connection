@@ -58,11 +58,10 @@ scalable - ready for the big growth of Art Connection, increasing customer base 
 - The following technologies have been used: React for development, Firebase for hosting and stable/reliable database and Stripe for payment system integration.
 
 
-**The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.**
-
-
 **4. Outcome:**
 
 - The new application, Art Connection, although still in production, is faster, simpler to maintain the code.
 
 - With the rewriting, the application has become scalable and possible to implement and use by other similar businesses.
+
+**The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.**
