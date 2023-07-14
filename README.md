@@ -19,56 +19,50 @@ Password: `password`
 
 ### Case Study
 
-#### Summary:
+1. Summary:
 
-Client: Art Connection
+- Client: Art Connection
 
-Country: USA
+- Country: USA
 
-Project scope and technology: React & Firebase Development, UX/UI Design
+- Project scope and technology: React & Firebase Development, UX/UI Design
 
-Industry: eCommerce, Art / Design
+- Industry: eCommerce, Art / Design
 
+2. Challenge:
 
+- The client came with software that was already in production and wanted to develop new functions and fully transform the way the website felt and looked.
 
-Art Connection is the leading provider of framed art to designers, galleries, and art retailers with more than 32 years in the fine art and custom framing industry. Its massive 45,000-square-foot showroom, located in Pompano Beach, Florida, holds more than 4,000 pieces of art, as well as metal and resin sculptures, vases, lamps, Italian accessories, and “Melting” sculptures.
+- The software was developed from 2016 to 2019 by the client's development team and collected valuable info, including business data. By August 2019 the company's database contained 2000 customer records. Each of these records included information on price, product, services and other related information.
 
+- After analyzing the client's current situation and technological needs, the conclusion was that adding new features introduced too much change to the codebase so it was decided to re-write it from scratch.
 
-
-#### Challenge:
-
-The client came with software that was already in production and wanted to develop new functions and fully transform the way the website felt and looked.
-
-The software was developed from 2016 to 2019 by the client's development team and collected valuable info, including business data. By August 2019 the company's database contained 2000 customer records. Each of these records included information on price, product, services and other related information.
-
-After analyzing the client's current situation and technological needs, the conclusion was that adding new features introduced too much change to the codebase so it was decided to re-write it from scratch.
-
-With the new version of the app, two requirements appeared:
+- With the new version of the app, two requirements appeared:
 universal - the possibility of easily and effectively change the codebase.
 scalable - ready for the big growth of Art Connection, increasing customer base and team.
 
 
 
-#### Process:
+3. Process:
 
-After analysis of the old code, it turned out that it is of low quality and that adding new functionalities will be difficult and expensive, so my recommendation was to rewrite the application. The client agreed to this solution.
+- After analysis of the old code, it turned out that it is of low quality and that adding new functionalities will be difficult and expensive, so my recommendation was to rewrite the application. The client agreed to this solution.
 
-The development was based on the plan created together with the owners, which included adding new features and a redesign and implementation of the new and updated UI/UX of the website.
+- The development was based on the plan created together with the owners, which included adding new features and a redesign and implementation of the new and updated UI/UX of the website.
 
-Ongoing support and maintenance was also provided.
+- Ongoing support and maintenance was also provided.
 
-During the tests, the client was collecting feedback from end-users and changes were implemented.
+- During the tests, the client was collecting feedback from end-users and changes were implemented.
 
-The last step was to assist and support the implementation of the application.
+- The last step was to assist and support the implementation of the application.
 
-The following technologies have been used: React for development, Firebase for hosting and stable/reliable database and Stripe for payment system integration.
-
-
-The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.
+- The following technologies have been used: React for development, Firebase for hosting and stable/reliable database and Stripe for payment system integration.
 
 
-#### Outcome:
+==The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.==
 
-The new application, Art Connection, although still in production, is faster, simpler to maintain the code.
 
-With the rewriting, the application has become scalable and possible to implement and use by other similar businesses.
+4. Outcome:
+
+- The new application, Art Connection, although still in production, is faster, simpler to maintain the code.
+
+- With the rewriting, the application has become scalable and possible to implement and use by other similar businesses.
