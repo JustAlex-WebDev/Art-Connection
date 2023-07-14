@@ -19,7 +19,7 @@ Password: `password`
 
 ### Case Study
 
-1. Summary:
+*1. Summary:*
 
 - Client: Art Connection
 
@@ -29,7 +29,7 @@ Password: `password`
 
 - Industry: eCommerce, Art / Design
 
-2. Challenge:
+*2. Challenge:*
 
 - The client came with software that was already in production and wanted to develop new functions and fully transform the way the website felt and looked.
 
@@ -43,7 +43,7 @@ scalable - ready for the big growth of Art Connection, increasing customer base 
 
 
 
-3. Process:
+*3. Process:*
 
 - After analysis of the old code, it turned out that it is of low quality and that adding new functionalities will be difficult and expensive, so my recommendation was to rewrite the application. The client agreed to this solution.
 
@@ -58,10 +58,10 @@ scalable - ready for the big growth of Art Connection, increasing customer base 
 - The following technologies have been used: React for development, Firebase for hosting and stable/reliable database and Stripe for payment system integration.
 
 
-==The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.==
+*The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.*
 
 
-4. Outcome:
+*4. Outcome:*
 
 - The new application, Art Connection, although still in production, is faster, simpler to maintain the code.
 
