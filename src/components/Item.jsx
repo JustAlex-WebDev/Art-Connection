@@ -83,7 +83,7 @@ const Item = ({
               </div>
             )}
             <div className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-700">
-              <Link to={"/watches/" + item.id}>
+              <Link to={"/" + item.id}>
                 <div className="hover:opacity-50 cursor-pointer">
                   Learn more
                 </div>

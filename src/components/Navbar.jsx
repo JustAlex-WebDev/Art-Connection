@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose, AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
@@ -8,6 +8,7 @@ import MobileMenu from "./MobileMenu";
 import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { motion as m } from "framer-motion";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Navbar = () => {
   let totalItemsShoppingCart = 0;
@@ -15,6 +16,7 @@ const Navbar = () => {
   const { shoppingCart } = useShoppingCart();
   const [nav, setNav] = useState(false);
   const [navbarShadow, setNavbarShadow] = useState(false);
+  const { theme, setTheme } = useContext(ThemeContext);
   const { user, logOut } = UserAuth();
 
   // Navbar Shadow on scroll
@@ -34,7 +36,7 @@ const Navbar = () => {
       transition={{ duration: 1, delay: 1 }}
       className={`bg-secondary w-full fixed top-0 z-50 duration-300 ${
         navbarShadow ? "shadow-md" : "shadow-sm"
-      }`}
+      } ${theme === "dark" ? "shadow-white" : null}`}
     >
       <div className="flex w-full">
         <m.div
