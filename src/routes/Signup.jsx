@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Slides from "../components/Slides";
 import Footer from "../components/Footer";
 import { motion as m } from "framer-motion";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ const Signup = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { signUp, setSignedUp } = UserAuth();
+  const { scrollToTopFunction } = useScrollToTopFunction();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -84,7 +86,11 @@ const Signup = () => {
           </form>
           <p className="my-4 text-center text-primary duration-300">
             Already have an account?<span> </span>
-            <Link className="hover:opacity-50 font-bold" to="/signin">
+            <Link
+              className="hover:opacity-50 font-bold"
+              to="/signin"
+              onClick={scrollToTopFunction}
+            >
               Sign In
             </Link>
           </p>

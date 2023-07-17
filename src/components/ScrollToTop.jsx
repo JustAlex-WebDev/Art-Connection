@@ -1,7 +1,10 @@
 import React from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
-const ScrollToTop = ({ scrollToTopIndicator, scrollToTopFunction }) => {
+const ScrollToTop = ({ scrollToTopIndicator }) => {
+  const { scrollToTopFunction } = useScrollToTopFunction();
+
   return (
     <div
       onClick={scrollToTopFunction}

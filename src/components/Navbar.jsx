@@ -9,6 +9,7 @@ import { useFavouritesSection } from "../context/FavouritesContext";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { motion as m } from "framer-motion";
 import { ThemeContext } from "../context/ThemeContext";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const Navbar = () => {
   let totalItemsShoppingCart = 0;
@@ -18,6 +19,7 @@ const Navbar = () => {
   const [navbarShadow, setNavbarShadow] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
   const { user, logOut } = UserAuth();
+  const { scrollToTopFunction } = useScrollToTopFunction();
 
   // Navbar Shadow on scroll
   const scrollNavbarShadow = () => {
@@ -58,7 +60,7 @@ const Navbar = () => {
         transition={{ delay: 2, duration: 0.5 }}
         className="main-div flex items-center justify-between h-20 font-bold text-primary"
       >
-        <Link to="/">
+        <Link to="/" onClick={scrollToTopFunction}>
           <h1 title="Home" className="text-xl hover:opacity-50">
             Art Connection
           </h1>
@@ -70,6 +72,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Link
               to="/account"
+              onClick={scrollToTopFunction}
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               Account
@@ -82,6 +85,7 @@ const Navbar = () => {
             </button>
             <Link
               to="/favourites"
+              onClick={scrollToTopFunction}
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               <span className="absolute pt-5 pl-7 top-0">
@@ -91,6 +95,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/shoppingcart"
+              onClick={scrollToTopFunction}
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               <span className="absolute pt-5 pl-8 top-0">
@@ -107,24 +112,28 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Link
               to="/signin"
+              onClick={scrollToTopFunction}
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               Sign In
             </Link>
             <Link
               to="/signup"
+              onClick={scrollToTopFunction}
               className="bg-button text-button px-5 py-2 mx-2 rounded-2xl shadow-lg hover:opacity-50 duration-100 ease-in-out"
             >
               Sign Up
             </Link>
             <Link
               to="/favourites"
+              onClick={scrollToTopFunction}
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               <AiOutlineHeart title="Favourites" size={25} />
             </Link>
             <Link
               to="/shoppingcart"
+              onClick={scrollToTopFunction}
               className="p-4 hover:opacity-50 duration-100 ease-in-out"
             >
               <FiShoppingCart title="Shopping Cart" size={25} />

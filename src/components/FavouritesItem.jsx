@@ -3,6 +3,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaShoppingCart } from "react-icons/fa";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const FavouritesItem = ({
   item,
@@ -11,9 +12,11 @@ const FavouritesItem = ({
   removeItemShoppingCart,
   isInShoppingCart,
 }) => {
+  const { scrollToTopFunction } = useScrollToTopFunction();
+
   return (
     <div className="group my-8 flex flex-col xxxsm:flex-row justify-center items-center gap-4 xxxsm:gap-8">
-      <Link to={"/" + item.id}>
+      <Link to={"/" + item.id} onClick={scrollToTopFunction}>
         <img
           className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] object-scale-down h-[13rem] shadow-lg bg-secondary group-hover:animate-panImage hover:cursor-pointer duration-300"
           src={item.img}
