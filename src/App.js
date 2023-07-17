@@ -14,6 +14,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { AuthContextProvider } from "./context/AuthContext";
 import FavouritesContextProvider from "./context/FavouritesContext";
 import ShoppingCartContextProvider from "./context/ShoppingCartContext";
+import ScrollToTopContextProvider from "./context/ScrollToTopContext";
 import Painting from "./routes/Painting";
 
 function App() {
@@ -31,10 +32,6 @@ function App() {
   };
   window.addEventListener("scroll", scrollToTopIndicator);
 
-  const scrollToTopFunction = () => {
-    document.documentElement.scrollTop = 0;
-  };
-
   // Animation on Load
   useEffect(() => {
     setLoading(true);
@@ -48,29 +45,28 @@ function App() {
       <AuthContextProvider>
         <FavouritesContextProvider>
           <ShoppingCartContextProvider>
-            {loading ? (
-              <AnimationOnLoad />
-            ) : (
-              <>
-                <ScrollToTop
-                  scrollToTopIndicator={scrollToTop}
-                  scrollToTopFunction={scrollToTopFunction}
-                />
+            <ScrollToTopContextProvider>
+              {loading ? (
+                <AnimationOnLoad />
+              ) : (
+                <>
+                  <ScrollToTop scrollToTopIndicator={scrollToTop} />
 
-                <AnimatePresence initial={false}>
-                  <Routes location={location} key={location.pathName}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/:id" element={<Painting />} />
-                    <Route path="/favourites" element={<Favourites />} />
-                    <Route path="/shoppingcart" element={<ShoppingCart />} />
-                    <Route path="/signin" element={<Signin />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/account" element={<Account />} />
-                    <Route path="/checkout" element={<Checkout />} />
-                  </Routes>
-                </AnimatePresence>
-              </>
-            )}
+                  <AnimatePresence initial={false}>
+                    <Routes location={location} key={location.pathName}>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/:id" element={<Painting />} />
+                      <Route path="/favourites" element={<Favourites />} />
+                      <Route path="/shoppingcart" element={<ShoppingCart />} />
+                      <Route path="/signin" element={<Signin />} />
+                      <Route path="/signup" element={<Signup />} />
+                      <Route path="/account" element={<Account />} />
+                      <Route path="/checkout" element={<Checkout />} />
+                    </Routes>
+                  </AnimatePresence>
+                </>
+              )}
+            </ScrollToTopContextProvider>
           </ShoppingCartContextProvider>
         </FavouritesContextProvider>
       </AuthContextProvider>

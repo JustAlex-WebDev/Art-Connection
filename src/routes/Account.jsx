@@ -8,9 +8,11 @@ import Slides from "../components/Slides";
 import { UserAuth } from "../context/AuthContext";
 import { motion as m } from "framer-motion";
 import Footer from "../components/Footer";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const Account = () => {
   const { user, logOut } = UserAuth();
+  const { scrollToTopFunction } = useScrollToTopFunction();
 
   if (user) {
     return (
@@ -36,12 +38,14 @@ const Account = () => {
             <div className="flex flex-col">
               <Link
                 to="/favourites"
+                onClick={scrollToTopFunction}
                 className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center duration-300"
               >
                 <AiOutlineHeart size={20} />
               </Link>
               <Link
                 to="/shoppingcart"
+                onClick={scrollToTopFunction}
                 className="px-6 py-2 mt-4 bg-button text-button hover:opacity-50 rounded-2xl shadow-xl font-bold flex justify-center items-center duration-300"
               >
                 <FiShoppingCart size={20} />

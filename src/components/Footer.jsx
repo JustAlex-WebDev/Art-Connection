@@ -5,8 +5,11 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { motion as m } from "framer-motion";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const Footer = () => {
+  const { scrollToTopFunction } = useScrollToTopFunction();
+
   return (
     <div className="main-div pt-4 text-primary mb-4 duration-300">
       <m.div
@@ -112,7 +115,7 @@ const Footer = () => {
         className="text-center py-4"
       >
         © 2023{" "}
-        <Link to="/">
+        <Link to="/" onClick={scrollToTopFunction}>
           <span className="hover:opacity-50 cursor-pointer">
             Art Connection
           </span>

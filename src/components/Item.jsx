@@ -5,6 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const Item = ({
   item,
@@ -17,6 +18,7 @@ const Item = ({
 }) => {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
   const { user } = UserAuth();
+  const { scrollToTopFunction } = useScrollToTopFunction();
 
   return (
     <article
@@ -30,7 +32,7 @@ const Item = ({
     >
       <div className="w-[10rem] md:w-[11.5rem] lg:w-[13rem] h-[13rem] hover:z-20">
         <div className="overflow-hidden group w-full">
-          <Link to={"/" + item.id}>
+          <Link to={"/" + item.id} onClick={scrollToTopFunction}>
             <img
               src={item.img}
               alt={item.name}
@@ -83,7 +85,7 @@ const Item = ({
               </div>
             )}
             <div className="opacity-0 group-hover:opacity-100 duration-300 ease-in-out delay-700">
-              <Link to={"/" + item.id}>
+              <Link to={"/" + item.id} onClick={scrollToTopFunction}>
                 <div className="hover:opacity-50 cursor-pointer">
                   Learn more
                 </div>
