@@ -6,7 +6,7 @@ Art Connection is the leading provider of framed art to designers, galleries, an
 
 ## Development
 
-The website is developed with the help of React, Firebase and Tailwind! There are a lot of cool features, such as Light/Dark Mode, Authentication, dynamic routes and payment system integrated with the help of Stripe. Furthermore, React-Router-Dom is used for navigating the user around the app and useContext for keeping track of the state throughout the whole application. Finally, there are many features, such as filtering system and other functionalities.
+The website is developed with the help of React, Firebase and Tailwind! There are a lot of cool features, such as Light/Dark Mode, Authentication and dynamic routes. Furthermore, React-Router-Dom is used for navigating the user around the app and useContext for keeping track of the state throughout the whole application. Finally, there are many features, such as filtering system and other functionalities.
 
 ## Demo Link
 
