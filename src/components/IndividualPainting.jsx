@@ -18,7 +18,7 @@ const IndividualPainting = ({
     <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 2.5, duration: 0.5 }}
+      transition={{ delay: 2.75, duration: 0.75 }}
       className="main-div my-24 xxsm:mt-8 flex flex-col md:flex-row justify-center"
     >
       {theme === "dark" ? (
