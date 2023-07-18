@@ -23,7 +23,7 @@ const Account = () => {
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 0.5 }}
+          transition={{ delay: 2.75, duration: 1 }}
           className="main-div mb-40 mt-28"
         >
           <div className="flex flex-col justify-center items-center my-12 py-8 main-div">

@@ -33,31 +33,17 @@ const Navbar = () => {
 
   return (
     <m.div
-      initial={{ transform: "scale(0.5)", opacity: "0" }}
-      animate={{ transform: "scale(1)", opacity: "1" }}
+      initial={{ y: "-100%" }}
+      animate={{ y: "0" }}
       transition={{ duration: 1, delay: 1 }}
       className={`bg-secondary w-full fixed top-0 z-50 duration-300 ${
         navbarShadow ? "shadow-md" : "shadow-sm"
       } ${theme === "dark" ? "shadow-white" : null}`}
     >
-      <div className="flex w-full">
-        <m.div
-          initial={{ width: "50%" }}
-          animate={{ width: "0" }}
-          transition={{ duration: 1, delay: 1 }}
-          className="bg-primary h-20 fixed top-0 right-0"
-        ></m.div>
-        <m.div
-          initial={{ width: "50%" }}
-          animate={{ width: "0" }}
-          transition={{ duration: 1, delay: 1 }}
-          className="bg-primary h-20 fixed top-0 justify-end"
-        ></m.div>
-      </div>
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
+        transition={{ delay: 2.25, duration: 0.5 }}
         className="main-div flex items-center justify-between h-20 font-bold text-primary"
       >
         <Link to="/" onClick={scrollToTopFunction}>

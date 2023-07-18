@@ -15,7 +15,7 @@ const Footer = () => {
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.75, duration: 0.5 }}
+        transition={{ delay: 3, duration: 0.75 }}
         className="grid md:grid-cols-2"
       >
         <div className="flex justify-evenly w-full md:max-w-[300px] uppercase">

@@ -29,7 +29,7 @@ const ItemSearch = () => {
     <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 2.5, duration: 0.5 }}
+      transition={{ delay: 2.75, duration: 0.75 }}
       className="main-div mb-24 mt-24 xxsm:mt-8"
     >
       <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 text-center md:text-right">

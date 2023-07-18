@@ -38,7 +38,7 @@ const Signin = () => {
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 0.5 }}
+        transition={{ delay: 2.75, duration: 0.75 }}
       >
         <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-36">
           <h1 className="text-2xl font-bold text-primary duration-300">
