@@ -20,8 +20,8 @@ const MobileMenu = ({
       onClick={() => setNav(false)}
       className={
         nav
-          ? "md:hidden fixed right-0 top-0 w-full h-[100vh] h-[100svh] z-40"
-          : "md:hidden fixed right-[-100%] top-0 w-full h-[100vh] h-[100svh] z-40"
+          ? "mobile-menu md:hidden fixed right-0 top-0 w-full z-40"
+          : "mobile-menu md:hidden fixed right-[-100%] top-0 w-full z-40"
       }
     >
       <div
