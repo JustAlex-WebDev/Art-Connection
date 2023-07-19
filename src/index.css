@@ -34,9 +34,19 @@
   scroll-behavior: smooth;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   background-color: var(--color-bg-primary);
   transition-duration: 300ms;
+  height: -webkit-fill-available;
+}
+
+.mobile-menu {
+  height: 100vh;
+  height: -webkit-fill-available;
 }
 
 /* Custom Scrollbar */
