@@ -41,6 +41,7 @@ html {
 body {
   background-color: var(--color-bg-primary);
   transition-duration: 300ms;
+  height: 100vh;
   height: -webkit-fill-available;
 }
 
