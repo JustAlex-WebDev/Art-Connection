@@ -7,7 +7,6 @@ import {
 } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const ShoppingCartItem = ({
   item,
@@ -17,9 +16,8 @@ const ShoppingCartItem = ({
   addItemFavouritesSection,
   removeItemFavouritesSection,
   isInFavouritesSection,
+  scrollToTopFunction,
 }) => {
-  const { scrollToTopFunction } = useScrollToTopFunction();
-
   return (
     <div className="group my-8 flex flex-col xxxsm:flex-row justify-center items-center gap-4 xxxsm:gap-8">
       <Link to={"/" + item.id} onClick={scrollToTopFunction}>
