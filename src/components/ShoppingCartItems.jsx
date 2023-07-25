@@ -5,6 +5,7 @@ import { Navigate, Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useFavouritesSection } from "../context/FavouritesContext";
 import { motion as m } from "framer-motion";
+import { useScrollToTopFunction } from "../context/ScrollToTopContext";
 
 const ShoppingCartItems = () => {
   const {
@@ -19,6 +20,7 @@ const ShoppingCartItems = () => {
     removeItemFavouritesSection,
   } = useFavouritesSection();
   const { user } = UserAuth();
+  const { scrollToTopFunction } = useScrollToTopFunction();
 
   let totalPrice = 0;
   let totalItems = 0;
@@ -78,6 +80,7 @@ const ShoppingCartItems = () => {
                 addItemFavouritesSection={addItemFavouritesSection}
                 removeItemFavouritesSection={removeItemFavouritesSection}
                 isInFavouritesSection={isInFavouritesSection}
+                scrollToTopFunction={scrollToTopFunction}
               />
             );
           })}
@@ -86,6 +89,7 @@ const ShoppingCartItems = () => {
           <div className="flex justify-center items-center mt-12 main-div">
             <Link
               to="/checkout"
+              onClick={scrollToTopFunction}
               className="p-3 px-6 bg-button text-button hover:opacity-50 font-bold rounded-2xl shadow-md"
             >
               Go to Checkout
