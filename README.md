@@ -1,4 +1,4 @@
-# E-Commerce-Shop-FAKE-API-Project
+# E-Commerce-Shop (Art Connection)
 
 ## About
 
