@@ -1,4 +1,4 @@
-# E-Commerce-Shop (Art Connection)
+# Art Connection
 
 ## About
 
