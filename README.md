@@ -2,11 +2,11 @@
 
 ## About
 
-Art Connection is the leading provider of framed art to designers, galleries, and art retailers with more than 32 years in the fine art and custom framing industry. Its massive 45,000-square-foot showroom, located in Pompano Beach, Florida, holds more than 4,000 pieces of art, as well as metal and resin sculptures, vases, lamps, Italian accessories, and “Melting” sculptures.
+Art Connection is the leading provider of framed art to designers, galleries, and art retailers with more than 32 years in the fine art and custom framing industry. Its massive 45,000-square-foot showroom, located in Pompano Beach, Florida, holds more than 4,000 pieces of art, as well as metal and resin sculptures, vases, lamps, Italian accessories, and “Melting” sculptures!
 
 ## Development
 
-The website is developed with the help of React, Firebase and Tailwind! There are a lot of cool features, such as Light/Dark Mode, Authentication and dynamic routes. Furthermore, React-Router-Dom is used for navigating the user around the app and useContext for keeping track of the state throughout the whole application. Finally, there are many features, such as filtering, sorting and searching system, fully functional form for the checkout and other cool functionalities.
+The website is developed with the help of React, Firebase and Tailwind! There are a lot of cool features, such as Light/Dark Mode, Authentication and dynamic routes. Furthermore, React-Router-Dom is used for navigating the user around the app and useContext for keeping track of the state throughout the whole application. Finally, there are many features, such as filtering, sorting and searching system, fully functional form for the checkout and other cool functionalities!
 
 ## Demo Link
 
