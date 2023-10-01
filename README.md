@@ -25,6 +25,8 @@ Password: `password`
 
 - Country: USA
 
+- My Role: UI/UX Developer
+
 - Project scope and technology: React & Firebase Development, UX/UI Design
 
 - Industry: eCommerce, Art / Design
