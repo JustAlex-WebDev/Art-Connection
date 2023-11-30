@@ -19,10 +19,10 @@ Password: `password`
 
 ## Case Study
 
-** ROLE ** - UI/UX Developer and Designer
-** RESPONSIBILITES ** - React Development / Structure & Design / Firebase Integration / SEO Optimisation / Consultation
-** GitHub ** - https://github.com/JustAlex-WebDev/E-Commerce-App
-** URL ** - https://e-commerce-app-cf00d.web.app/
+**ROLE** - UI/UX Developer and Designer
+**RESPONSIBILITES** - React Development / Structure & Design / Firebase Integration / SEO Optimisation / Consultation
+**GitHub** - https://github.com/JustAlex-WebDev/E-Commerce-App
+**URL** - https://e-commerce-app-cf00d.web.app/
 
 ### Challenge
 
