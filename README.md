@@ -12,54 +12,54 @@ Our website is crafted using cutting-edge technologies, blending React, Firebase
 
 Experience Art Connection now with our live demo! If you prefer not to use your personal information, utilize the following demo credentials:
 
-- **Email:** `demo@demo.com`
-- **Password:** `password`
+**Email:** `demo@demo.com`
+**Password:** `password`
 
 [Explore the Demo](https://e-commerce-app-cf00d.web.app/ "See the demo")
 
 ## Case Study
 
-### **Role:**
+### **Role**
 UI/UX Developer and Designer
 
-### **Responsibilities:**
+### **Responsibilities**
 - React Development
 - Structure & Design
 - Firebase Integration
 - SEO Optimization
 - Consultation
 
-### **Challenge:**
+### **Challenge**
 
 The client presented an existing software in production and sought to revolutionize its functions and overall look and feel. Developed by the client's team from 2016 to 2019, the software amassed valuable business data, including 2000 customer records by August 2019. The decision to rewrite the codebase from scratch was made to accommodate new features, with a focus on universality and scalability for Art Connection's anticipated growth.
 
-### **Process:**
+### **Process**
 
-1. **Analysis:**
-   - Identified low-quality code in the existing system.
-   - Proposed a complete rewrite, which the client accepted.
+**Analysis**
+- Identified low-quality code in the existing system.
+- Proposed a complete rewrite, which the client accepted.
 
-2. **Development Plan:**
-   - Collaborated on a plan with the owners, outlining new features and UI/UX redesign.
-   - Ensured ongoing support and maintenance.
+**Development Plan**
+- Collaborated on a plan with the owners, outlining new features and UI/UX redesign.
+- Ensured ongoing support and maintenance.
 
-3. **Testing and Feedback:**
-   - Collected feedback from end-users during testing.
-   - Implemented changes based on feedback.
+**Testing and Feedback**
+- Collected feedback from end-users during testing.
+- Implemented changes based on feedback.
 
-4. **Implementation Support:**
-   - Assisted and supported the application's implementation.
+**Implementation Support**
+- Assisted and supported the application's implementation.
 
-### **Technologies Used:**
+### **Technologies Used**
 - React for development
 - Firebase for hosting and a stable/reliable database
 - Stripe for seamless payment system integration
 
-### **Outcome:**
+### **Outcome**
 
 Though still in production, the new Art Connection application stands out with:
 - Improved speed and simplified code maintenance.
 - Enhanced scalability and user-friendliness.
 
-**Note:**
+**Note**
 The application is currently in the testing phase and hasn't been deployed at the client's company. However, a fully functional demo/testing version is available for exploration.
