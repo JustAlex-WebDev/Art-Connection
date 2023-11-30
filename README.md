@@ -23,10 +23,6 @@ Password: `password`
 
 **RESPONSIBILITES** - React Development / Structure & Design / Firebase Integration / SEO Optimisation / Consultation
 
-**GitHub** - https://github.com/JustAlex-WebDev/E-Commerce-App
-
-**URL** - https://e-commerce-app-cf00d.web.app/
-
 ### Challenge
 
 The client came with software that was already in production and wanted to develop new functions and fully transform the way the website felt and looked.
