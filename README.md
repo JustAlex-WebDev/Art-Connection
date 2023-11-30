@@ -2,56 +2,64 @@
 
 ## About
 
-Art Connection is the leading provider of framed art to designers, galleries, and art retailers with more than 32 years in the fine art and custom framing industry. Its massive 45,000-square-foot showroom, located in Pompano Beach, Florida, holds more than 4,000 pieces of art, as well as metal and resin sculptures, vases, lamps, Italian accessories, and “Melting” sculptures!
+Welcome to Art Connection, the premier provider of framed art to designers, galleries, and art retailers, boasting over 32 years of expertise in the fine art and custom framing industry. Our expansive 45,000-square-foot showroom in Pompano Beach, Florida, showcases a diverse collection of over 4,000 art pieces, along with metal and resin sculptures, vases, lamps, Italian accessories, and unique "Melting" sculptures!
 
 ## Development
 
-The website is developed with the help of React, Firebase and Tailwind! There are a lot of cool features, such as Light/Dark Mode, Authentication and dynamic routes. Furthermore, React-Router-Dom is used for navigating the user around the app and useContext for keeping track of the state throughout the whole application. Finally, there are many features, such as filtering, sorting and searching system, fully functional form for the checkout and other cool functionalities.
+Our website is crafted using cutting-edge technologies, blending React, Firebase, and Tailwind to deliver an immersive experience. Explore a myriad of features, including Light/Dark Mode, Authentication, dynamic routes, and the seamless navigation provided by React-Router-Dom. Harness the power of useContext for state management across the entire application. Dive into the world of advanced functionalities, such as a robust filtering and sorting system, a comprehensive search mechanism, and a fully functional checkout form.
 
 ## Live Demo
 
-If you do not want to use your own information just use these demo email and password to sign in:
+Experience Art Connection now with our live demo! If you prefer not to use your personal information, utilize the following demo credentials:
 
-Email: `demo@demo.com`
-Password: `password`
+- **Email:** `demo@demo.com`
+- **Password:** `password`
 
-[Go to app](https://e-commerce-app-cf00d.web.app/ "See the demo")
+[Explore the Demo](https://e-commerce-app-cf00d.web.app/ "See the demo")
 
 ## Case Study
 
-**ROLE** - UI/UX Developer and Designer
+### **Role:**
+UI/UX Developer and Designer
 
-**RESPONSIBILITES** - React Development / Structure & Design / Firebase Integration / SEO Optimisation / Consultation
+### **Responsibilities:**
+- React Development
+- Structure & Design
+- Firebase Integration
+- SEO Optimization
+- Consultation
 
-### Challenge
+### **Challenge:**
 
-The client came with software that was already in production and wanted to develop new functions and fully transform the way the website felt and looked.
+The client presented an existing software in production and sought to revolutionize its functions and overall look and feel. Developed by the client's team from 2016 to 2019, the software amassed valuable business data, including 2000 customer records by August 2019. The decision to rewrite the codebase from scratch was made to accommodate new features, with a focus on universality and scalability for Art Connection's anticipated growth.
 
-The software was developed from 2016 to 2019 by the client's development team and collected valuable info, including business data. By August 2019 the company's database contained 2000 customer records. Each of these records included information on price, product, services and other related information.
+### **Process:**
 
-After analyzing the client's current situation and technological needs, the conclusion was that adding new features introduced too much change to the codebase so it was decided to re-write it from scratch.
+1. **Analysis:**
+   - Identified low-quality code in the existing system.
+   - Proposed a complete rewrite, which the client accepted.
 
-With the new version of the app, two requirements appeared: universal - the possibility of easily and effectively change the codebase. scalable - ready for the big growth of Art Connection, increasing customer base and team.
+2. **Development Plan:**
+   - Collaborated on a plan with the owners, outlining new features and UI/UX redesign.
+   - Ensured ongoing support and maintenance.
 
-### Process
+3. **Testing and Feedback:**
+   - Collected feedback from end-users during testing.
+   - Implemented changes based on feedback.
 
-After analysis of the old code, it turned out that it is of low quality and that adding new functionalities will be difficult and expensive, so my recommendation was to rewrite the application. The client agreed to this solution.
+4. **Implementation Support:**
+   - Assisted and supported the application's implementation.
 
-The development was based on a plan created together with the owners, which included adding new features and a redesign and implementation of the new and updated UI/UX of the website.
+### **Technologies Used:**
+- React for development
+- Firebase for hosting and a stable/reliable database
+- Stripe for seamless payment system integration
 
-Ongoing support and maintenance was also provided.
+### **Outcome:**
 
-During the tests, the client was collecting feedback from end-users and changes were implemented.
+Though still in production, the new Art Connection application stands out with:
+- Improved speed and simplified code maintenance.
+- Enhanced scalability and user-friendliness.
 
-The last step was to assist and support the implementation of the application.
-
-The following technologies have been used: React for development, Firebase for hosting and stable/reliable database and Stripe for payment system integration.
-
-
-### Outcome
-
-The new application, Art Connection, although still in production, is faster and simpler to maintain the code.
-
-With the rewriting, the application has become more scalable and user friendly.
-
-**The application is still under development and has not yet been deployed at the Client's company, but a fully functional demo/testing version of it is deployed.**
+**Note:**
+The application is currently in the testing phase and hasn't been deployed at the client's company. However, a fully functional demo/testing version is available for exploration.
