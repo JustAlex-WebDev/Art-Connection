@@ -6,7 +6,7 @@ Welcome to Art Connection, the premier provider of framed art to designers, gall
 
 ## Development
 
-Our website is crafted using cutting-edge technologies, blending React, Firebase, and Tailwind to deliver an immersive experience. Explore a myriad of features, including Light/Dark Mode, Authentication, dynamic routes, and the seamless navigation provided by React-Router-Dom. Harness the power of useContext for state management across the entire application. Dive into the world of advanced functionalities, such as a robust filtering and sorting system, a comprehensive search mechanism, and a fully functional checkout form.
+The website is crafted using cutting-edge technologies, blending React, Firebase, and Tailwind to deliver an immersive experience. Explore a myriad of features, including Light/Dark Mode, Authentication, dynamic routes, and the seamless navigation provided by React-Router-Dom. Harness the power of useContext for state management across the entire application. Dive into the world of advanced functionalities, such as a robust filtering and sorting system, a comprehensive search mechanism, and a fully functional checkout form.
 
 ## Live Demo
 
@@ -23,11 +23,11 @@ Experience Art Connection now with our live demo! If you prefer not to use your 
 UI/UX Developer and Designer
 
 ### **Responsibilities**
-- React Development
-- Structure & Design
-- Firebase Integration
-- SEO Optimization
-- Consultation
+React Development
+Structure & Design
+Firebase Integration
+SEO Optimization
+Consultation
 
 ### **Challenge**
 
@@ -36,30 +36,30 @@ The client presented an existing software in production and sought to revolution
 ### **Process**
 
 **Analysis**
-- Identified low-quality code in the existing system.
-- Proposed a complete rewrite, which the client accepted.
+Identified low-quality code in the existing system.
+Proposed a complete rewrite, which the client accepted.
 
 **Development Plan**
-- Collaborated on a plan with the owners, outlining new features and UI/UX redesign.
-- Ensured ongoing support and maintenance.
+Collaborated on a plan with the owners, outlining new features and UI/UX redesign.
+Ensured ongoing support and maintenance.
 
 **Testing and Feedback**
-- Collected feedback from end-users during testing.
-- Implemented changes based on feedback.
+Collected feedback from end-users during testing.
+Implemented changes based on feedback.
 
 **Implementation Support**
-- Assisted and supported the application's implementation.
+Assisted and supported the application's implementation.
 
 ### **Technologies Used**
-- React for development
-- Firebase for hosting and a stable/reliable database
-- Stripe for seamless payment system integration
+React for development
+Firebase for hosting and a stable/reliable database
+Stripe for seamless payment system integration
 
 ### **Outcome**
 
 Though still in production, the new Art Connection application stands out with:
-- Improved speed and simplified code maintenance.
-- Enhanced scalability and user-friendliness.
+Improved speed and simplified code maintenance.
+Enhanced scalability and user-friendliness.
 
 **Note**
 The application is currently in the testing phase and hasn't been deployed at the client's company. However, a fully functional demo/testing version is available for exploration.
