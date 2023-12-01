@@ -2,7 +2,7 @@
 
 ## About
 
-Welcome to Art Connection, the premier provider of framed art to designers, galleries, and art retailers, boasting over 32 years of expertise in the fine art and custom framing industry. Our expansive 45,000-square-foot showroom in Pompano Beach, Florida, showcases a diverse collection of over 4,000 art pieces, along with metal and resin sculptures, vases, lamps, Italian accessories, and unique "Melting" sculptures!
+Welcome to Art Connection, the premier provider of framed art to designers, galleries, and art retailers, boasting over 32 years of expertise in the fine art and custom framing industry. It's expansive 45,000-square-foot showroom in Pompano Beach, Florida, showcases a diverse collection of over 4,000 art pieces, along with metal and resin sculptures, vases, lamps, Italian accessories, and unique "Melting" sculptures!
 
 ## Development
 
