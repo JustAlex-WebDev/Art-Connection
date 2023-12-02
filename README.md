@@ -31,19 +31,19 @@ The client presented an existing software in production and sought to revolution
 
 ### **Process**
 
-**Analysis**
+**Analysis: **
 Identified low-quality code in the existing system.
 Proposed a complete rewrite, which the client accepted.
 
-**Development Plan**
+**Development Plan: **
 Collaborated on a plan with the owners, outlining new features and UI/UX redesign.
 Ensured ongoing support and maintenance.
 
-**Testing and Feedback**
+**Testing and Feedback: **
 Collected feedback from end-users during testing.
 Implemented changes based on feedback.
 
-**Implementation Support**
+**Implementation Support: **
 Assisted and supported the application's implementation.
 
 ### **Technologies Used**
