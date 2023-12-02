@@ -23,11 +23,7 @@ Experience Art Connection now with our live demo! If you prefer not to use your 
 UI/UX Developer and Designer
 
 ### **Responsibilities**
-React Development
-Structure & Design
-Firebase Integration
-SEO Optimization
-Consultation
+React Development / Structure & Design / Firebase Integration / SEO Optimization / Consultation
 
 ### **Challenge**
 
