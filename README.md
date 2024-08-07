@@ -1,4 +1,4 @@
-# Art Connection
+# [Art Connection](https://e-commerce-app-cf00d.web.app/ "Art Connection")
 
 ## About
 
@@ -14,14 +14,12 @@ The Art Connection website is built using modern technologies, including React, 
 - **useContext** for efficient state management
 - **Advanced Functionalities** such as a robust filtering and sorting system, a comprehensive search mechanism, and a fully functional checkout form
 
-## Live Demo
+## [Live Demo](https://e-commerce-app-cf00d.web.app/ "Live Demo")
 
 Experience Art Connection firsthand with our live demo! To explore without using personal information, use the following demo credentials:
 
 - **Email:** `demo@demo.com`
 - **Password:** `password`
-
-[Explore the Demo](https://e-commerce-app-cf00d.web.app/ "See the demo")
 
 ## Case Study
 
